@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=4 uid="uid://6hh7o77unixk"]
+[gd_scene load_steps=129 format=4 uid="uid://6hh7o77unixk"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_4dqq6"]
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_ponqc"]
@@ -39,6 +39,7 @@
 [ext_resource type="PackedScene" uid="uid://b76etfjjltnts" path="res://addons/cogito/DemoScenes/DemoPrefabs/ceiling_fan_lab.tscn" id="32_j2alh"]
 [ext_resource type="PackedScene" uid="uid://c7ft55rxa0rum" path="res://addons/cogito/DemoScenes/DemoPrefabs/ksi_steps_flat.tscn" id="33_01501"]
 [ext_resource type="PackedScene" uid="uid://crh8d5v2dqakq" path="res://addons/cogito/DemoScenes/DemoPrefabs/ksi_steps_flat_corner.tscn" id="34_6q0uf"]
+[ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="34_t2hdn"]
 [ext_resource type="PackedScene" uid="uid://d3m4ni301eso7" path="res://addons/cogito/PackedScenes/carriable_box.tscn" id="35_hegwd"]
 [ext_resource type="PackedScene" uid="uid://8h462cd7whew" path="res://addons/cogito/PackedScenes/hazard_zone.tscn" id="35_mda7y"]
 [ext_resource type="PackedScene" uid="uid://cjs44e1ow53rv" path="res://addons/cogito/PackedScenes/heal_zone.tscn" id="36_fryka"]
@@ -88,7 +89,7 @@ volumetric_fog_ambient_inject = 0.1
 volumetric_fog_sky_affect = 0.1
 volumetric_fog_temporal_reprojection_amount = 0.85
 
-[sub_resource type="Resource" id="Resource_bftoa"]
+[sub_resource type="Resource" id="Resource_t2hdn"]
 resource_local_to_scene = true
 script = ExtResource("4_hlewe")
 grid = true
@@ -901,7 +902,7 @@ environment = SubResource("Environment_bftoa")
 
 [node name="Player" parent="." instance=ExtResource("2_7qwrr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.13854, 0.8, -5.43073)
-inventory_data = SubResource("Resource_bftoa")
+inventory_data = SubResource("Resource_t2hdn")
 
 [node name="CONNECTOR_TO_LOBBY" type="Node3D" parent="."]
 
@@ -3051,6 +3052,9 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3, 0,
 
 [node name="KSI_wall_window_painted4" parent="NavigationRegion3D/SHOOTING_RANGE" instance=ExtResource("23_qd03d")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -6, 0, -10)
+
+[node name="CogitoObject" parent="NavigationRegion3D/SHOOTING_RANGE" instance=ExtResource("34_t2hdn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.91913, 0.401361, -15.4007)
 
 [node name="MOVEMENT" type="Node3D" parent="NavigationRegion3D"]
 

@@ -1,0 +1,22 @@
+[gd_resource type="Resource" script_class="WieldableItemPD" load_steps=2 format=3 uid="uid://btidn4oif2c0k"]
+
+[ext_resource type="Script" uid="uid://bkxgkf3pj8kb8" path="res://addons/cogito/InventoryPD/CustomResources/WieldableItemPD.gd" id="1_1fyy2"]
+
+[resource]
+script = ExtResource("1_1fyy2")
+no_reload = false
+hint_on_empty = ""
+charge_max = 0.0
+ammo_item_name = ""
+charge_current = 0.0
+wieldable_range = 0.0
+wieldable_damage = 0.0
+name = ""
+description = ""
+is_stackable = false
+is_droppable = true
+stack_size = 0
+drop_scene = null
+hint_text_on_use = ""
+item_size = Vector2(1, 1)
+metadata/_custom_type_script = "uid://bkxgkf3pj8kb8"

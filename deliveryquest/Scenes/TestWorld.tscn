@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://dinvhe27jhx8t"]
+
+[ext_resource type="Terrain3DMaterial" uid="uid://cucldk088ofyp" path="res://TerrainDir/new_terrain_3d_material.tres" id="1_se0eo"]
+[ext_resource type="Terrain3DAssets" uid="uid://cuqdmkilbu7em" path="res://TerrainDir/new_terrain_3d_assets.tres" id="2_4snwc"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="3_4snwc"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_4snwc"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_ed2pg"]
+sky_material = SubResource("ProceduralSkyMaterial_4snwc")
+
+[sub_resource type="Environment" id="Environment_rdsav"]
+background_mode = 2
+sky = SubResource("Sky_ed2pg")
+tonemap_mode = 2
+glow_enabled = true
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_rdsav")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Terrain3D" type="Terrain3D" parent="."]
+data_directory = "res://TerrainDir"
+material = ExtResource("1_se0eo")
+assets = ExtResource("2_4snwc")
+top_level = true
+metadata/_edit_lock_ = true
+
+[node name="CogitoPlayer" parent="." instance=ExtResource("3_4snwc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.04, 0)
+
+[node name="Town" type="Node3D" parent="."]

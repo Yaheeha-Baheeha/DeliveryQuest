@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=4 uid="uid://dkpk7ddabglvq"]
+[gd_scene load_steps=14 format=4 uid="uid://dkpk7ddabglvq"]
 
 [ext_resource type="Script" uid="uid://baea7y77yq7ga" path="res://Scenes/Weildables/weildable_sword.gd" id="1_mbj2j"]
+[ext_resource type="AudioStream" uid="uid://ocm2blyfthyq" path="res://addons/cogito/Assets/Audio/Kenney/woosh1.ogg" id="2_hpniy"]
 [ext_resource type="Texture2D" uid="uid://bbylpbkbubo6m" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/knight_texture.png" id="2_mbj2j"]
 [ext_resource type="Script" uid="uid://b361n7ae3ixmn" path="res://addons/cogito/Assets/Shader/ViewmodelSpace.gd" id="2_xntsa"]
 
@@ -45,7 +46,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8c1sv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xntsa"]
-size = Vector3(0.460083, 1.36485, 0.222351)
+size = Vector3(0.980385, 1.83074, 0.547409)
 
 [sub_resource type="Animation" id="Animation_mbj2j"]
 length = 0.001
@@ -59,7 +60,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.317418, 0, -0.534663)]
+"values": [Vector3(0.317418, -0.154023, -0.534663)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -86,34 +87,6 @@ tracks/2/keys = {
 "values": [true]
 }
 
-[sub_resource type="Animation" id="Animation_hpniy"]
-resource_name = "swing"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("SwordMesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0.0001, 0.2, 0.266667, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0.43059, 1.01742, -0.542168), Vector3(0.43059, 1.14153, -1.03086), Vector3(0.43059, 0.485678, -1.69272), Vector3(0.43059, 1.01742, -0.542168)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("SwordMesh:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.266667, 0.466667),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.437868, 0, 0), Vector3(-1.17665, 0, 0), Vector3(0, 0, 0)]
-}
-
 [sub_resource type="Animation" id="Animation_xntsa"]
 resource_name = "equip"
 tracks/0/type = "value"
@@ -126,7 +99,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.43059, -0.331787, -1.83257), Vector3(0.43059, 1.01742, -0.542168)]
+"values": [Vector3(0.43059, -0.331787, 0.16743), Vector3(0.317418, -0.154023, -0.534663)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -153,6 +126,34 @@ tracks/2/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_hpniy"]
+resource_name = "swing"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SwordMesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.266667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.317418, -0.154023, -0.534663), Vector3(0.430235, -0.00972527, -1.0293), Vector3(0.430581, -0.338921, -1.67503), Vector3(0.317418, -0.154023, -0.534663)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("SwordMesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.266667, 0.466667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.437868, 0, 0), Vector3(-1.17665, 0, 0), Vector3(0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_tdpt3"]
 resource_name = "unequip"
 tracks/0/type = "value"
@@ -165,7 +166,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0.43059, 1.01742, -0.542168), Vector3(0.43059, -0.331787, -1.83257)]
+"values": [Vector3(0.317418, -0.154023, -0.534663), Vector3(0.43059, -0.331787, 0.16743)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -200,11 +201,17 @@ _data = {
 &"unequip": SubResource("Animation_tdpt3")
 }
 
-[node name="Weildable_Sword" type="Node3D"]
+[node name="Weildable_Sword" type="Node3D" node_paths=PackedStringArray("damage_area", "wieldable_mesh")]
 script = ExtResource("1_mbj2j")
+damage_area = NodePath("SwordMesh/DamageArea")
+uses_stamina = true
+stamina_cost = 1
+swing_sound = ExtResource("2_hpniy")
+wieldable_mesh = NodePath("SwordMesh")
+anim_action_primary = "swing"
 
 [node name="SwordMesh" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.317418, 0, -0.534663)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.317418, -0.154023, -0.534663)
 script = ExtResource("2_xntsa")
 
 [node name="sword_2handed3" type="MeshInstance3D" parent="SwordMesh"]
@@ -214,9 +221,10 @@ skeleton = NodePath("")
 
 [node name="DamageArea" type="Area3D" parent="SwordMesh"]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00174737, -1.01742, 0)
+monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwordMesh/DamageArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00934202, 1.30021, 0.00252748)
+transform = Transform3D(0.999983, 0, 0, 0, 0.999983, 0, 7.38964e-13, 0, 1, -0.000190496, 1.53315, -0.00208831)
 shape = SubResource("BoxShape3D_xntsa")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

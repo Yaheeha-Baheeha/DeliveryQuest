@@ -3,7 +3,7 @@ extends CogitoWieldable
 @export_group("Sword Settings")
 @export var damage_area : Area3D
 @export var uses_stamina : bool = false
-@export var stamina_cost : int = 4
+@export var stamina_cost : int = 0
 ##Collision hit can be defined using Camera-Collider raycast, or Hitbox-Collider raycast. Camera-Collider is more reliable but less accurate, Hitbox-collider is more accurate but less reliable
 @export var use_camera_collision : bool
 
@@ -18,12 +18,14 @@ var player_stamina : CogitoAttribute = null
 func _ready():
 	if wieldable_mesh:
 		wieldable_mesh.hide()
-		
-	damage_area.body_entered.connect(_on_body_entered)
+	print("damage_area: ", damage_area)  # Add this line
+	if damage_area:
+		damage_area.body_entered.connect(_on_body_entered)
+	else:
+		CogitoGlobals.debug_log(true, "CogitoWieldable", "damage_area is null!")
 
 	if uses_stamina:
 		player_stamina = grab_player_stamina_attribute()
-		
 
 
 func grab_player_stamina_attribute() -> CogitoAttribute:

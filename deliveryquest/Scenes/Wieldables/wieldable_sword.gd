@@ -18,14 +18,13 @@ var player_stamina : CogitoAttribute = null
 func _ready():
 	if wieldable_mesh:
 		wieldable_mesh.hide()
-	print("damage_area: ", damage_area)  # Add this line
-	if damage_area:
-		damage_area.body_entered.connect(_on_body_entered)
-	else:
-		CogitoGlobals.debug_log(true, "CogitoWieldable", "damage_area is null!")
+		
+	damage_area.body_entered.connect(_on_body_entered)
 
 	if uses_stamina:
 		player_stamina = grab_player_stamina_attribute()
+		
+
 
 
 func grab_player_stamina_attribute() -> CogitoAttribute:

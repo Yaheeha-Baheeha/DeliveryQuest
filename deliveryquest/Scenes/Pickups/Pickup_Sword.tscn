@@ -3,10 +3,10 @@
 [ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_yll8p"]
 [ext_resource type="Texture2D" uid="uid://bbylpbkbubo6m" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/knight_texture.png" id="2_tk2i1"]
 [ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_5c71n"]
-[ext_resource type="Texture2D" uid="uid://uj2uowrvb2ni" path="res://addons/cogito/Assets/Graphics/ItemIcons/Cogito_LaserAmmo.png" id="4_idd88"]
+[ext_resource type="Texture2D" uid="uid://dyu6r70686huy" path="res://Scenes/Wieldables/Icons/SwordIcon.png" id="4_oaffv"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="4_ttpfk"]
 [ext_resource type="Script" uid="uid://bkxgkf3pj8kb8" path="res://addons/cogito/InventoryPD/CustomResources/WieldableItemPD.gd" id="5_ttpfk"]
-[ext_resource type="PackedScene" uid="uid://dkpk7ddabglvq" path="res://Scenes/Weildables/weildable_sword.tscn" id="6_ttpfk"]
+[ext_resource type="PackedScene" uid="uid://dkpk7ddabglvq" path="res://Scenes/Wieldables/wieldable_sword.tscn" id="6_ttpfk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s47qe"]
 resource_name = "knight_texture"
@@ -56,14 +56,14 @@ script = ExtResource("5_ttpfk")
 wieldable_scene = ExtResource("6_ttpfk")
 no_reload = true
 hint_on_empty = ""
-charge_max = 0.0
+charge_max = 1.0
 ammo_item_name = ""
-charge_current = 0.0
-wieldable_range = 0.0
-wieldable_damage = 0.0
+charge_current = 1.0
+wieldable_range = 7.2
+wieldable_damage = 6.9
 name = "Two Handed Sword"
 description = "A Big Sword"
-icon = ExtResource("4_idd88")
+icon = ExtResource("4_oaffv")
 is_stackable = false
 is_droppable = true
 stack_size = 0

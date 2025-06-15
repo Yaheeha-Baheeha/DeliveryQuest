@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://dkpk7ddabglvq"]
 
-[ext_resource type="Script" uid="uid://baea7y77yq7ga" path="res://Scenes/Weildables/weildable_sword.gd" id="1_mbj2j"]
+[ext_resource type="Script" uid="uid://baea7y77yq7ga" path="res://Scenes/Wieldables/wieldable_sword.gd" id="1_mbj2j"]
 [ext_resource type="AudioStream" uid="uid://ocm2blyfthyq" path="res://addons/cogito/Assets/Audio/Kenney/woosh1.ogg" id="2_hpniy"]
 [ext_resource type="Texture2D" uid="uid://bbylpbkbubo6m" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/knight_texture.png" id="2_mbj2j"]
 [ext_resource type="Script" uid="uid://b361n7ae3ixmn" path="res://addons/cogito/Assets/Shader/ViewmodelSpace.gd" id="2_xntsa"]
@@ -204,8 +204,6 @@ _data = {
 [node name="Weildable_Sword" type="Node3D" node_paths=PackedStringArray("damage_area", "wieldable_mesh")]
 script = ExtResource("1_mbj2j")
 damage_area = NodePath("SwordMesh/DamageArea")
-uses_stamina = true
-stamina_cost = 1
 swing_sound = ExtResource("2_hpniy")
 wieldable_mesh = NodePath("SwordMesh")
 anim_action_primary = "swing"

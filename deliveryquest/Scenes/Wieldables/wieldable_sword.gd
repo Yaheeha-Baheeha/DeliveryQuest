@@ -16,6 +16,7 @@ var player_stamina : CogitoAttribute = null
 
 
 func _ready():
+
 	if wieldable_mesh:
 		wieldable_mesh.hide()
 		
@@ -58,6 +59,7 @@ func action_primary(_passed_item_reference:InventoryItemPD, _is_released: bool):
 
 
 func _on_body_entered(collider):
+	print("HIT")
 	if collider.has_signal("damage_received"):
 		var player = player_interaction_component.get_parent()
 		var hit_position : Vector3

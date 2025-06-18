@@ -57,6 +57,7 @@ func action_primary(_passed_item_reference:InventoryItemPD, _is_released: bool):
 
 func _on_body_entered(collider):
 	if collider.has_signal("damage_received"):
+		print("Hit")
 		var player = player_interaction_component.get_parent()
 		var hit_position : Vector3
 		var bullet_direction : Vector3

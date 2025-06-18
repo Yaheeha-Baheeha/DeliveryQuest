@@ -46,7 +46,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_8c1sv")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_xntsa"]
-size = Vector3(0.980385, 1.83074, 0.547409)
+size = Vector3(0.980385, 1.83074, 1.70814)
 
 [sub_resource type="Animation" id="Animation_mbj2j"]
 length = 0.001
@@ -85,6 +85,18 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("SwordMesh/DamageArea:monitoring")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_xntsa"]
@@ -153,6 +165,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0), Vector3(-0.437868, 0, 0), Vector3(-1.17665, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SwordMesh/DamageArea:monitoring")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.37, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_tdpt3"]
 resource_name = "unequip"
@@ -204,6 +228,8 @@ _data = {
 [node name="Weildable_Sword" type="Node3D" node_paths=PackedStringArray("damage_area", "wieldable_mesh")]
 script = ExtResource("1_mbj2j")
 damage_area = NodePath("SwordMesh/DamageArea")
+uses_stamina = true
+stamina_cost = 4
 swing_sound = ExtResource("2_hpniy")
 wieldable_mesh = NodePath("SwordMesh")
 anim_action_primary = "swing"
@@ -222,7 +248,7 @@ transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.0017
 monitoring = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="SwordMesh/DamageArea"]
-transform = Transform3D(0.999983, 0, 0, 0, 0.999983, 0, 7.38964e-13, 0, 1, -0.000190496, 1.53315, -0.00208831)
+transform = Transform3D(1, 0, -7.38964e-13, 0, 1, 0, 7.38964e-13, 0, 1, -0.000190496, 1.53315, 0.0159113)
 shape = SubResource("BoxShape3D_xntsa")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

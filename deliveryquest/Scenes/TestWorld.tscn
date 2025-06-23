@@ -599,8 +599,14 @@ transform = Transform3D(-0.974781, 0, 0.223165, 0, 1, 0, -0.223165, 0, -0.974781
 environment = SubResource("Environment_rdsav")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-0.803461, -0.520608, 0.288822, 0.576581, -0.559549, 0.595366, -0.148342, 0.644883, 0.749748, 0, 508.508, 0)
+transform = Transform3D(-0.94725, -0.310451, 0.0796098, 0.284099, -0.698389, 0.656918, -0.148342, 0.644882, 0.749748, 0, 461.874, 0)
+light_energy = 1.005
 shadow_enabled = true
+shadow_bias = 0.0
+shadow_normal_bias = 2.1
+shadow_blur = 2.009
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="DirectionalLight3D"]
 
 [node name="Terrain3D" type="Terrain3D" parent="."]
 data_directory = "res://TerrainDir"

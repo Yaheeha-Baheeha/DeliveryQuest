@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://c1umit2vtv22v"]
+[gd_scene load_steps=10 format=3 uid="uid://7b72frrru7rt"]
 
-[ext_resource type="Script" uid="uid://fo2f3fr8frg4" path="res://addons/cogito/CogitoObjects/cogito_projectile.gd" id="1_6pqxf"]
-[ext_resource type="Resource" uid="uid://bqhbrpnp2tt08" path="res://addons/cogito/InventoryPD/Items/Cogito_FoamBullets.tres" id="3_7etap"]
-[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="4_acy7b"]
-[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="4_tbkmk"]
-[ext_resource type="PackedScene" uid="uid://cj0yaeh3yg7tu" path="res://addons/cogito/Components/Properties/CogitoProperties.tscn" id="5_6jfy1"]
+[ext_resource type="Script" uid="uid://fo2f3fr8frg4" path="res://addons/cogito/CogitoObjects/cogito_projectile.gd" id="1_5h8un"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="2_uidkc"]
+[ext_resource type="Resource" uid="uid://bqhbrpnp2tt08" path="res://addons/cogito/InventoryPD/Items/Cogito_FoamBullets.tres" id="3_y0rg8"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="4_pivxk"]
+[ext_resource type="PackedScene" uid="uid://cj0yaeh3yg7tu" path="res://addons/cogito/Components/Properties/CogitoProperties.tscn" id="5_rmwj8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sn251"]
 albedo_color = Color(1, 0, 0, 1)
@@ -25,8 +25,8 @@ radius = 0.05
 
 [sub_resource type="Resource" id="Resource_i4rbf"]
 resource_local_to_scene = true
-script = ExtResource("4_tbkmk")
-inventory_item = ExtResource("3_7etap")
+script = ExtResource("4_pivxk")
+inventory_item = ExtResource("3_y0rg8")
 quantity = 1
 origin_index = -1
 
@@ -39,7 +39,7 @@ mass = 0.1
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 10
-script = ExtResource("1_6pqxf")
+script = ExtResource("1_5h8un")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
@@ -61,10 +61,10 @@ shape = SubResource("CylinderShape3D_wm252")
 wait_time = 30.0
 autostart = true
 
-[node name="PickupComponent" parent="." instance=ExtResource("4_acy7b")]
+[node name="PickupComponent" parent="." instance=ExtResource("2_uidkc")]
 slot_data = SubResource("Resource_i4rbf")
 
-[node name="CogitoProperties" parent="." instance=ExtResource("5_6jfy1")]
+[node name="CogitoProperties" parent="." instance=ExtResource("5_rmwj8")]
 material_properties = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

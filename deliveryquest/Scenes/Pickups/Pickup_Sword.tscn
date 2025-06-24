@@ -1,12 +1,10 @@
-[gd_scene load_steps=14 format=4 uid="uid://cbe3gqvench2s"]
+[gd_scene load_steps=11 format=4 uid="uid://cbe3gqvench2s"]
 
 [ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_yll8p"]
 [ext_resource type="Texture2D" uid="uid://bbylpbkbubo6m" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/knight_texture.png" id="2_tk2i1"]
 [ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_5c71n"]
-[ext_resource type="Texture2D" uid="uid://dyu6r70686huy" path="res://Scenes/Wieldables/Icons/SwordIcon.png" id="4_oaffv"]
+[ext_resource type="Resource" uid="uid://btidn4oif2c0k" path="res://Resources/2H_Sword.tres" id="4_tk2i1"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="4_ttpfk"]
-[ext_resource type="Script" uid="uid://bkxgkf3pj8kb8" path="res://addons/cogito/InventoryPD/CustomResources/WieldableItemPD.gd" id="5_ttpfk"]
-[ext_resource type="PackedScene" uid="uid://dkpk7ddabglvq" path="res://Scenes/Wieldables/wieldable_sword.tscn" id="6_ttpfk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s47qe"]
 resource_name = "knight_texture"
@@ -51,30 +49,9 @@ shadow_mesh = SubResource("ArrayMesh_8c1sv")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5c71n"]
 points = PackedVector3Array(-0.419511, 0.420277, -6.70552e-08, -0.276278, 0.397583, 0.0451562, -0.418689, 0.442509, -6.70552e-08, -0.276278, 0.397583, -0.0451806, -0.204169, 0.187541, -0.065331, -0.0578973, -0.287193, -0.0647241, -0.0909131, -0.33953, -0.0360765, -0.099126, -0.344393, -6.70552e-08, -0.0909131, -0.33953, 0.0360521, -0.0578973, -0.287193, 0.0646997, -0.204169, 0.187541, 0.0653066, -7.85887e-05, 0.406383, 0.12401, 0.000167787, 1.71642, 0.0478268, -7.85887e-05, 0.120615, 0.12401, -0.138712, 1.71642, -6.70552e-08, 0.000167787, 1.71642, -0.0478512, -7.85887e-05, 0.406383, -0.12401, -7.85887e-05, 0.120615, -0.12401, -0.0409788, -0.327951, -0.0647241, -0.0524768, -0.377972, -0.0360765, -0.0572403, -0.386077, -6.70552e-08, -0.0524768, -0.377972, 0.0360521, -0.0409788, -0.327951, 0.0646997, 0.276203, 0.397583, 0.0451562, 0.418614, 0.442509, -6.70552e-08, 0.139048, 1.71642, -6.70552e-08, 0.000167787, 1.96444, -6.70552e-08, -7.85887e-05, -0.344856, 0.0646997, 0.0408216, -0.327951, 0.0646997, 0.0578223, -0.287193, 0.0646997, 0.204094, 0.187541, 0.0653066, 0.276203, 0.397583, -0.0451806, 0.0578223, -0.287193, -0.0647241, 0.0408216, -0.327951, -0.0647241, -7.85887e-05, -0.344856, -0.0647241, 0.204094, 0.187541, -0.065331, -7.85887e-05, -0.392098, -0.0360765, -7.85887e-05, -0.401361, -2.4341e-05, -7.85887e-05, -0.392098, 0.0360521, 0.419518, 0.420277, -6.70552e-08, 0.0524018, -0.377972, 0.0360521, 0.0907559, -0.33953, 0.0360521, 0.0907559, -0.33953, -0.0360765, 0.0524018, -0.377972, -0.0360765, 0.0571652, -0.386077, -6.70552e-08, 0.0989688, -0.344393, -6.70552e-08)
 
-[sub_resource type="Resource" id="Resource_oaffv"]
-script = ExtResource("5_ttpfk")
-wieldable_scene = ExtResource("6_ttpfk")
-no_reload = true
-hint_on_empty = ""
-charge_max = 1.0
-ammo_item_name = ""
-charge_current = 1.0
-wieldable_range = 5.0
-wieldable_damage = 7.0
-name = "Two Handed Sword"
-description = "A Big Sword"
-icon = ExtResource("4_oaffv")
-is_stackable = false
-is_droppable = true
-stack_size = 0
-drop_scene = "uid://cbe3gqvench2s"
-hint_text_on_use = ""
-item_size = Vector2(1, 1)
-metadata/_custom_type_script = "uid://bkxgkf3pj8kb8"
-
 [sub_resource type="Resource" id="Resource_6w07v"]
 script = ExtResource("4_ttpfk")
-inventory_item = SubResource("Resource_oaffv")
+inventory_item = ExtResource("4_tk2i1")
 quantity = 1
 origin_index = -1
 metadata/_custom_type_script = "uid://di15gqemrkk0x"

@@ -1,0 +1,99 @@
+[gd_scene load_steps=13 format=4 uid="uid://c1umit2vtv22v"]
+
+[ext_resource type="Script" uid="uid://fo2f3fr8frg4" path="res://addons/cogito/CogitoObjects/cogito_projectile.gd" id="1_u58o4"]
+[ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_6kanr"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_mtfql"]
+[ext_resource type="Resource" uid="uid://bqhbrpnp2tt08" path="res://addons/cogito/InventoryPD/Items/Cogito_FoamBullets.tres" id="4_fgmik"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_q450k"]
+[ext_resource type="PackedScene" uid="uid://cj0yaeh3yg7tu" path="res://addons/cogito/Components/Properties/CogitoProperties.tscn" id="6_acy82"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocxvc"]
+resource_name = "rogue_texture"
+cull_mode = 2
+albedo_texture = ExtResource("2_6kanr")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_01x3y"]
+_surfaces = [{
+"aabb": AABB(-0.0586665, -0.382929, -0.0338781, 0.11734, 0.748546, 0.101626),
+"format": 34896613377,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgADAAQABQAEAAMABQADAAEAAgAEAAYABgAEAAUACAACAAYAAgAHAAAACAAHAAIAAAAHAAkACAAJAAcAAAANAAEACwAJAAgAAAAJAAsADAANAAAADAAAAAsAAQANAA4ADAAOAA0AAQAOAA8ADwAOAAwABQABAA8AFAALAAgAFQAMAAsAFAAVAAsACgAPAAwAFQAKAAwAFgAFAA8ACgAWAA8AFgAXAAUAFwAGAAUAGAAIAAYAFwAYAAYAGAAUAAgAFgARABcAFwAZABgAFwARABkAFgAaABEACgAaABYAEQATABkAGgATABEAGAAZABIAGAASABQAGQATABIAFAASABsAEgATABsAFAAbABUACgAQABoAEAATABoAFQAQAAoAGwATABAAFQAbABAA"),
+"lods": [0.0256302, PackedByteArray("AAABAAIAAQADAAIAAgADAAQABQAEAAMABQADAAEAAgAEAAYABgAEAAUAAgAHAAAACAACAAYACAAHAAIACAAJAAcAAAAHAAkACgAIAAYACgAGAAUACwAJAAgAAAAJAAsACgALAAgADAAAAAsACgAMAAsADAANAAAAAAANAAEADAAOAA0AAQANAA4ADwAOAAwAAQAOAA8ABQABAA8ACgAPAAwACgAFAA8ACgAQABEACgASABAACgARABIAEAATABEAEQATABIAEgATABAA")],
+"name": "rogue_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("Ppzh9SloAAC3Y+H1MGgAAP9/4fWtLwAA1C/+/+YfAAAAAITiAAAAAGpXlNNWVQAAs2uU08MsAAAm0P//5x8AAEeUlNPDLAAA//+E4gIAAABHlDci6X0AAJGolNNWVQAAR5SU0+l9AAD+f/7/NsAAAAGAhOL//wAAs2uU0+l9AAA1qiUdyqkAAIQrJR1WVQAANaolHeIAAAD6fwAAVlUAAEeUNyLDLAAAkag3IlZVAACzazci6X0AAGpXNyJWVQAAs2s3IsMsAAC/VSUd4gAAAL9VJR3KqQAAcNQlHVZVAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sgnou"]
+resource_name = "arrow_Cylinder_007"
+_surfaces = [{
+"aabb": AABB(-0.0586665, -0.382929, -0.0338781, 0.11734, 0.748546, 0.101626),
+"attribute_data": PackedByteArray("RyyRqxAvkaurLZGrnjHYsrgp2LKrLdiyUGy7fsNqQWy3c0Fsw2pBbMNqFWa/bStDw2oVZrdzFWabrt1L46+Qb4ewkG+brpBv46+Qb/etkG+brpBvqyzEjUcsb6arK8SNqy21rastg5irLuqQqy2pm6ss6pCrLMSNqy1vpqsuxI24KbatXCeDmKsvxI0QL2+mqy7EjZ4xta36M4OYRyyvoFwnw5KrKwSIuCn2p6sr6pBcJ6mbqyzqkBAvr6CrLcOSqy4EiKst9aerLuqQ+jOpm6sv6pCrLa+g+jPDkqsuBIieMfWnLm+7fp1wu367cEFsu3BBbC5vu35QbLt+4Wq7fshnQWzIZxVmu3AVZrtwFWaHsN1L46/dS+Ov3Uubrt1L963dSw=="),
+"format": 34896613399,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAAAFAAEAOQAIADoAOgAIADsAOQA8AAgAOgA7AD0ABgA8ADkAPQA7AAkABgAHADwAPQAJAD4APwAHAAYAPgAJAEAAPwBAAAcAPgBAAD8AQQALAAwADAALAEIACgALAEEAQgALAA0AQwALAAoADQALAEMARAAPABAARABFAA8ARgBEABAARQARAA8ARgAQABIARQBHABEADgBGABIARwATABEADgASABQARwBIABMASAAOABQASAAUABMAFQAWABcAFQAYABYAFQAZABgAGgAbABwAHQAeAB8AHQAgAB4AHQAhACAAIgAjACQAIgAlACMAIgAmACUAJwAoACkAJwAqACgAKwAsAC0ALgAvADAALgAxAC8AMgAzADQANQA2ADcANQA4ADYA"),
+"lods": [0.0256302, PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAAAFAAEABgAHAAgABgAJAAcABgAIAAkACgALAAwADAALAA0ADQALAAoADgAPABAADgARAA8ADgAQABIADgATABEADgASABQADgAUABMAFQAWABcAFQAYABYAFQAZABgAGgAbABwAHQAeAB8AHQAgAB4AHQAhACAAIgAjACQAIgAlACMAIgAmACUAJwAoACkAJwAqACgAKwAsAC0ALgAvADAALgAxAC8AMgAzADQANQA2ADcANQA4ADYA")],
+"material": SubResource("StandardMaterial3D_ocxvc"),
+"name": "rogue_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 73,
+"vertex_data": PackedByteArray("Ppzh9SloKQe3Y+H1MGgjB/9/4fWtL///1C/+/+Yfuu4m0P//5x+57v5//v82wAMAR5Q3Iul9d/Y1qiUdyql49oQrJR1WVTUvNaolHeIA/hI1qiUd4gDWFPp/AABWVQAANaolHcqpiPuEKyUdVlWzO0eUNyLpff//s2uU08MsVRVqV5TTVlX//0eUlNPDLFUVs2uU0+l9//+RqJTTVlX/P0eUlNPpff//R5SU0+l9oP8+nOH1KWhi/5GolNNWVaH//n/+/zbAb/8BgITi//9X/7NrlNPpff//AYCE4v////9HlJTT6X3//0eUlNPDLK0E/3/h9a0vAACza5TTwyyuBCbQ///nH9oL//+E4gIA2gtqV5TTVlW1/7dj4fUwaKf/s2uU0+l9s//UL/7/5h+g/wAAhOIAALz/Ppzh9Slowf///4TiAgCr/5GolNNWVdX/JtD//+cfnf+RqJTTVlVcJv//hOICAFwmR5SU08MsXCa3Y+H1MGhJ/wGAhOL//2b/s2uU0+l9gv/+f/7/NsBz/7NrlNPDLFwmAACE4gAAXCZqV5TTVlVcJv9/4fWtLwAAAACE4gAA2guza5TTwyyuBNQv/v/mH9oLs2s3Iul9d/ZqVzciVlU1L79VJR3iAP8Sv1UlHcqpdvazazciwyz+EkeUNyLDLAATkag3IlZVqPFw1CUdVlWo8XDUJR1WVbM7v1UlHcqpiPu/VSUd4gDWFGpXNyJWVf//s2s3IsMsVRWzazci6X3//0eUNyLDLFUVkag3IlZV/z9ked7A3ECfBrPIBgAxpBWd6uI0JP9/cNdYk3SkV5N0pCKRDsP2sY4KLHqRG/8//v+qEuTo/1lU9wyb/3//f////z//f/9/AADyZP9//38AAAyb/399sp2Aia7agKCqpIAnuNSAMLi/gP9/cFf/f3BX/39wVxKA5P4+gEX+534PACyAXf5ZgDf+T/+eKvj+eS5U/3cy9/4cJOr+FyRxrhiBFqQMgZWqw4AYpAWBM2wVNjNsFTYzbBU2Nf+QLjL/KDh4/4YyJ/8jOOpJM+zqSTPs6kkz7OSBagCvgT4AToFMAJqBJACI21cTIpEOw4+KBs6I21gTjooGzvaxjwq3qRWit6kVolR3/yXkaFRtbmQr+v8//3//f///8mT/f/9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_01x3y")
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_wm252"]
+height = 0.53186
+radius = 0.0239258
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lnsdt"]
+radius = 0.0409915
+height = 0.16039
+
+[sub_resource type="Resource" id="Resource_inc2m"]
+resource_local_to_scene = true
+script = ExtResource("5_q450k")
+inventory_item = ExtResource("4_fgmik")
+quantity = 1
+origin_index = -1
+
+[node name="Arrow" type="RigidBody3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+top_level = true
+collision_layer = 2
+collision_mask = 3
+mass = 0.1
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 10
+script = ExtResource("1_u58o4")
+
+[node name="arrow" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+mesh = SubResource("ArrayMesh_sgnou")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -7.49689e-10, 7.49689e-10, 0.0171509)
+shape = SubResource("CylinderShape3D_wm252")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -1.45099e-08, 7.49689e-10, 0.331947)
+shape = SubResource("CapsuleShape3D_lnsdt")
+
+[node name="Lifespan" type="Timer" parent="."]
+wait_time = 30.0
+autostart = true
+
+[node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
+slot_data = SubResource("Resource_inc2m")
+
+[node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
+material_properties = 1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

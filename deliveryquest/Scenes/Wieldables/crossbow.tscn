@@ -1,16 +1,13 @@
-[gd_scene load_steps=17 format=4 uid="uid://87t5cnxk7t8t"]
+[gd_scene load_steps=7 format=4 uid="uid://dlfbijka7cgw7"]
 
-[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_ksdyc"]
-[ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_6y0vc"]
-[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_nxhqf"]
-[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://addons/cogito/Components/Interactions/CarryableComponent.tscn" id="4_cx31u"]
-[ext_resource type="Resource" uid="uid://bkywtmyl70uxv" path="res://Resources/crossbow.tres" id="4_ogob1"]
-[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_fct1j"]
+[ext_resource type="Script" uid="uid://cpigmb4oay57b" path="res://Scenes/Wieldables/crossbow.gd" id="1_8oj5a"]
+[ext_resource type="Script" uid="uid://b361n7ae3ixmn" path="res://addons/cogito/Assets/Shader/ViewmodelSpace.gd" id="1_n8ktg"]
+[ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_8oj5a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjicb"]
 resource_name = "rogue_texture"
 cull_mode = 2
-albedo_texture = ExtResource("2_6y0vc")
+albedo_texture = ExtResource("2_8oj5a")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u4yxo"]
@@ -28,7 +25,7 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_nxhqf"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_te3ta"]
 resource_name = "crossbow_2handed_Cube_002"
 _surfaces = [{
 "aabb": AABB(-0.611559, -0.171236, -0.277689, 1.22315, 0.479242, 1.44087),
@@ -47,69 +44,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u4yxo")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ogob1"]
-points = PackedVector3Array(-0.142736, 0.0232251, 1.08317, 0.0173084, 0.137564, 1.12887, 0.0630602, 0.114688, 1.17462, 0.131717, 0.046101, 1.03743, 0.0173084, 0.000335723, 1.15175, -0.11986, 0.114688, 1.03743, -0.142736, 0.0917991, 1.15175, 0.131717, 0.114688, 1.03743, 0.131717, 0.0232251, 1.15175, -0.074108, 0.0232251, 1.17462, -0.142736, 0.046101, 1.03743, 0.0173084, 0.000335723, 1.08317, 0.154593, 0.0917991, 1.12887, -0.074108, 0.114688, 1.17462, -0.142736, 0.114688, 1.10603, 0.0630602, 0.0232251, 1.17462, 0.131717, 0.114688, 1.12887, -0.142736, 0.0232251, 1.12887, -0.0512321, 0.000335723, 1.08317, -0.0283562, 0.137564, 1.10603, 0.131717, 0.0232251, 1.08317, 0.154593, 0.046101, 1.08317, -0.0283562, 0.000335723, 1.15175, -0.142736, 0.114688, 1.06029, 0.131717, 0.0917991, 1.15175, -0.142736, 0.046101, 1.15175, -0.0283562, 0.137564, 1.12887, 0.154593, 0.046101, 1.12887, 0.108841, 0.0232251, 1.06029)
+[node name="crossbow" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
+script = ExtResource("1_8oj5a")
+wieldable_mesh = NodePath("crossbow_mesh")
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_fct1j"]
-size = Vector3(0.220154, 0.0880432, 0.131287)
+[node name="crossbow_mesh" type="Node3D" parent="."]
+script = ExtResource("1_n8ktg")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ke0dc"]
-points = PackedVector3Array(0.177507, 0.137564, 0.945868, 0.612021, 0.0918214, 0.465722, 0.612021, 0.0460786, 0.465722, 0.383365, 0.137564, 0.442835, 0.177507, 0.0460786, 0.762878, 0.177507, 0.206179, 0.762878, 0.383365, 0.183307, 0.785765, 0.291877, 0.0460786, 0.87726, 0.40612, 0.0460786, 0.419948, 0.451886, 0.0232072, 0.648658, 0.40612, 0.06895, 0.785765, 0.246155, 0.206179, 0.900093, 0.497608, 0.114693, 0.397061, 0.177507, 0.0460786, 0.922981, 0.246155, 0.206179, 0.740045, 0.291877, 0.137564, 0.900093, 0.543331, 0.0460786, 0.397061, 0.40612, 0.160418, 0.785765, 0.612021, 0.0918214, 0.419948, 0.177507, 0.206179, 0.87726, 0.429003, 0.137564, 0.442835, 0.223272, 0.0460786, 0.922981, 0.383365, 0.0460786, 0.442835, 0.451886, 0.160418, 0.717158, 0.612021, 0.0460786, 0.419948, 0.31476, 0.06895, 0.87726, 0.200389, 0.137564, 0.945868, 0.383365, 0.0460786, 0.785765, 0.474726, 0.0460786, 0.397061, 0.40612, 0.114693, 0.419948, 0.177507, 0.183307, 0.922981, 0.291877, 0.183307, 0.625771)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u0hhk"]
-points = PackedVector3Array(-0.531478, 0.114706, 0.442835, -0.165697, 0.160427, 0.945868, -0.165697, 0.0918304, 0.945868, -0.348632, 0.137551, 0.488556, -0.165697, 0.0461099, 0.762878, -0.623036, 0.0461099, 0.465722, -0.37151, 0.183287, 0.808653, -0.165697, 0.206163, 0.762878, -0.302876, 0.0461099, 0.87726, -0.417132, 0.0461099, 0.419948, -0.417132, 0.0918304, 0.785765, -0.257164, 0.206163, 0.900093, -0.348632, 0.183287, 0.648658, -0.508645, 0.114706, 0.397061, -0.623036, 0.0689701, 0.419948, -0.325754, 0.137551, 0.87726, -0.165697, 0.0461099, 0.922981, -0.394344, 0.137551, 0.442835, -0.165697, 0.206163, 0.922981, -0.600113, 0.0918304, 0.465722, -0.417132, 0.137551, 0.785765, -0.440011, 0.160427, 0.602937, -0.348632, 0.0461099, 0.488556, -0.531478, 0.0461099, 0.397061, -0.234286, 0.206163, 0.740045, -0.394344, 0.0689701, 0.808653, -0.18853, 0.0918304, 0.945868, -0.623036, 0.0689701, 0.465722, -0.394344, 0.160427, 0.53433, -0.234286, 0.183287, 0.922981, -0.394344, 0.0461099, 0.785765, -0.325754, 0.0918304, 0.87726)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yuda8"]
-points = PackedVector3Array(-0.142736, 0.183303, 0.191191, 0.154593, 0.137564, 0.396974, 0.154593, 0.0918259, 0.396974, 0.0401843, 0.0232072, 0.0540028, -0.0969839, 0.0232072, 0.396974, 0.108841, 0.251921, 0.168326, -0.074108, 0.206138, 0.396974, -0.0969839, 0.251921, 0.168326, -0.0283562, 0.0232072, 0.0540028, 0.108841, 0.0232072, 0.374075, -0.142736, 0.0689903, 0.374075, 0.131717, 0.1604, 0.168326, -0.0283562, 0.0918259, 0.0540028, 0.108841, 0.251921, 0.236887, -0.142736, 0.206138, 0.305481, 0.154593, 0.0689903, 0.328346, 0.0630602, 0.206138, 0.396974, -0.074108, 0.0232072, 0.145462, -0.11986, 0.251921, 0.214056, -0.142736, 0.137564, 0.396974, 0.131717, 0.229041, 0.168326, -0.142736, 0.0689903, 0.305481, 0.0173084, 0.0918259, 0.0540028, 0.154593, 0.1604, 0.259752, 0.154593, 0.1604, 0.374075, 0.0859361, 0.0232072, 0.396974, 0.0859361, 0.0232072, 0.191191, -0.11986, 0.229041, 0.168326, -0.0969839, 0.251921, 0.236887, -0.142736, 0.137564, 0.214056, -0.0969839, 0.0232072, 0.236887, 0.131717, 0.229041, 0.259752)
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rei57"]
-points = PackedVector3Array(0.0173643, 0.000299916, -0.26617, -0.0283785, -0.182616, -0.197543, 0.0173643, -0.182616, -0.197543, -0.0741214, 0.0231669, 0.39694, 0.0859786, 0.000299916, 0.351143, -0.0283785, -0.159728, 0.168226, -0.0969928, -0.045434, -0.197543, 0.0859786, -0.136862, -0.197543, -0.0969928, -0.113995, 0.00820628, 0.0402357, 0.0231669, -0.197543, 0.0402357, -0.159728, 0.145395, 0.0859786, -0.022567, -0.197543, -0.0969928, 0.0231669, 0.236853, 0.0173643, -0.045434, 0.374042, 0.0859786, 0.0231669, 0.351143, -0.0741214, 0.000299916, -0.197543, -0.0283785, -0.136862, -0.26617, -0.0741214, -0.159728, -0.197543, 0.0859786, -0.136862, 0.00820628, 0.0402357, -0.0683009, -0.289069, -0.0969928, -0.022567, 0.282583, -0.0283785, -0.022567, -0.289069, 0.0402357, -0.182616, 0.00820628, -0.0741214, -0.159728, 0.0311046, -0.0283785, 0.0231669, -0.197543, -0.0741214, 0.000299916, 0.39694, 0.0631072, 0.000299916, 0.39694, -0.0283785, -0.182616, 0.0311046, -0.0969928, -0.113995, -0.197543, 0.0631072, -0.136862, -0.243272, 0.0859786, 0.0231669, 0.191124, -0.0741214, -0.113995, -0.243272)
-
-[sub_resource type="Resource" id="Resource_ke0dc"]
-resource_local_to_scene = true
-script = ExtResource("5_fct1j")
-inventory_item = ExtResource("4_ogob1")
-quantity = 1
-origin_index = -1
-metadata/_custom_type_script = "uid://di15gqemrkk0x"
-
-[node name="pickup_crossbow" type="RigidBody3D"]
-script = ExtResource("1_ksdyc")
-
-[node name="crossbow_2handed" type="MeshInstance3D" parent="."]
+[node name="crossbow_2handed" type="MeshInstance3D" parent="crossbow_mesh"]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
-mesh = SubResource("ArrayMesh_nxhqf")
+mesh = SubResource("ArrayMesh_te3ta")
 skeleton = NodePath("")
 
-[node name="CollisionShape3D7" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
-shape = SubResource("ConvexPolygonShape3D_ogob1")
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
-[node name="CollisionShape3D5" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.18287, -0.016861, 0.000762939)
-shape = SubResource("BoxShape3D_fct1j")
-
-[node name="CollisionShape3D4" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
-shape = SubResource("ConvexPolygonShape3D_ke0dc")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
-shape = SubResource("ConvexPolygonShape3D_u0hhk")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
-shape = SubResource("ConvexPolygonShape3D_yuda8")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
-shape = SubResource("ConvexPolygonShape3D_rei57")
-
-[node name="Bullet_Point" type="Node3D" parent="."]
-transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.130696, 0.0562433, 0.00182778)
-
-[node name="PickupComponent" parent="." instance=ExtResource("3_nxhqf")]
-transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.130696, 0.031203, 0.00182778)
-slot_data = SubResource("Resource_ke0dc")
-
-[node name="CarryableComponent" parent="." instance=ExtResource("4_cx31u")]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AudioStreamPlayer3D")

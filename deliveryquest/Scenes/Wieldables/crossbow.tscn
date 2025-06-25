@@ -1,8 +1,11 @@
-[gd_scene load_steps=7 format=4 uid="uid://dlfbijka7cgw7"]
+[gd_scene load_steps=20 format=4 uid="uid://dlfbijka7cgw7"]
 
 [ext_resource type="Script" uid="uid://cpigmb4oay57b" path="res://Scenes/Wieldables/crossbow.gd" id="1_8oj5a"]
 [ext_resource type="Script" uid="uid://b361n7ae3ixmn" path="res://addons/cogito/Assets/Shader/ViewmodelSpace.gd" id="1_n8ktg"]
 [ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_8oj5a"]
+[ext_resource type="PackedScene" uid="uid://c1umit2vtv22v" path="res://Scenes/Bullets/Arrow.tscn" id="2_hpk8d"]
+[ext_resource type="AudioStream" uid="uid://bl4h5ggcussow" path="res://Audio/crossbowUse.ogg" id="3_ad5hk"]
+[ext_resource type="AudioStream" uid="uid://dyu1qb6f8mlwy" path="res://Audio/crossbowReload.mp3" id="4_jtun3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjicb"]
 resource_name = "rogue_texture"
@@ -44,9 +47,422 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u4yxo")
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocxvc"]
+resource_name = "rogue_texture"
+cull_mode = 2
+albedo_texture = ExtResource("2_8oj5a")
+roughness = 0.5
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_01x3y"]
+_surfaces = [{
+"aabb": AABB(-0.0586665, -0.382929, -0.0338781, 0.11734, 0.748546, 0.101626),
+"format": 34896613377,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgADAAQABQAEAAMABQADAAEAAgAEAAYABgAEAAUACAACAAYAAgAHAAAACAAHAAIAAAAHAAkACAAJAAcAAAANAAEACwAJAAgAAAAJAAsADAANAAAADAAAAAsAAQANAA4ADAAOAA0AAQAOAA8ADwAOAAwABQABAA8AFAALAAgAFQAMAAsAFAAVAAsACgAPAAwAFQAKAAwAFgAFAA8ACgAWAA8AFgAXAAUAFwAGAAUAGAAIAAYAFwAYAAYAGAAUAAgAFgARABcAFwAZABgAFwARABkAFgAaABEACgAaABYAEQATABkAGgATABEAGAAZABIAGAASABQAGQATABIAFAASABsAEgATABsAFAAbABUACgAQABoAEAATABoAFQAQAAoAGwATABAAFQAbABAA"),
+"lods": [0.0256302, PackedByteArray("AAABAAIAAQADAAIAAgADAAQABQAEAAMABQADAAEAAgAEAAYABgAEAAUAAgAHAAAACAACAAYACAAHAAIACAAJAAcAAAAHAAkACgAIAAYACgAGAAUACwAJAAgAAAAJAAsACgALAAgADAAAAAsACgAMAAsADAANAAAAAAANAAEADAAOAA0AAQANAA4ADwAOAAwAAQAOAA8ABQABAA8ACgAPAAwACgAFAA8ACgAQABEACgASABAACgARABIAEAATABEAEQATABIAEgATABAA")],
+"name": "rogue_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 28,
+"vertex_data": PackedByteArray("Ppzh9SloAAC3Y+H1MGgAAP9/4fWtLwAA1C/+/+YfAAAAAITiAAAAAGpXlNNWVQAAs2uU08MsAAAm0P//5x8AAEeUlNPDLAAA//+E4gIAAABHlDci6X0AAJGolNNWVQAAR5SU0+l9AAD+f/7/NsAAAAGAhOL//wAAs2uU0+l9AAA1qiUdyqkAAIQrJR1WVQAANaolHeIAAAD6fwAAVlUAAEeUNyLDLAAAkag3IlZVAACzazci6X0AAGpXNyJWVQAAs2s3IsMsAAC/VSUd4gAAAL9VJR3KqQAAcNQlHVZVAAA=")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_imbai"]
+resource_name = "arrow_Cylinder_007"
+_surfaces = [{
+"aabb": AABB(-0.0586665, -0.382929, -0.0338781, 0.11734, 0.748546, 0.101626),
+"attribute_data": PackedByteArray("RyyRqxAvkaurLZGrnjHYsrgp2LKrLdiyUGy7fsNqQWy3c0Fsw2pBbMNqFWa/bStDw2oVZrdzFWabrt1L46+Qb4ewkG+brpBv46+Qb/etkG+brpBvqyzEjUcsb6arK8SNqy21rastg5irLuqQqy2pm6ss6pCrLMSNqy1vpqsuxI24KbatXCeDmKsvxI0QL2+mqy7EjZ4xta36M4OYRyyvoFwnw5KrKwSIuCn2p6sr6pBcJ6mbqyzqkBAvr6CrLcOSqy4EiKst9aerLuqQ+jOpm6sv6pCrLa+g+jPDkqsuBIieMfWnLm+7fp1wu367cEFsu3BBbC5vu35QbLt+4Wq7fshnQWzIZxVmu3AVZrtwFWaHsN1L46/dS+Ov3Uubrt1L963dSw=="),
+"format": 34896613399,
+"index_count": 156,
+"index_data": PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAAAFAAEAOQAIADoAOgAIADsAOQA8AAgAOgA7AD0ABgA8ADkAPQA7AAkABgAHADwAPQAJAD4APwAHAAYAPgAJAEAAPwBAAAcAPgBAAD8AQQALAAwADAALAEIACgALAEEAQgALAA0AQwALAAoADQALAEMARAAPABAARABFAA8ARgBEABAARQARAA8ARgAQABIARQBHABEADgBGABIARwATABEADgASABQARwBIABMASAAOABQASAAUABMAFQAWABcAFQAYABYAFQAZABgAGgAbABwAHQAeAB8AHQAgAB4AHQAhACAAIgAjACQAIgAlACMAIgAmACUAJwAoACkAJwAqACgAKwAsAC0ALgAvADAALgAxAC8AMgAzADQANQA2ADcANQA4ADYA"),
+"lods": [0.0256302, PackedByteArray("AAABAAIAAQADAAIAAgAEAAAAAAAFAAEABgAHAAgABgAJAAcABgAIAAkACgALAAwADAALAA0ADQALAAoADgAPABAADgARAA8ADgAQABIADgATABEADgASABQADgAUABMAFQAWABcAFQAYABYAFQAZABgAGgAbABwAHQAeAB8AHQAgAB4AHQAhACAAIgAjACQAIgAlACMAIgAmACUAJwAoACkAJwAqACgAKwAsAC0ALgAvADAALgAxAC8AMgAzADQANQA2ADcANQA4ADYA")],
+"material": SubResource("StandardMaterial3D_ocxvc"),
+"name": "rogue_texture",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 73,
+"vertex_data": PackedByteArray("Ppzh9SloKQe3Y+H1MGgjB/9/4fWtL///1C/+/+Yfuu4m0P//5x+57v5//v82wAMAR5Q3Iul9d/Y1qiUdyql49oQrJR1WVTUvNaolHeIA/hI1qiUd4gDWFPp/AABWVQAANaolHcqpiPuEKyUdVlWzO0eUNyLpff//s2uU08MsVRVqV5TTVlX//0eUlNPDLFUVs2uU0+l9//+RqJTTVlX/P0eUlNPpff//R5SU0+l9oP8+nOH1KWhi/5GolNNWVaH//n/+/zbAb/8BgITi//9X/7NrlNPpff//AYCE4v////9HlJTT6X3//0eUlNPDLK0E/3/h9a0vAACza5TTwyyuBCbQ///nH9oL//+E4gIA2gtqV5TTVlW1/7dj4fUwaKf/s2uU0+l9s//UL/7/5h+g/wAAhOIAALz/Ppzh9Slowf///4TiAgCr/5GolNNWVdX/JtD//+cfnf+RqJTTVlVcJv//hOICAFwmR5SU08MsXCa3Y+H1MGhJ/wGAhOL//2b/s2uU0+l9gv/+f/7/NsBz/7NrlNPDLFwmAACE4gAAXCZqV5TTVlVcJv9/4fWtLwAAAACE4gAA2guza5TTwyyuBNQv/v/mH9oLs2s3Iul9d/ZqVzciVlU1L79VJR3iAP8Sv1UlHcqpdvazazciwyz+EkeUNyLDLAATkag3IlZVqPFw1CUdVlWo8XDUJR1WVbM7v1UlHcqpiPu/VSUd4gDWFGpXNyJWVf//s2s3IsMsVRWzazci6X3//0eUNyLDLFUVkag3IlZV/z9ked7A3ECfBrPIBgAxpBWd6uI0JP9/cNdYk3SkV5N0pCKRDsP2sY4KLHqRG/8//v+qEuTo/1lU9wyb/3//f////z//f/9/AADyZP9//38AAAyb/399sp2Aia7agKCqpIAnuNSAMLi/gP9/cFf/f3BX/39wVxKA5P4+gEX+534PACyAXf5ZgDf+T/+eKvj+eS5U/3cy9/4cJOr+FyRxrhiBFqQMgZWqw4AYpAWBM2wVNjNsFTYzbBU2Nf+QLjL/KDh4/4YyJ/8jOOpJM+zqSTPs6kkz7OSBagCvgT4AToFMAJqBJACI21cTIpEOw4+KBs6I21gTjooGzvaxjwq3qRWit6kVolR3/yXkaFRtbmQr+v8//3//f///8mT/f/9/AAD/fwAA")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_01x3y")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hpk8d"]
+radius = 0.002
+height = 0.25
+
+[sub_resource type="Animation" id="Animation_i3g6q"]
+resource_name = "unequip"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.194556, -0.088626, 0), Vector3(-0.369786, -0.253004, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.608561), Vector3(0, 0, -1.65576)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_och62"]
+resource_name = "shoot"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh/MeshInstance3D:mesh:height")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.177171, 0.0563077, 0.0332704)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -1.79769, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.177171, 0.0563077, -0.0344523)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 1.79781, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ke0wy"]
+resource_name = "reload"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh/arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.227077, 0.199544, -0.26001), Vector3(0.227077, 0.106819, -0.0964918), Vector3(0.227077, 0.0527953, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh/arrow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1.00001, 1),
+"update": 0,
+"values": [Vector3(-1.01414, -1.5708, -2.638), Vector3(-1.4325, -1.98046, -2.638), Vector3(-1.5708, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh/arrow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.051069),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_3s7tv"]
+resource_name = "RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh/arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.227077, 0.0527953, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh/crossbow_2handed:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.124995, -0.0520652, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../crossbow_mesh:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../crossbow_mesh:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../crossbow_mesh/arrow:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 1.5708, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../crossbow_mesh/arrow:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../crossbow_mesh/MeshInstance3D:mesh:height")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.25]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.177171, 0.0563077, 0.0332704)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, -1.79769, 0)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.177171, 0.0563077, -0.0344523)]
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.5708, 1.79781, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ad5hk"]
+resource_name = "equip"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-0.369786, -0.253004, 0), Vector3(-0.194556, -0.088626, 0), Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.633333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, -1.65576), Vector3(0, 0, -0.608561), Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0666667, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_il6yl"]
+_data = {
+&"RESET": SubResource("Animation_3s7tv"),
+&"equip": SubResource("Animation_ad5hk"),
+&"reload": SubResource("Animation_ke0wy"),
+&"shoot": SubResource("Animation_och62"),
+&"unequip": SubResource("Animation_i3g6q")
+}
+
 [node name="crossbow" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
 script = ExtResource("1_8oj5a")
+projectile_prefab = ExtResource("2_hpk8d")
+projectile_velocity = 20.0
+ads_fov = 50
+sound_primary_use = ExtResource("3_ad5hk")
+sound_reload = ExtResource("4_jtun3")
 wieldable_mesh = NodePath("crossbow_mesh")
+anim_action_primary = "shoot"
 
 [node name="crossbow_mesh" type="Node3D" parent="."]
 script = ExtResource("1_n8ktg")
@@ -56,7 +472,28 @@ transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, 
 mesh = SubResource("ArrayMesh_te3ta")
 skeleton = NodePath("")
 
+[node name="Bullet_Point" type="Node3D" parent="crossbow_mesh"]
+unique_name_in_owner = true
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.131, 0.056, 0.002)
+
+[node name="arrow" type="MeshInstance3D" parent="crossbow_mesh"]
+transform = Transform3D(-2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 0.227077, 0.0527953, 0)
+visible = false
+mesh = SubResource("ArrayMesh_imbai")
+skeleton = NodePath("")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="crossbow_mesh"]
+transform = Transform3D(-0.22507, -0.974343, -4.25899e-08, 0, -4.37114e-08, 1, -0.974343, 0.22507, 9.83813e-09, 0.177171, 0.0563077, -0.0344523)
+mesh = SubResource("CapsuleMesh_hpk8d")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="crossbow_mesh"]
+transform = Transform3D(-0.224951, 0.97437, 4.25911e-08, 0, -4.37114e-08, 1, 0.97437, 0.224951, 9.83292e-09, 0.177171, 0.0563077, 0.0332704)
+mesh = SubResource("CapsuleMesh_hpk8d")
+
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AudioStreamPlayer3D")
+libraries = {
+&"": SubResource("AnimationLibrary_il6yl")
+}

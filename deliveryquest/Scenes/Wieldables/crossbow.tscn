@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://dlfbijka7cgw7"]
+[gd_scene load_steps=21 format=4 uid="uid://dlfbijka7cgw7"]
 
 [ext_resource type="Script" uid="uid://cpigmb4oay57b" path="res://Scenes/Wieldables/crossbow.gd" id="1_8oj5a"]
 [ext_resource type="Script" uid="uid://b361n7ae3ixmn" path="res://addons/cogito/Assets/Shader/ViewmodelSpace.gd" id="1_n8ktg"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c1umit2vtv22v" path="res://Scenes/Bullets/Arrow.tscn" id="2_hpk8d"]
 [ext_resource type="AudioStream" uid="uid://bl4h5ggcussow" path="res://Audio/crossbowUse.ogg" id="3_ad5hk"]
 [ext_resource type="AudioStream" uid="uid://dyu1qb6f8mlwy" path="res://Audio/crossbowReload.mp3" id="4_jtun3"]
+[ext_resource type="Material" uid="uid://bncvwxye2x1uq" path="res://addons/cogito/DynamicFootstepSystem/Assets/Materials/Prototype_Brown.tres" id="7_ad5hk"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjicb"]
 resource_name = "rogue_texture"
@@ -88,162 +89,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_01x3y")
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_hpk8d"]
+material = ExtResource("7_ad5hk")
 radius = 0.002
 height = 0.25
-
-[sub_resource type="Animation" id="Animation_i3g6q"]
-resource_name = "unequip"
-length = 0.7
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../crossbow_mesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.32, 0.61),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.194556, -0.088626, 0), Vector3(-0.369786, -0.253004, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../crossbow_mesh:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.32, 0.61),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.608561), Vector3(0, 0, -1.65576)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../crossbow_mesh:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.566667, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, true, false]
-}
-
-[sub_resource type="Animation" id="Animation_och62"]
-resource_name = "shoot"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../crossbow_mesh/MeshInstance3D:mesh:height")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.25]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.25]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.177171, 0.0563077, 0.0332704)]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, -1.79769, 0)]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0.177171, 0.0563077, -0.0344523)]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(-1.5708, 1.79781, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_ke0wy"]
-resource_name = "reload"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../crossbow_mesh/arrow:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.433333, 0.8),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.227077, 0.199544, -0.26001), Vector3(0.227077, 0.106819, -0.0964918), Vector3(0.227077, 0.0527953, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../crossbow_mesh/arrow:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
-"transitions": PackedFloat32Array(1, 1.00001, 1),
-"update": 0,
-"values": [Vector3(-1.01414, -1.5708, -2.638), Vector3(-1.4325, -1.98046, -2.638), Vector3(-1.5708, 1.5708, 0)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../crossbow_mesh/arrow:visible")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.051069),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
 
 [sub_resource type="Animation" id="Animation_3s7tv"]
 resource_name = "RESET"
@@ -330,7 +178,7 @@ tracks/6/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [false]
+"values": [true]
 }
 tracks/7/type = "value"
 tracks/7/imported = false
@@ -347,62 +195,62 @@ tracks/7/keys = {
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
+tracks/8/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [0.25]
+"values": [Vector3(0.177171, 0.0563077, -0.0344523)]
 }
 tracks/9/type = "value"
 tracks/9/imported = false
 tracks/9/enabled = true
-tracks/9/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
+tracks/9/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.177171, 0.0563077, 0.0332704)]
+"values": [Vector3(-1.5708, 1.79781, 0)]
 }
 tracks/10/type = "value"
 tracks/10/imported = false
 tracks/10/enabled = true
-tracks/10/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
+tracks/10/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5708, -1.79769, 0)]
+"values": [Vector3(0.177, 0.056, 0.031)]
 }
 tracks/11/type = "value"
 tracks/11/imported = false
 tracks/11/enabled = true
-tracks/11/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
+tracks/11/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0.177171, 0.0563077, -0.0344523)]
+"values": [Vector3(-1.5708, -1.79769, 0)]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
+tracks/12/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(-1.5708, 1.79781, 0)]
+"values": [0.25]
 }
 
 [sub_resource type="Animation" id="Animation_ad5hk"]
@@ -445,6 +293,246 @@ tracks/2/keys = {
 "values": [false, true, true]
 }
 
+[sub_resource type="Animation" id="Animation_ke0wy"]
+resource_name = "reload"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh/arrow:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.433333, 0.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.227077, 0.199544, -0.26001), Vector3(0.227077, 0.106819, -0.0964918), Vector3(0.227077, 0.0527953, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh/arrow:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.8),
+"transitions": PackedFloat32Array(1, 1.00001, 1),
+"update": 0,
+"values": [Vector3(-1.01414, -1.5708, -2.638), Vector3(-1.4325, -1.98046, -2.638), Vector3(-1.5708, 1.5708, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh/arrow:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.051069),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(0.297, 0.056, -0.0242822), Vector3(0.177, 0.056, -0.031)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(-1.5708, 3.14159, 0), Vector3(-1.5708, 1.82038, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../crossbow_mesh/MeshInstance3D:mesh:height")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.05, 0.25]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0.05, 0.25]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(0.296907, 0.056, 0.0240362), Vector3(0.177, 0.056, 0.031)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [Vector3(-1.5708, -3.14159, 0), Vector3(-1.5708, -1.82038, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_och62"]
+resource_name = "shoot"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh/MeshInstance3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.177, 0.056, -0.031), Vector3(0.205613, 0.056, -0.0333076), Vector3(0.232033, 0.056, -0.0333076), Vector3(0.287, 0.056, -0.033), Vector3(0.297, 0.056, -0.0242822)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh/MeshInstance3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, 1.82038, 0), Vector3(-1.5708, 1.88422, 0), Vector3(-1.5708, 2.01982, 0), Vector3(-1.5708, 2.77158, 0), Vector3(-1.5708, 3.14159, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh/MeshInstance3D:mesh:height")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.25, 0.2, 0.15, 0.09, 0.07, 0.05]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../crossbow_mesh/MeshInstance3D2:mesh:height")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.166667, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.25, 0.2, 0.15, 0.09, 0.07, 0.05]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../crossbow_mesh/MeshInstance3D2:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0.177, 0.056, 0.031), Vector3(0.206, 0.056, 0.033), Vector3(0.232, 0.056, 0.033), Vector3(0.287, 0.056, 0.033), Vector3(0.296907, 0.056, 0.0240362)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../crossbow_mesh/MeshInstance3D2:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.1, 0.2, 0.233333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(-1.5708, -1.82038, 0), Vector3(-1.5708, -1.88496, 0), Vector3(-1.5708, -2.01935, 0), Vector3(-1.5708, -2.77158, 0), Vector3(-1.5708, -3.14159, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../crossbow_mesh/arrow:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_i3g6q"]
+resource_name = "unequip"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../crossbow_mesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.194556, -0.088626, 0), Vector3(-0.369786, -0.253004, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../crossbow_mesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.32, 0.61),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.608561), Vector3(0, 0, -1.65576)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../crossbow_mesh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.566667, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_il6yl"]
 _data = {
 &"RESET": SubResource("Animation_3s7tv"),
@@ -477,17 +565,16 @@ unique_name_in_owner = true
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.131, 0.056, 0.002)
 
 [node name="arrow" type="MeshInstance3D" parent="crossbow_mesh"]
-transform = Transform3D(-2.18557e-08, -0.5, -2.18557e-08, 0, -2.18557e-08, 0.5, -0.5, 2.18557e-08, 9.55343e-16, 0.227077, 0.0527953, 0)
-visible = false
+transform = Transform3D(-1.81e-06, -0.5, -1.81e-06, 0, -1.81e-06, 0.5, -0.5, 1.81e-06, 6.55216e-12, 0.227077, 0.0527953, 0)
 mesh = SubResource("ArrayMesh_imbai")
 skeleton = NodePath("")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="crossbow_mesh"]
-transform = Transform3D(-0.22507, -0.974343, -4.25899e-08, 0, -4.37114e-08, 1, -0.974343, 0.22507, 9.83813e-09, 0.177171, 0.0563077, -0.0344523)
+transform = Transform3D(-0.225069, -0.974343, -3.52711e-06, 0, -3.61999e-06, 1, -0.974343, 0.225069, 8.14747e-07, 0.177171, 0.0563077, -0.0344523)
 mesh = SubResource("CapsuleMesh_hpk8d")
 
 [node name="MeshInstance3D2" type="MeshInstance3D" parent="crossbow_mesh"]
-transform = Transform3D(-0.224951, 0.97437, 4.25911e-08, 0, -4.37114e-08, 1, 0.97437, 0.224951, 9.83292e-09, 0.177171, 0.0563077, 0.0332704)
+transform = Transform3D(-0.224951, 0.97437, 4.25911e-08, 0, -4.37114e-08, 1, 0.97437, 0.224951, 9.83292e-09, 0.177, 0.056, 0.031)
 mesh = SubResource("CapsuleMesh_hpk8d")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

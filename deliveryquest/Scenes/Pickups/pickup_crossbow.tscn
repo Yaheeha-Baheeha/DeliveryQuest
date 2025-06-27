@@ -75,6 +75,8 @@ metadata/_custom_type_script = "uid://di15gqemrkk0x"
 
 [node name="pickup_crossbow" type="RigidBody3D"]
 script = ExtResource("1_ksdyc")
+cogito_name = "Crossbow"
+display_name = "Crossbow"
 
 [node name="crossbow_2handed" type="MeshInstance3D" parent="."]
 transform = Transform3D(-2.18557e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.18557e-08, -0.124995, -0.0520652, 0)
@@ -113,3 +115,4 @@ transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.130696, 0.031203
 slot_data = SubResource("Resource_ogob1")
 
 [node name="CarryableComponent" parent="." instance=ExtResource("4_cx31u")]
+enable_manual_rotating = false

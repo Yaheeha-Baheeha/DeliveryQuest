@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="WieldableItemPD" load_steps=4 format=3 uid="uid://bkywtmyl70uxv"]
+[gd_resource type="Resource" script_class="WieldableItemPD" load_steps=5 format=3 uid="uid://bkywtmyl70uxv"]
 
 [ext_resource type="Texture2D" uid="uid://crkqmpmo1ktcf" path="res://Scenes/Wieldables/Icons/crossbowIcon.png" id="1_lxphx"]
 [ext_resource type="Script" uid="uid://bkxgkf3pj8kb8" path="res://addons/cogito/InventoryPD/CustomResources/WieldableItemPD.gd" id="2_lcnqq"]
 [ext_resource type="AudioStream" uid="uid://bl4h5ggcussow" path="res://Audio/crossbowUse.ogg" id="3_lcnqq"]
+[ext_resource type="PackedScene" uid="uid://dlfbijka7cgw7" path="res://Scenes/Wieldables/crossbow.tscn" id="4_qr0p6"]
 
 [resource]
 script = ExtResource("2_lcnqq")
+wieldable_scene = ExtResource("4_qr0p6")
 no_reload = false
 hint_on_empty = ""
 charge_max = 8.0

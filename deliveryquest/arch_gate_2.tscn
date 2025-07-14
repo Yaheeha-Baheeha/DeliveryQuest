@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://de20ca7btu3ef"]
+
+[ext_resource type="PackedScene" uid="uid://mo72x0tw7yn6" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/arch_gate.gltf" id="1_cf8cx"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6vkf"]
+size = Vector3(3.72307, 4.11249, 1.0625)
+
+[node name="arch_gate2" instance=ExtResource("1_cf8cx")]
+
+[node name="RigidBody3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D" index="0"]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, -0.139672, 2.39637, 0.0325)
+shape = SubResource("BoxShape3D_k6vkf")

@@ -561,14 +561,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329, -0.264, -0.535)
 script = ExtResource("1_8oj5a")
 projectile_prefab = ExtResource("2_hpk8d")
 projectile_velocity = 40.0
-ads_fov = 50
+ads_fov = 30
+default_position = Vector3(0.329, -0.264, -0.535)
 sound_primary_use = ExtResource("3_ad5hk")
 sound_reload = ExtResource("4_jtun3")
 wieldable_mesh = NodePath("crossbow_mesh")
 anim_action_primary = "shoot"
 
 [node name="crossbow_mesh" type="Node3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+transform = Transform3D(-3.61999e-06, 0, 1, 0, 1, 0, -1, 0, -3.61999e-06, 0, 0, 0)
 script = ExtResource("1_n8ktg")
 
 [node name="crossbow_2handed" type="MeshInstance3D" parent="crossbow_mesh"]

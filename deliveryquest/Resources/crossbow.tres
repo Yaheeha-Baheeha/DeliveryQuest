@@ -9,12 +9,12 @@
 script = ExtResource("2_lcnqq")
 wieldable_scene = ExtResource("4_qr0p6")
 no_reload = false
-hint_on_empty = ""
+hint_on_empty = "No arrow!"
 charge_max = 1.0
 ammo_item_name = "Arrow"
-charge_current = 0.0
-wieldable_range = 30.0
-wieldable_damage = 5.0
+charge_current = 1.0
+wieldable_range = 10.0
+wieldable_damage = 1.0
 name = "Crossbow"
 description = "Shoots pointy thingy"
 icon = ExtResource("1_lxphx")

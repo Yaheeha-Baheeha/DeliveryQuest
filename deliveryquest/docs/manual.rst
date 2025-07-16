@@ -233,6 +233,12 @@ Cogito Objects
 .. hint:: 
    Interactables consider two major parts: The object itself and the InteractionComponents attached as child nodes to define what kind of interactions can be done.
 
+
+.. hint::
+   For the interaction raycast to be able to detect the object, it needs to be derived from a node that inhertis from CollisionObject3D.
+   Most commonly (depending on the use case) you'll want to make sure your script is attached to either a StaticBody3D, AnimatableBody3D or RigidBody3D node.
+
+
 Here's a quick overview which object to use for what use-case:
 
 +------------------------+-------------------------------------+
@@ -361,14 +367,21 @@ Slots
 ~~~~~
 Slots are containers that hold items. In most cases you don't have to deal with Slots except when defining the size of the player inventory or an external container. 
 
-External Inventories
-~~~~~~~~~~~~~~~~~~~~
+External Inventories / Cogito Container
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 External inventories are used to create containers or any other objects that should hold items that are NOT the player.
 An example would be the Fridge in the Lobby demo scene or the Chest in the legacy demo scene.
 
-To create an external inventory, use the ``external_inventory.gd`` script. You can then load a CogitoInventory resource.
+To create an external inventory, use the ``CogitoContainer`` class. You can then load a CogitoInventory resource.
 By doing this on a packed scene, you can make sure that all instances of that scene will have an inventory that is the same size.
+
+.. important::
+   The Player HUD looks for all CogitoContainers (more specifically all objects that are part of the ``external_inventory`` group) and connects their signal
+   to a function when a level scene loads. If you have CogitoContainers that get spawned in a level scene during runtime, you'll have to make sure the signal gets connected, otherwise the player won't be able to interact with them.
+   Make sure to add a line like this, which connects the toggle inventory signal to the Player HUD:
+   ``spawned_external_inventory.toggle_inventory.connect(CogitoSceneManager.player.player_hud.toggle_inventory_interface)``
+
 To make sure that these instances don't actually share the same inventory, make sure to check "Local to scene" (though this can be used to create "connected containers").
 Be sure to define if your inventory is grid based, and it's size.
 
@@ -706,7 +719,51 @@ Ladder Area
 -----------
 Script used to define ladders that the player can climb. Needs a reference to a CollisionObject3D and uses it's signals to determine if the player is on the ladder.
 
+Loot Component
+-----------
+Script used for generating loot upon death.
 
+Functionality:
+
+* LootComponent.gd
+   Can be enabled and disabled based on other functionality.
+   Loot table is a custom resource based on the BaseLootTable class which has an example dictionary. A generic loot table may also be found within Loot Tables folder. BaseLootTable has the definitions explained within it.
+   Customizable amount of items to drop during loot generation.
+   Can use custom scenes of loot bags, useful for creating different remain types. Should only use containers made from cogito_loot_drop_container.gd. 
+   Monitors the health component assigned manually in the editor to start.
+
+* cogito_lootable_container.gd
+   Is a child class of cogito_object. 
+   Respawning logic is included in the script itself.
+   Loot tables are shared and can be used accordingly.
+   Contents can be set to respawn or not to respawn. Respawning clears the contents and reinitializes new items within the container.
+   Non respawning can be useful for creating safe containers that saves it inventory during run time after initially rewarding player with some items.
+   
+* cogito_loot_drop_container.gd
+   Created by the Loot Component during run time after a health component has depleted.
+   Has built in despawn options. 
+   - Does not despawn
+   - Despawns after all items are taken out of the container (Instantly, closes the inventory to create a fast looting experience)
+   - Despawns after all items are taken out of the container (Only after player closes the inventory window)
+   - Container will continue to exist while the timer is still counting down, when it reaches zero, container and it's contents are deleted.
+   - Container will either despawn after all items are taken out of it, or when the timer hits zero. Whichever comes first.
+   
+* cogito_loot_generator.gd
+   Handles loot selection. Does not actually populate the containers, only passes the refined and rolled loot table to loot drop and lootable containers to facilitate item creation. Does not create items on its own. Sorts the loot table passed to it, randomly selects the items based on weights and amounts. Handles quest items, guaranteed drops and chance drops and unique items. 
+   
+   Script queries an unique item's existence from all containers currently in the scene and player's inventory to create a copy based on the loot table definitions of said items. If there can only be one, there can only be one. 
+   Script also handles quest item generation. In an example scenario, if a quest item is set to drop X times, you need to define those in the loot table to facilitate generation, otherwise only a single copy may drop. Quest item and random chance items share the same item amount pool. Meaning a quest item will prevent another chance item from spawning.
+   
+   Guaranteed items will be added regardless of amount of items requested in the editor. 
+
+* Timers
+   Timers can be configured to pass during unloaded time or while player is in the scene with the lootable container or loot drop containers. You can use the respawning containers throughout your game to seed items in containers like in other RPG games.
+   If player is viewing the inventory of the lootable container or loot drop container, timer of that container is paused to give player time to make decisions. 
+
+* Known issues
+   Script cannot handle grid inventories.
+   If you have multiple stackable items in loot table, and when generated these items do not go over the maximum stack size, script does not stack these items during generation and will consume a slot instead. So it is advised you choose a single stackable item per entry and increase the stack size to adjust for it. 
+    
 Cogito Rotator Tool
 -------------------
 A basic script to rotate Node3Ds. Used for the ceiling fans.

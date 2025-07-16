@@ -58,6 +58,7 @@ metadata/_custom_type_script = "uid://di15gqemrkk0x"
 
 [node name="Pickup_Sword" type="RigidBody3D"]
 script = ExtResource("1_yll8p")
+cogito_name = ""
 
 [node name="sword_2handed" type="MeshInstance3D" parent="."]
 mesh = SubResource("ArrayMesh_lxsx4")

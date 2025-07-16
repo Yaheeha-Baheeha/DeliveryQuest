@@ -4,6 +4,8 @@ class_name CogitoInventory
 signal inventory_interact(inventory_data: CogitoInventory, index: int, mouse_button: int)
 signal inventory_button_press(inventory_data: CogitoInventory, index: int, action: String)
 signal inventory_updated(inventory_data: CogitoInventory)
+signal unbind_quickslot_by_index(quickslot_index: int)
+signal picked_up_new_inventory_item(slot_data: InventorySlotPD)
 
 ## Enables grid inventory. If using, make sure player and ALL interactables have this set to true.
 @export var grid: bool
@@ -13,6 +15,7 @@ signal inventory_updated(inventory_data: CogitoInventory)
 @export var inventory_slots : Array[InventorySlotPD]
 
 var assigned_quickslots : Array[InventorySlotPD]
+var owner : Node
 
 @export var first_slot : InventorySlotPD
 
@@ -89,10 +92,11 @@ func use_slot_data(index: int):
 	
 	if not slot_data:
 		return
+	
+	if !slot_data.inventory_item.has_method("use"):
+		return
 
-	# THIS USES RESOURCE LOCAL TO SCENE DATA. Local scene in this case is player. If player is persistent, this should work, but might break if not!?
-	# This also throws an error when an item is used out of a container.
-	var use_successful : bool = slot_data.inventory_item.use(get_local_scene())
+	var use_successful : bool = slot_data.inventory_item.use(owner)
 	if slot_data.inventory_item.has_method("is_consumable") and use_successful:
 		slot_data.quantity -= 1
 		if slot_data.quantity < 1:
@@ -122,8 +126,15 @@ func remove_item_from_stack(slot_data: InventorySlotPD):
 	else:
 		print("Removing ", slot_data, " at index ", index)
 		inventory_slots[index].quantity -= 1
+		# What happens if last item of stack is removed.
 		if inventory_slots[index].quantity <= 0:
 			null_out_slots(slot_data)
+			
+			# If inventory slot was bind to a quick slot, unbind it.
+			var quickslot_index = assigned_quickslots.find(inventory_slots[index],0)
+			if quickslot_index > -1:
+				unbind_quickslot_by_index.emit(quickslot_index)
+				
 		inventory_updated.emit(self)
 
 
@@ -136,6 +147,12 @@ func drop_slot_data(grabbed_slot_data: InventorySlotPD, index: int) -> Inventory
 	elif is_enough_space(grabbed_slot_data, index, false):
 		# Swap out item
 		var item_to_swap = get_item_to_swap(grabbed_slot_data, index)
+		
+		# If item to swap is being wielded, cancel the swap
+		if item_to_swap and item_to_swap.inventory_item and item_to_swap.inventory_item.is_being_wielded:
+			print("cogito_inventory.gd: ERROR - cants swap out item thats being wielded.")
+			return grabbed_slot_data
+		
 		null_out_slots(item_to_swap)
 		grabbed_slot_data.origin_index = index
 		inventory_slots[index] = grabbed_slot_data
@@ -213,10 +230,20 @@ func pick_up_slot_data(slot_data: InventorySlotPD) -> bool:
 			inventory_slots[index] = slot_data
 			add_adjacent_slots(index)
 			inventory_updated.emit(self)
+			picked_up_new_inventory_item.emit(slot_data)
 			return true
 	
 	CogitoSceneManager._current_player_node.player_interaction_component.send_hint(null, "Unable to pick up item.")	
 	return false
+
+
+## LootComponent - Gets all items in inventory
+func get_all_items() -> Array[InventoryItemPD]:
+	var result: Array[InventoryItemPD] = []
+	for slot in inventory_slots:
+		if slot != null:
+			result.append(slot.inventory_item)
+	return result
 
 
 # Function to attempt to take all the items in a given inventory.

@@ -3,23 +3,26 @@ extends Control
 signal drop_slot_data(slot_data : InventorySlotPD)
 signal inventory_open(is_true: bool)
 
-@onready var inventory_ui = $VBoxContainer/InventoryUI
-@onready var player_currencies_ui = $VBoxContainer/PlayerCurrencies
+@export var inventory_ui : Control
 @onready var grabbed_slot_node = $GrabbedSlot
 @onready var external_inventory_ui = $ExternalInventoryUI
 @onready var hot_bar_inventory = $HotBarInventory
 @onready var quick_slots : CogitoQuickslots = $QuickSlots
 @onready var info_panel = $InfoPanel
 @onready var item_name = $InfoPanel/MarginContainer/VBoxContainer/ItemName
-@onready var item_description = $InfoPanel/MarginContainer/VBoxContainer/ItemDescription
+@onready var item_description: Control = $InfoPanel/MarginContainer/VBoxContainer/ItemDescription
 @onready var drop_prompt: Control = $InfoPanel/MarginContainer/VBoxContainer/HBoxDrop
 @onready var assign_prompt: Control = $InfoPanel/MarginContainer/VBoxContainer/HBoxAssign
+@onready var use_prompt: Control = $InfoPanel/MarginContainer/VBoxContainer/HBoxUse
 
 
 ## Sound that plays as a generic error.
 @export var sound_error : AudioStream
-
 @export var is_using_hotbar: bool = true
+
+@export_group("Inventory Screen")
+@export var nodes_to_show : Array[Node]
+@export var nodes_to_hide : Array[Node]
 
 var is_inventory_open : bool:
 	set(value):
@@ -58,8 +61,12 @@ func open_inventory():
 		is_inventory_open = true
 		info_panel.hide()
 		get_viewport().gui_focus_changed.connect(_on_focus_changed)
-		inventory_ui.show()
-		player_currencies_ui.show()
+		#inventory_ui.show()
+		#player_currencies_ui.show()
+		
+		for node in nodes_to_show:
+			node.show()
+		
 		if InputHelper.device_index != -1: # Check if gamepad is used
 			inventory_ui.slot_array[0].grab_focus() # Grab focus of inventory slot for gamepad users.
 #		inventory_interface.grabbed_slot_node.show()
@@ -80,20 +87,30 @@ func close_inventory():
 		get_viewport().gui_focus_changed.disconnect(_on_focus_changed)
 		if control_in_focus:
 			control_in_focus.release_focus()
-		inventory_ui.hide()
-		player_currencies_ui.hide()
+		
+		# Clearing out UI grabbed slot
+		if inventory_ui.grabbed_slot:
+			inventory_ui.detach_grabbed_slot()
+		
+		for node in nodes_to_show:
+			node.hide()
+		#inventory_ui.hide()
+		#player_currencies_ui.hide()
+		
 		if external_inventory_owner:
 			external_inventory_owner.close()
+
 		grabbed_slot_node.hide()
 		info_panel.hide()
 		external_inventory_ui.hide()
+
 		if is_using_hotbar:
 			hot_bar_inventory.show()
 
 
 func _on_focus_changed(control: Control):
 	if !control.has_method("set_slot_data"):
-		print("Not a slot. returning.")
+		CogitoGlobals.debug_log(true,"inventory_interface.gd", "_on_focus_changed: Not a slot. returning.")
 		return
 	
 	if control != null:
@@ -111,6 +128,11 @@ func _on_focus_changed(control: Control):
 		if control_in_focus.item_data.is_droppable:
 			drop_prompt.show()
 		else: drop_prompt.hide()
+		
+		if !control_in_focus.item_data.has_method("use"):
+			use_prompt.hide()
+		else:
+			use_prompt.show()
 
 		info_panel.show()
 		if !control.mouse_exited.is_connected(_slot_on_mouse_exit):
@@ -153,6 +175,7 @@ func set_external_inventory(_external_inventory_owner):
 	external_inventory_owner = _external_inventory_owner
 	var inventory_data = external_inventory_owner.inventory_data
 	
+	inventory_data.owner = external_inventory_owner # Setting reference to external inventory owner node
 #	inventory_data.inventory_interact.connect(on_inventory_interact)
 	inventory_data.inventory_button_press.connect(on_inventory_button_press)
 	external_inventory_ui.inventory_name = external_inventory_owner.display_name
@@ -163,6 +186,10 @@ func set_external_inventory(_external_inventory_owner):
 	if !external_inventory_ui.button_take_all.pressed.is_connected(_on_take_all_pressed):
 		external_inventory_ui.button_take_all.pressed.connect(_on_take_all_pressed)
 
+
+## Loot Component added
+func get_external_inventory():
+	return external_inventory_owner
 
 func _on_take_all_pressed():
 	external_inventory_owner.inventory_data.take_all_items(get_parent().player.inventory_data)
@@ -181,6 +208,8 @@ func clear_external_inventory():
 
 
 func set_player_inventory_data(inventory_data : CogitoInventory):
+	inventory_data.owner = CogitoSceneManager._current_player_node  # Setting player inventory owner reference to player node
+	
 #	inventory_data.inventory_interact.connect(on_inventory_interact)
 	if !inventory_data.inventory_button_press.is_connected(on_inventory_button_press):
 		inventory_data.inventory_button_press.connect(on_inventory_button_press)
@@ -189,11 +218,10 @@ func set_player_inventory_data(inventory_data : CogitoInventory):
 		quick_slots.show()
 		# Quickslots need reference to inventory when quickslot buttons are pressed
 		quick_slots.inventory_reference = inventory_data
-		# Connecting the inventory_updated signal (this is so quickslots update on item drop etc.)
-		inventory_data.inventory_updated.connect(quick_slots.on_inventory_updated)
 	else:
 		quick_slots.hide()
-	inventory_open.connect(quick_slots.update_inventory_status)
+	if !inventory_open.is_connected(quick_slots.update_inventory_status):
+		inventory_open.connect(quick_slots.update_inventory_status)
 	grabbed_slot_node.using_grid(inventory_data.grid)
 
 
@@ -201,7 +229,13 @@ func set_player_inventory_data(inventory_data : CogitoInventory):
 func on_inventory_button_press(inventory_data: CogitoInventory, index: int, action: String):
 	match [grabbed_slot_data, action]:
 		[null, "inventory_move_item"]:
-			grabbed_slot_data = inventory_data.grab_slot_data(index)
+			# Check if item is being wielded before grabbing it.
+			var temp_slot_data = inventory_data.get_slot_data(index)
+			if temp_slot_data and temp_slot_data.inventory_item and temp_slot_data.inventory_item.is_being_wielded:
+					Audio.play_sound(sound_error)
+					CogitoGlobals.debug_log(true, "inventory_interface.gd", "Can't move item while its being wielded.")
+			else:
+				grabbed_slot_data = inventory_data.grab_slot_data(index)
 		[_, "inventory_move_item"]:
 			grabbed_slot_data = inventory_data.drop_slot_data(grabbed_slot_data, index)
 		[null, "inventory_use_item"]:
@@ -225,8 +259,13 @@ func on_inventory_button_press(inventory_data: CogitoInventory, index: int, acti
 				else:
 					CogitoGlobals.debug_log(true, "inventory_interface.gd", "Dropping slot data via gamepad ")
 					grabbed_slot_data = inventory_data.grab_single_slot_data(index)
-					drop_slot_data.emit(grabbed_slot_data.create_single_slot_data_gamepad_drop(index))
-					grabbed_slot_data = null
+					if not _drop_item(grabbed_slot_data):
+						Audio.play_sound(sound_error)
+						get_parent().player.player_interaction_component.send_hint(null, "Not enough space to drop item.")
+						CogitoGlobals.debug_log(true, "inventory_interface.gd", "Can't drop because there isn't enough space.")
+					else:
+						grabbed_slot_data.create_single_slot_data(grabbed_slot_data.origin_index)
+						grabbed_slot_data = null
 		
 		[null, "inventory_assign_item"]: # Pressing "Assign quickslot" on gamepad
 			CogitoGlobals.debug_log(true, "inventory_interface.gd", "Grabbing focus of quickslots.")
@@ -250,7 +289,6 @@ func on_inventory_button_press(inventory_data: CogitoInventory, index: int, acti
 	else:
 		element = amount_of_inventory_slots-1
 	# Should fix issues where an external inventory is bigger than the players
-	#print("Inventory_interface: grabbing focus for slot_array index = ", element)
 	inventory_ui.slot_array[element].grab_focus()
 	update_grabbed_slot()
 
@@ -271,11 +309,13 @@ func update_grabbed_slot():
 
 func _on_bind_grabbed_slot_to_quickslot(quickslotcontainer: CogitoQuickslotContainer):
 	if grabbed_slot_data:
-		print("inventory_interface.gd: Binding to quickslot container: ", grabbed_slot_data, " -> ", quickslotcontainer)
+		CogitoGlobals.debug_log(true, "inventory_interface.gd", "Binding to quickslot container: " + str(grabbed_slot_data) + " -> " + str(quickslotcontainer) )
+		#get_parent().player.inventory_data.pick_up_slot_data(grabbed_slot_data) #Swapped with line below
 		quick_slots.bind_to_quickslot(grabbed_slot_data, quickslotcontainer)
-		get_parent().player.inventory_data.pick_up_slot_data(grabbed_slot_data)
-		grabbed_slot_data = null
-		update_grabbed_slot()
+		
+		#inventory_ui.detach_grabbed_slot()
+		#grabbed_slot_data = null
+		#update_grabbed_slot()
 	else:
 		CogitoGlobals.debug_log(true, "inventory_interface.gd", "No grabbed slot data.")
 
@@ -297,9 +337,14 @@ func _on_gui_input(event):
 						Audio.play_sound(sound_error)
 						CogitoGlobals.debug_log(true, "inventory_interface.gd", "Can't drop while wielding this item.")
 					else:
-						drop_slot_data.emit(grabbed_slot_data.create_single_slot_data(grabbed_slot_data.origin_index))
-						if grabbed_slot_data.quantity < 1:
-							grabbed_slot_data = null
+						if not _drop_item(grabbed_slot_data):
+							Audio.play_sound(sound_error)
+							get_parent().player.player_interaction_component.send_hint(null, "Not enough space to drop item.")
+							CogitoGlobals.debug_log(true, "inventory_interface.gd", "Can't drop because there isn't enough space.")
+						else:
+							grabbed_slot_data.create_single_slot_data(grabbed_slot_data.origin_index)
+							if grabbed_slot_data.quantity < 1:
+								grabbed_slot_data = null
 					
 				MOUSE_BUTTON_RIGHT:
 					if !grabbed_slot_data.inventory_item.is_droppable:
@@ -310,9 +355,14 @@ func _on_gui_input(event):
 						Audio.play_sound(sound_error)
 						CogitoGlobals.debug_log(true, "inventory_interface.gd", "Can't drop while wielding this item.")
 					else:
-						drop_slot_data.emit(grabbed_slot_data.create_single_slot_data(grabbed_slot_data.origin_index))
-						if grabbed_slot_data.quantity < 1:
-							grabbed_slot_data = null
+						if not _drop_item(grabbed_slot_data):
+							Audio.play_sound(sound_error)
+							get_parent().player.player_interaction_component.send_hint(null, "Not enough space to drop item.")
+							CogitoGlobals.debug_log(true, "inventory_interface.gd", "Can't drop because there isn't enough space.")
+						else:
+							grabbed_slot_data.create_single_slot_data(grabbed_slot_data.origin_index)
+							if grabbed_slot_data.quantity < 1:
+								grabbed_slot_data = null
 					
 			update_grabbed_slot()
 
@@ -322,3 +372,72 @@ func _on_visibility_changed():
 		drop_slot_data.emit(grabbed_slot_data)
 		grabbed_slot_data = null
 		update_grabbed_slot()
+
+
+func _on_inventory_ui_hidden() -> void:
+	# Hides item info panel if the inventory UI screen gets hidden.
+	info_panel.hide()
+
+
+func _drop_item(slot_data: InventorySlotPD) -> bool:
+	var player = get_parent().player
+	var player_radius = player.radius
+	var shape_cast = player.item_drop_shapecast
+	var item_drop_distance_offset = player.get_node(player.player_hud).item_drop_distance_offset
+	var camera_basis_z = get_viewport().get_camera_3d().get_global_transform().basis.z
+	
+	var drop_distance = abs(shape_cast.target_position.z - item_drop_distance_offset)
+	
+	var scene_to_drop = load(slot_data.inventory_item.drop_scene)
+	var dropped_item = scene_to_drop.instantiate()
+	
+	if dropped_item is not CogitoObject:
+		return false
+		
+	var item_aabb = dropped_item.get_aabb()
+	var item_length = item_aabb.size.z
+	
+	shape_cast.add_exception(player)
+	
+	shape_cast.shape.size = item_aabb.size
+	
+	var previous_target_position = shape_cast.target_position
+	shape_cast.target_position = Vector3.ZERO
+	
+	shape_cast.force_shapecast_update()
+	
+	if shape_cast.is_colliding():
+		shape_cast.target_position = previous_target_position
+		return false
+	
+	shape_cast.target_position = previous_target_position
+	
+	shape_cast.force_shapecast_update()
+	
+	var collision_safe_fraction = shape_cast.get_closest_collision_safe_fraction()
+	var safe_drop_distance = drop_distance * collision_safe_fraction
+	
+	if item_length < player_radius:
+		if safe_drop_distance < player_radius:
+			return false
+	else:
+		if safe_drop_distance < item_length:
+			return false
+			
+	CogitoSceneManager._current_scene_root_node.add_child(dropped_item)
+	dropped_item.global_rotation = player.body.global_rotation
+	dropped_item.position = shape_cast.global_position + (safe_drop_distance - item_length / 2) * -camera_basis_z
+		
+	Audio.play_sound(slot_data.inventory_item.sound_drop)
+	
+	if item_length < player_radius:
+		dropped_item.position = shape_cast.global_position + (safe_drop_distance - item_length / 2) * -camera_basis_z
+	else:
+		dropped_item.position = shape_cast.global_position + (safe_drop_distance - item_length / 2 + player_radius) * -camera_basis_z
+		
+	dropped_item.find_interaction_nodes()
+	for node in dropped_item.interaction_nodes:
+		if node.has_method("get_item_type"):
+			node.slot_data = slot_data
+
+	return true

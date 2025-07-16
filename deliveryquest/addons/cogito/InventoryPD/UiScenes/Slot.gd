@@ -1,15 +1,14 @@
 class_name SlotPanel extends PanelContainer
 
-
 @onready var texture_rect = $MarginContainer/TextureRect
 @onready var quantity_label = $QuantityLabel
 @onready var charge_label = $ChargeLabel
 @onready var selection_panel = $Selected
 
-
 @export var highlight_color : Color
 ## AudioStream that plays when slot gets highlighted.
 @export var sound_highlight : AudioStream
+
 var item_data = null
 var origin_index : int = -1
 var grid : bool

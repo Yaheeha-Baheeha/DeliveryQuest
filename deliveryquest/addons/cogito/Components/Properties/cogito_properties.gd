@@ -111,8 +111,7 @@ func start_reaction_threshold_timer(passed_collider: Node3D):
 
 
 func check_for_reaction_timer_interrupt(passed_collider: Node3D):
-	#print(get_parent().name , ": check for reaction timer interrupt called. Passed collider: ", passed_collider.name, ". Current reaction collider: ", reaction_collider.name)
-	
+
 	# Quick check to see if the collider has any CogitoProperties.
 	if( !passed_collider.cogito_properties):
 		CogitoGlobals.debug_log(is_logging, "cogito_properties.gd", "Collider " + passed_collider.name + " has no properties.")
@@ -161,7 +160,7 @@ func check_for_systemic_reactions():
 				print(get_parent().name, ": Touched by electrified collider ", reaction_collider.name, ". Getting electric.")
 				make_electric()
 
-		print("Collider ", reaction_collider.name, " elemental properties: ", reaction_collider.cogito_properties.elemental_properties)
+		#print("Collider ", reaction_collider.name, " elemental properties: ", reaction_collider.cogito_properties.elemental_properties)
 		match reaction_collider.cogito_properties.elemental_properties:
 			ElementalProperties.WET: ### WATER REACTIONS
 				if is_on_fire:

@@ -1,16 +1,16 @@
 [gd_scene load_steps=17 format=4 uid="uid://87t5cnxk7t8t"]
 
-[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_ksdyc"]
-[ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_6y0vc"]
-[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_nxhqf"]
-[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://addons/cogito/Components/Interactions/CarryableComponent.tscn" id="4_cx31u"]
-[ext_resource type="Resource" uid="uid://bkywtmyl70uxv" path="res://Resources/crossbow.tres" id="4_ogob1"]
-[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_fct1j"]
+[ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_8d6yp"]
+[ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_vifhu"]
+[ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_3brsh"]
+[ext_resource type="Resource" uid="uid://bkywtmyl70uxv" path="res://Resources/crossbow.tres" id="4_3way3"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_6tox2"]
+[ext_resource type="PackedScene" uid="uid://cio4x05ipvslu" path="res://addons/cogito/Components/Interactions/CarryableComponent.tscn" id="6_q8j6x"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xjicb"]
 resource_name = "rogue_texture"
 cull_mode = 2
-albedo_texture = ExtResource("2_6y0vc")
+albedo_texture = ExtResource("2_vifhu")
 roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_u4yxo"]
@@ -65,16 +65,16 @@ points = PackedVector3Array(-0.142736, 0.183303, 0.191191, 0.154593, 0.137564, 0
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rei57"]
 points = PackedVector3Array(0.0173643, 0.000299916, -0.26617, -0.0283785, -0.182616, -0.197543, 0.0173643, -0.182616, -0.197543, -0.0741214, 0.0231669, 0.39694, 0.0859786, 0.000299916, 0.351143, -0.0283785, -0.159728, 0.168226, -0.0969928, -0.045434, -0.197543, 0.0859786, -0.136862, -0.197543, -0.0969928, -0.113995, 0.00820628, 0.0402357, 0.0231669, -0.197543, 0.0402357, -0.159728, 0.145395, 0.0859786, -0.022567, -0.197543, -0.0969928, 0.0231669, 0.236853, 0.0173643, -0.045434, 0.374042, 0.0859786, 0.0231669, 0.351143, -0.0741214, 0.000299916, -0.197543, -0.0283785, -0.136862, -0.26617, -0.0741214, -0.159728, -0.197543, 0.0859786, -0.136862, 0.00820628, 0.0402357, -0.0683009, -0.289069, -0.0969928, -0.022567, 0.282583, -0.0283785, -0.022567, -0.289069, 0.0402357, -0.182616, 0.00820628, -0.0741214, -0.159728, 0.0311046, -0.0283785, 0.0231669, -0.197543, -0.0741214, 0.000299916, 0.39694, 0.0631072, 0.000299916, 0.39694, -0.0283785, -0.182616, 0.0311046, -0.0969928, -0.113995, -0.197543, 0.0631072, -0.136862, -0.243272, 0.0859786, 0.0231669, 0.191124, -0.0741214, -0.113995, -0.243272)
 
-[sub_resource type="Resource" id="Resource_ogob1"]
+[sub_resource type="Resource" id="Resource_6mro7"]
 resource_local_to_scene = true
-script = ExtResource("5_fct1j")
-inventory_item = ExtResource("4_ogob1")
+script = ExtResource("5_6tox2")
+inventory_item = ExtResource("4_3way3")
 quantity = 1
 origin_index = -1
 metadata/_custom_type_script = "uid://di15gqemrkk0x"
 
 [node name="pickup_crossbow" type="RigidBody3D"]
-script = ExtResource("1_ksdyc")
+script = ExtResource("1_8d6yp")
 cogito_name = "Crossbow"
 display_name = "Crossbow"
 
@@ -110,9 +110,9 @@ shape = SubResource("ConvexPolygonShape3D_rei57")
 [node name="Bullet_Point" type="Node3D" parent="."]
 transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.130696, 0.0562433, 0.00182778)
 
-[node name="PickupComponent" parent="." instance=ExtResource("3_nxhqf")]
+[node name="PickupComponent" parent="." instance=ExtResource("3_3brsh")]
 transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.130696, 0.031203, 0.00182778)
-slot_data = SubResource("Resource_ogob1")
+slot_data = SubResource("Resource_6mro7")
 
-[node name="CarryableComponent" parent="." instance=ExtResource("4_cx31u")]
+[node name="CarryableComponent" parent="." instance=ExtResource("6_q8j6x")]
 enable_manual_rotating = false

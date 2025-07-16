@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=4 uid="uid://dgtjml2t3hdvx"]
 
 [ext_resource type="Script" uid="uid://hif5sm107p01" path="res://addons/cogito/Wieldables/wieldable_toy_pistol.gd" id="1_o04qd"]
-[ext_resource type="PackedScene" uid="uid://c1umit2vtv22v" path="res://Scenes/Bullets/Arrow.tscn" id="2_l6tt4"]
+[ext_resource type="PackedScene" uid="uid://7b72frrru7rt" path="res://addons/cogito/InventoryPD/Items/projectile_pistol.tscn" id="2_1jevy"]
 [ext_resource type="AudioStream" uid="uid://clsajk36s7luk" path="res://addons/cogito/Assets/Audio/Kenney/error_004.ogg" id="3_vdfq8"]
 [ext_resource type="Script" uid="uid://b361n7ae3ixmn" path="res://addons/cogito/Assets/Shader/ViewmodelSpace.gd" id="5_1h55s"]
 [ext_resource type="AnimationLibrary" uid="uid://bbnpn3wqqoj7l" path="res://addons/cogito/Wieldables/Animations/Wieldable_ToyPistol.res" id="5_fkf6b"]
@@ -53,7 +53,7 @@ shadow_mesh = SubResource("ArrayMesh_gcevq")
 [node name="Toy Pistol" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
 transform = Transform3D(-3.61999e-06, 0, 0.999999, 0, 1, 0, -1, 0, -3.61999e-06, 0.328536, -0.26394, -0.53488)
 script = ExtResource("1_o04qd")
-projectile_prefab = ExtResource("2_l6tt4")
+projectile_prefab = ExtResource("2_1jevy")
 projectile_velocity = 50.0
 default_position = Vector3(0.329, -0.264, -0.535)
 sound_primary_use = ExtResource("3_vdfq8")

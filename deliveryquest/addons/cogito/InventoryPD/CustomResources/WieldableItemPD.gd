@@ -8,6 +8,7 @@ signal charge_changed()
 @export var wieldable_scene : PackedScene
 ## Icon that is displayed on the HUD when item is wielded. If NULL, the item icon will be used instead.
 @export var wieldable_data_icon : Texture2D
+@export var wieldable_crosshair : Texture2D
 ## Check this if your wieldable doesn't use reload (for example melee weapons)
 @export var no_reload : bool = false
 ## Message to display when wieldable is empty (no ammo in clip/no charge). Leave empty if you don't want to show any message.
@@ -26,10 +27,15 @@ signal charge_changed()
 var wieldable_data_text : String
 
 func use(target) -> bool:
+	if target.is_in_group("external_inventory"):
+		CogitoGlobals.debug_log(true,"WieldableItemPD.gd", "Can't use wieldable that is not in your inventory." )
+		return false
+		
 	# Target should always be player? Null check to override using the CogitoSceneManager, which stores a reference to current player node
-	if target == null or target.is_in_group("external_inventory"):
+	if target == null:
 		CogitoGlobals.debug_log(true,"WieldableItemPD.gd", "Bad target pass. Setting target to " + CogitoSceneManager._current_player_node.name )
 		target = CogitoSceneManager._current_player_node
+
 		
 	player_interaction_component = target.player_interaction_component
 	if player_interaction_component.carried_object != null:

@@ -1,11 +1,14 @@
-[gd_scene load_steps=12 format=4 uid="uid://c1umit2vtv22v"]
+[gd_scene load_steps=16 format=4 uid="uid://c1umit2vtv22v"]
 
 [ext_resource type="Script" uid="uid://fo2f3fr8frg4" path="res://addons/cogito/CogitoObjects/cogito_projectile.gd" id="1_u58o4"]
 [ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_6kanr"]
 [ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_mtfql"]
-[ext_resource type="Resource" uid="uid://quefvxbgsy5p" path="res://Scenes/Bullets/Arrow.tres" id="4_u58o4"]
+[ext_resource type="Texture2D" uid="uid://cg5knuav7df4o" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_X.png" id="4_fgmik"]
+[ext_resource type="Texture2D" uid="uid://b3ie8fviatl6u" path="res://Scenes/Wieldables/Icons/Screenshot 2025-07-14 124401.png" id="5_acy82"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_q450k"]
 [ext_resource type="PackedScene" uid="uid://cj0yaeh3yg7tu" path="res://addons/cogito/Components/Properties/CogitoProperties.tscn" id="6_acy82"]
+[ext_resource type="Script" uid="uid://6vgnb68cqtwh" path="res://addons/cogito/InventoryPD/CustomResources/AmmoItemPD.gd" id="6_sgnou"]
+[ext_resource type="AudioStream" uid="uid://npav2p2tk10i" path="res://addons/cogito/Assets/Audio/Kenney/handleSmallLeather.ogg" id="7_lnsdt"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocxvc"]
 resource_name = "rogue_texture"
@@ -47,13 +50,33 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u58o4")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u58o4"]
-points = PackedVector3Array(-0.0586665, 0.279376, -0.0338781, 3.49805e-06, 0.279376, 0.0677479, -0.0367514, 0.365544, -0.0212246, 0.0367354, 0.365617, -0.0212146, 0.0586735, 0.279376, -0.0338781, -0.0193732, -0.297714, -0.0335299, -0.038727, -0.297714, -6.07967e-06, -7.99075e-06, 0.365544, 0.042421, -0.0193732, -0.297714, 0.0335178, 0.0193458, -0.297714, 0.0335178, 0.0386995, -0.297714, -6.07967e-06, 0.0193458, -0.297714, -0.0335299, -7.99075e-06, -0.382929, -6.07967e-06)
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fgmik"]
+points = PackedVector3Array(0.0412837, 0.362698, -0.0138991, -0.0615569, 0.271301, -0.0367569, -0.0329736, -0.300044, -0.0253227, -0.00440269, 0.288429, 0.0718042, 0.0412837, -0.305729, 0.00895865, 0.0641454, 0.276986, -0.0367569, -0.0272521, -0.305729, 0.0317952, 0.0241436, -0.305729, -0.0367569, 0.0241436, -0.305729, 0.0375016, -0.0444045, 0.362698, -0.0253227, 0.00700354, 0.271301, 0.0660765, -0.0041875, -0.371512, -0.00170988, -0.00440269, 0.368457, 0.0489464, -0.0386952, -0.300044, 0.0146757, -0.0215428, -0.305729, -0.0367569, 0.0641454, 0.282744, -0.0310398, 0.0412837, -0.305729, -0.00818201, -0.0215428, -0.305729, 0.0375016, -0.055823, 0.317, -0.0253227, -0.0386952, -0.311413, -0.00818201, 0.0412837, 0.368457, -0.0196056, 0.0355745, -0.300044, 0.020361, 0.0584238, 0.299872, -0.0367569, 0.00700354, 0.362698, 0.0432187, -0.055823, 0.299872, -0.0367569, -0.0386952, 0.368457, -0.0138991, 0.00670913, -0.36631, -0.00143416, -0.00440269, 0.276986, 0.0718042, 0.0584238, 0.305557, -0.0253227, -0.0386952, -0.311413, 0.00895865, -0.0386952, -0.300044, -0.0138991, 0.0355745, -0.300044, -0.0196056)
 
-[sub_resource type="Resource" id="Resource_6kanr"]
+[sub_resource type="Resource" id="Resource_inc2m"]
+resource_local_to_scene = true
+script = ExtResource("6_sgnou")
+reload_amount = 1
+name = "Arrow"
+description = "Vanishes after 60 secs"
+icon = ExtResource("5_acy82")
+is_stackable = true
+is_droppable = true
+is_unique = false
+stack_size = 50
+drop_scene = "uid://dlfbijka7cgw7"
+item_drop_size = 0.5
+hint_icon_on_use = ExtResource("4_fgmik")
+hint_text_on_use = "Can't be used by itself."
+item_size = Vector2(1, 1)
+sound_pickup = ExtResource("7_lnsdt")
+can_auto_slot = false
+slot_number = -1
+
+[sub_resource type="Resource" id="Resource_6r53n"]
 resource_local_to_scene = true
 script = ExtResource("5_q450k")
-inventory_item = ExtResource("4_u58o4")
+inventory_item = SubResource("Resource_inc2m")
 quantity = 1
 origin_index = -1
 
@@ -74,15 +97,16 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_u58o4")
+shape = SubResource("ConvexPolygonShape3D_fgmik")
 
 [node name="Lifespan" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
-slot_data = SubResource("Resource_6kanr")
+slot_data = SubResource("Resource_6r53n")
 
 [node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
+material_properties = 1
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

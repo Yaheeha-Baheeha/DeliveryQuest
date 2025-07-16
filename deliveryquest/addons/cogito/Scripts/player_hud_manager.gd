@@ -6,32 +6,44 @@ signal hide_inventory
 
 #region Variables
 
+@export_group("Setup")
+
 ## Reference to the Node that has the player.gd script.
 @export var player : Node
 
 ## Used to reset icons etc, useful to have.
 @export var empty_texture : Texture2D
-## The hint icon that displays when no other icon is passed.
-@export var default_hint_icon : Texture2D
 
+
+@export_group("Interaction Prompts and Hints")
 ## PackedScene/Prefab for Object Name as it'd pop up in the HUD
 @export var object_name_component : PackedScene
 ## PackedScene/Prefab for Interaction Prompts
 @export var prompt_component : PackedScene
 ## PackedScene/Prefab for Hints
 @export var hint_component : PackedScene
-## 
+## The hint icon that displays when no other icon is passed.
+@export var default_hint_icon : Texture2D
 
 ## This sets how far away from the player dropped items appear. 0 = items appear on the tip of the player interaction raycast. Negative values mean closer, positive values mean further away that this.
 @export var item_drop_distance_offset : float = -1
 
+@export_group("HUD")
 ## Reference to PackedScene that gets instantiated for each player attribute.
 @export var ui_attribute_prefab : PackedScene
 ## Reference to PackedScene that gets instantiated for each player currency.
 @export var ui_currency_prefab : PackedScene
 ## If you want to have the stamina bar outside of the other attributes, you can set a reference here. This will remove it from the main attribute container
 @export var fixed_stamina_bar : CogitoAttributeUi
+@export var default_crosshair : Texture2D
 
+@export_group("Interface Screen")
+@export var ui_currency_area: Control
+## If you want to display the playeres attributes (like a Stats menu), put a reference here. If not, leave blank.
+@export var attribute_display_node : Control
+@export var ui_attribute_display_prefab : PackedScene
+## If checked, only attributes that have their visibility set to "Interface" will be shown.
+@export var only_show_interface_attributes : bool
 
 var hurt_tween : Tween
 var is_inventory_open : bool = false
@@ -44,8 +56,8 @@ var interaction_texture : Texture2D
 @onready var prompt_area: Control = $PromptArea
 @onready var hint_area: Control = $HintArea
 @onready var ui_attribute_area : BoxContainer = $MarginContainer_BottomUI/PlayerAttributes/MarginContainer/VBoxContainer
-@onready var ui_currency_area: VBoxContainer = $InventoryInterface/VBoxContainer/PlayerCurrencies/MarginContainer/VBoxContainer
 @onready var crosshair: Control = $Crosshair
+@onready var crosshair_texture: TextureRect = crosshair.get_child(0)
 
 #endregion
 
@@ -64,6 +76,7 @@ func _ready():
 	
 	# Set up for HUD elements for wieldables
 	wieldable_hud.hide()
+	crosshair_texture.texture = default_crosshair
 	
 	_setup_player.call_deferred()
 	connect_to_external_inventories.call_deferred()
@@ -80,6 +93,7 @@ func _setup_player():
 
 	connect_to_player_signals()
 	instantiate_player_attribute_ui()
+	instantiate_interface_attributes()
 	instantiate_player_currency_ui()
 	
 	# Fill inventory HUD with player inventory
@@ -107,7 +121,7 @@ func instantiate_player_attribute_ui():
 		if fixed_stamina_bar and attribute.attribute_name == "stamina":
 			fixed_stamina_bar.initiate_attribute_ui(attribute)
 		else:
-			if attribute.attribute_visibility == 0: # Only instantiates Attributes that have visibility set to HUD
+			if attribute.attribute_visibility == 0 or attribute.attribute_visibility == 1: # Only instantiates Attributes that have visibility set to HUD
 				var spawned_attribute_ui = ui_attribute_prefab.instantiate()
 				ui_attribute_area.add_child(spawned_attribute_ui)
 				if attribute.attribute_name == "health":
@@ -115,6 +129,20 @@ func instantiate_player_attribute_ui():
 					attribute.death.connect(_on_player_death)
 				
 				spawned_attribute_ui.initiate_attribute_ui(attribute)
+
+
+func instantiate_interface_attributes():
+	# Clearing out child nodes
+	for n in attribute_display_node.get_children():
+		attribute_display_node.remove_child(n)
+		n.queue_free()
+	
+	# Only spawn attributes set to visibility "Interface"
+	for attribute in player.player_attributes.values():
+		if attribute.attribute_visibility == 1 or attribute.attribute_visibility == 2  : # Only instantiates Attributes that have visibility set to HUD
+			var spawned_interface_attribute = ui_attribute_display_prefab.instantiate()
+			attribute_display_node.add_child(spawned_interface_attribute)
+			spawned_interface_attribute.initiate_interface_ui(attribute)
 
 
 func instantiate_player_currency_ui():
@@ -207,6 +235,19 @@ func delete_interaction_prompts() -> void:
 
 func set_drop_prompt(_carrying_node):
 	delete_interaction_prompts()
+	
+	# Create an input prompt if a PickupComponent or BackpackComponent exists
+	# This approach isn't great, but doesn't affect the passed argument or connected signals
+	# Build this input prompt first to maintain the same prompt layout
+	var carry_parent: CogitoObject = _carrying_node.get_parent() as CogitoObject
+	if carry_parent:
+		for node: InteractionComponent in carry_parent.interaction_nodes:
+			if node is PickupComponent or node is BackpackComponent:
+				var instanced_take_prompt: UiPromptComponent = prompt_component.instantiate()
+				prompt_area.add_child(instanced_take_prompt)
+				instanced_take_prompt.set_prompt(node.interaction_text, node.input_map_action)
+				break # Break out of the loop as no object should have both
+	
 	var instanced_prompt: UiPromptComponent = prompt_component.instantiate()
 	prompt_area.add_child(instanced_prompt)
 	instanced_prompt.set_prompt("Drop", _carrying_node.input_map_action)
@@ -244,7 +285,12 @@ func _on_update_wieldable_data(passed_wieldable_item: WieldableItemPD, passed_am
 	if passed_wieldable_item:
 		wieldable_hud.show()
 		wieldable_hud.update_wieldable_data(passed_wieldable_item, passed_ammo_in_inventory, passed_ammo_item)
+		if passed_wieldable_item.wieldable_crosshair:
+			crosshair_texture.texture = passed_wieldable_item.wieldable_crosshair
+		else:
+			crosshair_texture.texture = default_crosshair
 	else:
+		crosshair_texture.texture = default_crosshair
 		wieldable_hud.hide()
 
 
@@ -277,13 +323,4 @@ func _on_restart_button_pressed():
 
 # On Inventory UI Item Drop
 func _on_inventory_interface_drop_slot_data(slot_data: InventorySlotPD):
-	var scene_to_drop = load(slot_data.inventory_item.drop_scene)
-	Audio.play_sound(slot_data.inventory_item.sound_drop)
-	var dropped_item = scene_to_drop.instantiate()
-	dropped_item.position = player.player_interaction_component.get_interaction_raycast_tip(item_drop_distance_offset)
-	dropped_item.find_interaction_nodes()
-	for node in dropped_item.interaction_nodes:
-		if node.has_method("get_item_type"):
-			node.slot_data = slot_data
-
-	CogitoSceneManager._current_scene_root_node.add_child(dropped_item)
+	pass

@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://npav2p2tk10i" path="res://addons/cogito/Assets/Audio/Kenney/handleSmallLeather.ogg" id="3_1p7et"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("2_ufam7")
 reload_amount = 1
 name = "Arrow"
@@ -14,7 +15,7 @@ icon = ExtResource("2_1p7et")
 is_stackable = true
 is_droppable = true
 stack_size = 50
-drop_scene = "res://addons/cogito/PackedScenes/projectile_pistol.tscn"
+drop_scene = "uid://dlfbijka7cgw7"
 hint_icon_on_use = ExtResource("1_cwqsl")
 hint_text_on_use = "Can't be used by itself."
 item_size = Vector2(1, 1)

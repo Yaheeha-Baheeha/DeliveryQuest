@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c1umit2vtv22v"]
+[gd_scene load_steps=12 format=4 uid="uid://c1umit2vtv22v"]
 
 [ext_resource type="Script" uid="uid://fo2f3fr8frg4" path="res://addons/cogito/CogitoObjects/cogito_projectile.gd" id="1_u58o4"]
 [ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_6kanr"]
@@ -6,10 +6,6 @@
 [ext_resource type="Resource" uid="uid://quefvxbgsy5p" path="res://Scenes/Bullets/Arrow.tres" id="4_u58o4"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_q450k"]
 [ext_resource type="PackedScene" uid="uid://cj0yaeh3yg7tu" path="res://addons/cogito/Components/Properties/CogitoProperties.tscn" id="6_acy82"]
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u58o4"]
-radius = 0.0600725
-height = 0.199919
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocxvc"]
 resource_name = "rogue_texture"
@@ -51,15 +47,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u58o4")
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_wm252"]
-height = 0.53186
-radius = 0.0239258
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_u58o4"]
+points = PackedVector3Array(-0.0586665, 0.279376, -0.0338781, 3.49805e-06, 0.279376, 0.0677479, -0.0367514, 0.365544, -0.0212246, 0.0367354, 0.365617, -0.0212146, 0.0586735, 0.279376, -0.0338781, -0.0193732, -0.297714, -0.0335299, -0.038727, -0.297714, -6.07967e-06, -7.99075e-06, 0.365544, 0.042421, -0.0193732, -0.297714, 0.0335178, 0.0193458, -0.297714, 0.0335178, 0.0386995, -0.297714, -6.07967e-06, 0.0193458, -0.297714, -0.0335299, -7.99075e-06, -0.382929, -6.07967e-06)
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lnsdt"]
-radius = 0.0409915
-height = 0.16039
-
-[sub_resource type="Resource" id="Resource_u58o4"]
+[sub_resource type="Resource" id="Resource_6kanr"]
 resource_local_to_scene = true
 script = ExtResource("5_q450k")
 inventory_item = ExtResource("4_u58o4")
@@ -76,31 +67,21 @@ max_contacts_reported = 10
 script = ExtResource("1_u58o4")
 cogito_name = "Arrow"
 
-[node name="Area3D" type="Area3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, -4.37114e-08, 4.37114e-08, 4.37114e-08, -4.37114e-08, -1, 4.37114e-08, 1, -4.37114e-08, -1.50831e-08, 0, 0.345061)
-shape = SubResource("CapsuleShape3D_u58o4")
-
 [node name="arrow" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_sgnou")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -7.49689e-10, 7.49689e-10, 0.0171509)
-shape = SubResource("CylinderShape3D_wm252")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
-transform = Transform3D(1.91069e-15, 4.37114e-08, -1, 1, -4.37114e-08, 0, -4.37114e-08, -1, -4.37114e-08, -1.45099e-08, 7.49689e-10, 0.331947)
-shape = SubResource("CapsuleShape3D_lnsdt")
+transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_u58o4")
 
 [node name="Lifespan" type="Timer" parent="."]
 wait_time = 60.0
 autostart = true
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
-slot_data = SubResource("Resource_u58o4")
+slot_data = SubResource("Resource_6kanr")
 
 [node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
 

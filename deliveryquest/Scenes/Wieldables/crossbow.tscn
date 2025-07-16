@@ -329,7 +329,7 @@ tracks/1/path = NodePath("../crossbow_mesh/arrow:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.6, 0.8),
+"times": PackedFloat32Array(0, 0.666667, 0.8),
 "transitions": PackedFloat32Array(1, 1.00001, 1),
 "update": 0,
 "values": [Vector3(-1.01414, -1.5708, -2.638), Vector3(-1.4325, -1.98046, -2.638), Vector3(-1.5708, 1.5708, 0)]
@@ -561,7 +561,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329, -0.264, -0.535)
 script = ExtResource("1_8oj5a")
 projectile_prefab = ExtResource("2_hpk8d")
 projectile_velocity = 40.0
-ads_fov = 30
+ads_fov = 22
 default_position = Vector3(0.329, -0.264, -0.535)
 sound_primary_use = ExtResource("3_ad5hk")
 sound_reload = ExtResource("4_jtun3")

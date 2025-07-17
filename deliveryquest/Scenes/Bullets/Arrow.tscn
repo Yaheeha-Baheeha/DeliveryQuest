@@ -53,7 +53,7 @@ shadow_mesh = SubResource("ArrayMesh_u58o4")
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fgmik"]
 points = PackedVector3Array(0.0412837, 0.362698, -0.0138991, -0.0615569, 0.271301, -0.0367569, -0.0329736, -0.300044, -0.0253227, -0.00440269, 0.288429, 0.0718042, 0.0412837, -0.305729, 0.00895865, 0.0641454, 0.276986, -0.0367569, -0.0272521, -0.305729, 0.0317952, 0.0241436, -0.305729, -0.0367569, 0.0241436, -0.305729, 0.0375016, -0.0444045, 0.362698, -0.0253227, 0.00700354, 0.271301, 0.0660765, -0.0041875, -0.371512, -0.00170988, -0.00440269, 0.368457, 0.0489464, -0.0386952, -0.300044, 0.0146757, -0.0215428, -0.305729, -0.0367569, 0.0641454, 0.282744, -0.0310398, 0.0412837, -0.305729, -0.00818201, -0.0215428, -0.305729, 0.0375016, -0.055823, 0.317, -0.0253227, -0.0386952, -0.311413, -0.00818201, 0.0412837, 0.368457, -0.0196056, 0.0355745, -0.300044, 0.020361, 0.0584238, 0.299872, -0.0367569, 0.00700354, 0.362698, 0.0432187, -0.055823, 0.299872, -0.0367569, -0.0386952, 0.368457, -0.0138991, 0.00670913, -0.36631, -0.00143416, -0.00440269, 0.276986, 0.0718042, 0.0584238, 0.305557, -0.0253227, -0.0386952, -0.311413, 0.00895865, -0.0386952, -0.300044, -0.0138991, 0.0355745, -0.300044, -0.0196056)
 
-[sub_resource type="Resource" id="Resource_inc2m"]
+[sub_resource type="Resource" id="Resource_fgmik"]
 resource_local_to_scene = true
 script = ExtResource("6_sgnou")
 reload_amount = 1
@@ -73,10 +73,10 @@ sound_pickup = ExtResource("7_lnsdt")
 can_auto_slot = false
 slot_number = -1
 
-[sub_resource type="Resource" id="Resource_6r53n"]
+[sub_resource type="Resource" id="Resource_q450k"]
 resource_local_to_scene = true
 script = ExtResource("5_q450k")
-inventory_item = SubResource("Resource_inc2m")
+inventory_item = SubResource("Resource_fgmik")
 quantity = 1
 origin_index = -1
 
@@ -104,7 +104,7 @@ wait_time = 60.0
 autostart = true
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
-slot_data = SubResource("Resource_6r53n")
+slot_data = SubResource("Resource_q450k")
 
 [node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
 material_properties = 1

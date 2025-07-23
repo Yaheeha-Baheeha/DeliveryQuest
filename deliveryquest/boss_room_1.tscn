@@ -1,0 +1,417 @@
+[gd_scene load_steps=8 format=3 uid="uid://b5kwhrbgvdste"]
+
+[ext_resource type="PackedScene" uid="uid://bpgx5306ixvyv" path="res://bossroom1.blend" id="2_jlwm5"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_kuu48"]
+[ext_resource type="PackedScene" uid="uid://bexluxi3b8fyy" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/skull_candle.gltf" id="3_5kgce"]
+[ext_resource type="PackedScene" uid="uid://ba2ubd3cjwb80" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/skull.gltf" id="4_gjh8l"]
+[ext_resource type="PackedScene" uid="uid://cmv6f5nugvxwx" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/ribcage.gltf" id="5_rynic"]
+[ext_resource type="PackedScene" uid="uid://c45unuyv4guui" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/path_D.gltf" id="6_gonin"]
+[ext_resource type="PackedScene" uid="uid://je86lkcg6qh4" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/path_A.gltf" id="7_ayw61"]
+
+[node name="BossRoom1" type="Node3D"]
+
+[node name="CogitoPlayer" parent="." instance=ExtResource("2_kuu48")]
+transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, -7.06015, 2.00308, 2.09613)
+fall_damage = 1
+
+[node name="bossroom1" parent="." instance=ExtResource("2_jlwm5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.10576, 0, 30.002)
+
+[node name="skull_candle2" parent="." instance=ExtResource("3_5kgce")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.929006, 0, -7.70355)
+
+[node name="skull2" parent="." instance=ExtResource("4_gjh8l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27881, 0, -10.3293)
+
+[node name="roof" parent="." instance=ExtResource("5_rynic")]
+transform = Transform3D(2.89, 0, 0, 0, 2.89, 0, 0, 0, 2.89, -1.48255, 0.318782, 0.68611)
+
+[node name="path_D2" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 1.97022)
+
+[node name="path_A2" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, -4.80224)
+
+[node name="path_A3" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, -4.80224)
+
+[node name="path_A4" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, -4.80224)
+
+[node name="path_A5" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, -4.80224)
+
+[node name="path_A6" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, -4.80224)
+
+[node name="path_A7" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, -4.80224)
+
+[node name="path_A8" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, -4.80224)
+
+[node name="path_A9" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, -4.80224)
+
+[node name="path_A10" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, -4.80224)
+
+[node name="path_D3" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 2.77098)
+
+[node name="path_A11" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, -4.00148)
+
+[node name="path_A12" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, -4.00148)
+
+[node name="path_A13" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, -4.00148)
+
+[node name="path_A14" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, -4.00148)
+
+[node name="path_A15" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, -4.00148)
+
+[node name="path_A16" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, -4.00148)
+
+[node name="path_A17" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, -4.00148)
+
+[node name="path_A18" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, -4.00148)
+
+[node name="path_A19" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, -4.00148)
+
+[node name="path_D4" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 4.06149)
+
+[node name="path_A20" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, -2.71097)
+
+[node name="path_A21" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, -2.71097)
+
+[node name="path_A22" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, -2.71097)
+
+[node name="path_A23" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, -2.71097)
+
+[node name="path_A24" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, -2.71097)
+
+[node name="path_A25" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, -2.71097)
+
+[node name="path_A26" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, -2.71097)
+
+[node name="path_A27" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, -2.71097)
+
+[node name="path_A28" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, -2.71097)
+
+[node name="path_D5" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 5.29038)
+
+[node name="path_A29" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, -1.48208)
+
+[node name="path_A30" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, -1.48208)
+
+[node name="path_A31" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, -1.48208)
+
+[node name="path_A32" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, -1.48208)
+
+[node name="path_A33" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, -1.48208)
+
+[node name="path_A34" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, -1.48208)
+
+[node name="path_A35" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, -1.48208)
+
+[node name="path_A36" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, -1.48208)
+
+[node name="path_A37" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, -1.48208)
+
+[node name="path_D6" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 7.15756)
+
+[node name="path_A38" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 0.385099)
+
+[node name="path_A39" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 0.385099)
+
+[node name="path_A40" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 0.385099)
+
+[node name="path_A41" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 0.385099)
+
+[node name="path_A42" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 0.385099)
+
+[node name="path_A43" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 0.385099)
+
+[node name="path_A44" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 0.385099)
+
+[node name="path_A45" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 0.385099)
+
+[node name="path_A46" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 0.385099)
+
+[node name="path_D7" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 8.62257)
+
+[node name="path_A47" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 1.85011)
+
+[node name="path_A48" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 1.85011)
+
+[node name="path_A49" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 1.85011)
+
+[node name="path_A50" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 1.85011)
+
+[node name="path_A51" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 1.85011)
+
+[node name="path_A52" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 1.85011)
+
+[node name="path_A53" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 1.85011)
+
+[node name="path_A54" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 1.85011)
+
+[node name="path_A55" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 1.85011)
+
+[node name="path_D8" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 9.64108)
+
+[node name="path_A56" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 2.86862)
+
+[node name="path_A57" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 2.86862)
+
+[node name="path_A58" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 2.86862)
+
+[node name="path_A59" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 2.86862)
+
+[node name="path_A60" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 2.86862)
+
+[node name="path_A61" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 2.86862)
+
+[node name="path_A62" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 2.86862)
+
+[node name="path_A63" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 2.86862)
+
+[node name="path_A64" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 2.86862)
+
+[node name="path_D9" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 10.7467)
+
+[node name="path_A65" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 3.97422)
+
+[node name="path_A66" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 3.97422)
+
+[node name="path_A67" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 3.97422)
+
+[node name="path_A68" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 3.97422)
+
+[node name="path_A69" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 3.97422)
+
+[node name="path_A70" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 3.97422)
+
+[node name="path_A71" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 3.97422)
+
+[node name="path_A72" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 3.97422)
+
+[node name="path_A73" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 3.97422)
+
+[node name="path_D10" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 11.8764)
+
+[node name="path_A74" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 5.10391)
+
+[node name="path_A75" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 5.10391)
+
+[node name="path_A76" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 5.10391)
+
+[node name="path_A77" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 5.10391)
+
+[node name="path_A78" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 5.10391)
+
+[node name="path_A79" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 5.10391)
+
+[node name="path_A80" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 5.10391)
+
+[node name="path_A81" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 5.10391)
+
+[node name="path_A82" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 5.10391)
+
+[node name="path_D11" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 13.2264)
+
+[node name="path_A83" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 6.45396)
+
+[node name="path_A84" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 6.45396)
+
+[node name="path_A85" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 6.45396)
+
+[node name="path_A86" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 6.45396)
+
+[node name="path_A87" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 6.45396)
+
+[node name="path_A88" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 6.45396)
+
+[node name="path_A89" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 6.45396)
+
+[node name="path_A90" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 6.45396)
+
+[node name="path_A91" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 6.45396)
+
+[node name="path_D12" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 14.5186)
+
+[node name="path_A92" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 7.7461)
+
+[node name="path_A93" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 7.7461)
+
+[node name="path_A94" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 7.7461)
+
+[node name="path_A95" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 7.7461)
+
+[node name="path_A96" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 7.7461)
+
+[node name="path_A97" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 7.7461)
+
+[node name="path_A98" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 7.7461)
+
+[node name="path_A99" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 7.7461)
+
+[node name="path_A100" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 7.7461)
+
+[node name="path_D13" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 16.057)
+
+[node name="path_A101" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 9.28452)
+
+[node name="path_A102" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 9.28452)
+
+[node name="path_A103" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 9.28452)
+
+[node name="path_A104" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 9.28452)
+
+[node name="path_A105" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 9.28452)
+
+[node name="path_A106" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 9.28452)
+
+[node name="path_A107" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 9.28452)
+
+[node name="path_A108" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 9.28452)
+
+[node name="path_A109" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 9.28452)
+
+[node name="path_D14" parent="roof" instance=ExtResource("6_gonin")]
+transform = Transform3D(0.346021, 0, 0, 0, 0.346021, 0, 0, 0, 0.346021, 1.48541, 2.02969, 16.6092)
+
+[node name="path_A110" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, -0.0472066, 2.52566, 9.83677)
+
+[node name="path_A111" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 1.01014, 2.52566, 9.83677)
+
+[node name="path_A112" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 2.13983, 2.52566, 9.83677)
+
+[node name="path_A113" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.17066, 2.52566, 9.83677)
+
+[node name="path_A114" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 3.8627, 2.52566, 9.83677)
+
+[node name="path_A115" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 4.74667, 2.52566, 9.83677)
+
+[node name="path_A116" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 5.64002, 2.52566, 9.83677)
+
+[node name="path_A117" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.10683, 2.52566, 9.83677)
+
+[node name="path_A118" parent="roof" instance=ExtResource("7_ayw61")]
+transform = Transform3D(-0.692041, 1.04495e-07, 0, -1.04495e-07, -0.692041, 0, 0, 0, 0.692041, 6.43838, 2.52566, 9.83677)

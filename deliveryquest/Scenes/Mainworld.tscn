@@ -269,7 +269,7 @@ _data = {
 &"day_night": SubResource("Animation_mtuv6")
 }
 
-[node name="Node3D" type="Node3D"]
+[node name="mainworld" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54863, -1.23779, -4.63899)
 
 [node name="roads" type="Node3D" parent="."]

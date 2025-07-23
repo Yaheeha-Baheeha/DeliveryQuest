@@ -4583,7 +4583,7 @@ cogito_name = ""
 
 [node name="CogitoNPC" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("63_t2hdn")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9769, 3.07015, 19.6502)
-patrol_path = NodePath("../EnemyPatrolpath2")
+patrol_path = NodePath("../EnemyPatrolpath")
 
 [node name="Pickup_Sword" parent="." instance=ExtResource("67_ovhpt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88628, 0.401361, -15.6723)

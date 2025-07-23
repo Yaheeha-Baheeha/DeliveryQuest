@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://kicjwmh02uwf"]
+[gd_scene load_steps=38 format=3 uid="uid://kicjwmh02uwf"]
 
 [ext_resource type="Script" uid="uid://dyitnpyhwiqx7" path="res://addons/cogito/CogitoObjects/cogito_player.gd" id="1_87we8"]
 [ext_resource type="Resource" uid="uid://ll11y3yjbqt" path="res://addons/cogito/InventoryPD/Inventories/PlayerInventory_FIXED.tres" id="2_iyhv4"]
@@ -6,13 +6,14 @@
 [ext_resource type="AudioStream" uid="uid://b7wmxwvtbpfu1" path="res://addons/cogito/Assets/Audio/537275__laughingfish78__dirt-sliding.ogg" id="4_1i2kv"]
 [ext_resource type="PackedScene" uid="uid://n1doui0jpn1v" path="res://addons/cogito/InventoryPD/CustomResources/CogtoTestCurrency.tscn" id="5_opu5d"]
 [ext_resource type="PackedScene" uid="uid://dorp3auw3s65q" path="res://addons/cogito/Components/Attributes/LightMeterAttribute.tscn" id="5_v3qv3"]
+[ext_resource type="Texture2D" uid="uid://ltw74nlvopb" path="res://addons/cogito/Assets/Graphics/UiIcons/Ui_Icon_Sanity.png" id="6_qmi31"]
 [ext_resource type="Script" uid="uid://b6l8lsrktfd4b" path="res://addons/cogito/Components/Attributes/cogito_attribute.gd" id="6_xg64i"]
-[ext_resource type="PackedScene" uid="uid://cetc123v5gnff" path="res://addons/cogito/Components/Attributes/SanityAttribute.tscn" id="7_27cpi"]
 [ext_resource type="Texture2D" uid="uid://d0so3oo1yk4kh" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_Heart.png" id="7_ekjhh"]
 [ext_resource type="PackedScene" uid="uid://ce7bjv28uakxl" path="res://addons/cogito/Components/Attributes/StaminaAttribute.tscn" id="8_kodbk"]
 [ext_resource type="PackedScene" uid="uid://cqgg1nng0vvbh" path="res://addons/cogito/Components/Attributes/HealthAttribute.tscn" id="9_ky5mf"]
 [ext_resource type="PackedScene" uid="uid://cbd2ojah4nun6" path="res://addons/cogito/Components/interaction_raycast.tscn" id="10_2dndr"]
 [ext_resource type="AnimationLibrary" uid="uid://cdchpsv104er2" path="res://addons/cogito/Assets/Animations/player_eyes.tres" id="10_tp6cj"]
+[ext_resource type="PackedScene" uid="uid://wtf1fqndii2p" path="res://addons/cogito/Components/Attributes/VisibilityAttribute.tscn" id="11_bpb0d"]
 [ext_resource type="Script" uid="uid://017wlbrnndy0" path="res://addons/cogito/Scripts/wieldables_sway.gd" id="12_lr21i"]
 [ext_resource type="AudioStream" uid="uid://up2hfhgq1qx6" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep00.ogg" id="12_ug3wt"]
 [ext_resource type="AudioStream" uid="uid://crj07wq4oocwi" path="res://addons/cogito/Assets/Audio/Kenney/Footsteps/footstep01.ogg" id="13_fyfhw"]
@@ -70,6 +71,11 @@ STEP_HEIGHT_DEFAULT = Vector3(0, 0.35, 0)
 STEP_MAX_SLOPE_DEGREE = 1.0
 
 [node name="CogtoTestCurrency" parent="." instance=ExtResource("5_opu5d")]
+currency_name = "Experience"
+currency_display_name = "Xp"
+currency_color = Color(2.16588e-06, 0.849659, 0.22255, 1)
+currency_icon = ExtResource("6_qmi31")
+value_max = 99999.0
 
 [node name="StrengthAttribute" type="Node" parent="."]
 script = ExtResource("6_xg64i")
@@ -84,12 +90,11 @@ metadata/_custom_type_script = "uid://b6l8lsrktfd4b"
 
 [node name="LightMeterAttribute" parent="." instance=ExtResource("5_v3qv3")]
 
-[node name="SanityAttribute" parent="." instance=ExtResource("7_27cpi")]
-decay_in_darkness = false
-
 [node name="StaminaAttribute" parent="." instance=ExtResource("8_kodbk")]
 
 [node name="HealthAttribute" parent="." instance=ExtResource("9_ky5mf")]
+
+[node name="VisibilityAttribute" parent="." instance=ExtResource("11_bpb0d")]
 
 [node name="StandingCollisionShape" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05, 0)

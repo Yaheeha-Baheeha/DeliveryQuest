@@ -86,7 +86,9 @@ top_level = true
 collision_layer = 2
 collision_mask = 3
 mass = 0.3
-max_contacts_reported = 10
+continuous_cd = true
+contact_monitor = true
+max_contacts_reported = 747
 script = ExtResource("1_u58o4")
 cogito_name = "Arrow"
 
@@ -99,14 +101,11 @@ skeleton = NodePath("")
 transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_fgmik")
 
-[node name="Lifespan" type="Timer" parent="."]
-wait_time = 60.0
-autostart = true
-
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
 slot_data = SubResource("Resource_q450k")
 
 [node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
-material_properties = 1
+elemental_properties = 2
+reaction_threshold_time = 0.055
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

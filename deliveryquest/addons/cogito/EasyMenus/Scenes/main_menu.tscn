@@ -29,9 +29,9 @@ sound_click = ExtResource("4_mhv4c")
 
 [node name="ContentMain" type="VBoxContainer" parent="."]
 layout_mode = 2
-offset_left = 100.0
+offset_left = 387.0
 offset_top = 50.0
-offset_right = 600.0
+offset_right = 887.0
 offset_bottom = 671.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -40,13 +40,13 @@ theme_override_constants/separation = 15
 [node name="TitleLabel" type="Label" parent="ContentMain"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 45
-text = "COGITO"
+text = "Delivery Quest"
 horizontal_alignment = 1
 
 [node name="TitleLabel2" type="Label" parent="ContentMain"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 25
-text = "Template Project 2024"
+text = "From the peasant to the King"
 horizontal_alignment = 1
 
 [node name="HSeparator" type="HSeparator" parent="ContentMain"]

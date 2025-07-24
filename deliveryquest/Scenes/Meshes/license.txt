@@ -1,0 +1,11 @@
+Model Information:
+* title:	Scrolls - Low poly
+* source:	https://sketchfab.com/3d-models/scrolls-low-poly-084a75fe09be475ea154f74fdfdbe316
+* author:	Emma-Lie Kamping (https://sketchfab.com/Ellemieke25)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Scrolls - Low poly" (https://sketchfab.com/3d-models/scrolls-low-poly-084a75fe09be475ea154f74fdfdbe316) by Emma-Lie Kamping (https://sketchfab.com/Ellemieke25) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

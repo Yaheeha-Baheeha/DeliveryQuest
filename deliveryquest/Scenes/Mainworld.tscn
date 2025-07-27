@@ -1,6 +1,7 @@
-[gd_scene load_steps=123 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=128 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="PackedScene" uid="uid://bi1fnwvtcgjhl" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_B.prefab.scn" id="1_4wp0g"]
+[ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://dmxgglnmegev7" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_A.prefab.scn" id="2_hr1cd"]
 [ext_resource type="PackedScene" uid="uid://bq3durpimelo2" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_B.prefab.scn" id="3_b4p4q"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
@@ -59,6 +60,7 @@
 [ext_resource type="PackedScene" uid="uid://dj7qulns22ldg" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Hous_25_B.prefab.scn" id="60_0kq8q"]
 [ext_resource type="PackedScene" uid="uid://bfmvli7hd3xoi" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Hous_26_B.prefab.scn" id="62_c8kmu"]
 [ext_resource type="PackedScene" uid="uid://dw5rw7iji6tfu" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Hous_28_A.prefab.scn" id="64_6nkmj"]
+[ext_resource type="PackedScene" uid="uid://dwldqh3dxyq5n" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/grave_B.gltf" id="64_jnvg0"]
 [ext_resource type="PackedScene" uid="uid://ds62swfq8js7d" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Signboard_01_A.prefab.scn" id="65_ahf5g"]
 [ext_resource type="PackedScene" uid="uid://dnf2y7he5j7hl" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Cart_01_A.prefab.scn" id="66_2nmsm"]
 [ext_resource type="PackedScene" uid="uid://je86lkcg6qh4" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/path_A.gltf" id="66_cc01v"]
@@ -69,7 +71,7 @@
 [ext_resource type="PackedScene" uid="uid://u6wml17862hj" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Raod_03_A.prefab.scn" id="69_4sohq"]
 [ext_resource type="PackedScene" uid="uid://c45unuyv4guui" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/path_D.gltf" id="69_hlf8l"]
 [ext_resource type="PackedScene" uid="uid://caiur4v5ri88x" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Raod_01_A.prefab.scn" id="70_ed4i0"]
-[ext_resource type="PackedScene" uid="uid://cfxk2ylulk0r1" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Box_01_A.prefab.scn" id="71_iytxh"]
+[ext_resource type="PackedScene" uid="uid://cfxk2ylulk0r1" path="res://Assets/Polygon-FantasyVillage/SM_Box_01_A.prefab.scn" id="71_iytxh"]
 [ext_resource type="PackedScene" uid="uid://b4gh11avtd18u" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Box_01_B.prefab.scn" id="72_2g3l1"]
 [ext_resource type="PackedScene" uid="uid://crvirn4udq5ry" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Cockshot_01_A.prefab.scn" id="73_3ey7c"]
 [ext_resource type="PackedScene" uid="uid://c7etjm4xfkc2c" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Dummy_01_A.prefab.scn" id="74_nn75l"]
@@ -113,6 +115,8 @@
 [ext_resource type="PackedScene" uid="uid://ci7t4cyub7dra" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bone_A.gltf" id="111_vjxb2"]
 [ext_resource type="PackedScene" uid="uid://djvbguoalmacm" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bench_decorated.gltf" id="112_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://ogw7f2fmw5ui" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bone_C.gltf" id="113_jnvg0"]
+[ext_resource type="Script" uid="uid://6010ovanwkwo" path="res://addons/cogito/Scripts/scene_transition_zone.gd" id="116_nr6q2"]
+[ext_resource type="PackedScene" uid="uid://b5kwhrbgvdste" path="res://boss_room_1.tscn" id="117_087cg"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ltp5"]
 size = Vector2(1000, 1000)
@@ -269,8 +273,12 @@ _data = {
 &"day_night": SubResource("Animation_mtuv6")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_dlejt"]
+size = Vector3(5.53, 6.80804, 5.77135)
+
 [node name="mainworld" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54863, -1.23779, -4.63899)
+script = ExtResource("1_7vrjw")
 
 [node name="roads" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.732, 0.00543641, -139.964)
@@ -1225,7 +1233,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="CogitoPlayer" parent="." instance=ExtResource("12_nr6q2")]
-transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, -17.5272, 10.2754, -20.0057)
+transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 401.089, 10.2754, -89.793)
 fall_damage = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -2244,6 +2252,9 @@ transform = Transform3D(2.025, 0, 0, 0, 2.025, 0, 0, 0, 2.025, 236.418, 0, -3.64
 
 [node name="path_D3" parent="Town" instance=ExtResource("69_hlf8l")]
 transform = Transform3D(2.025, 0, 0, 0, 2.025, 0, 0, 0, 2.025, 205.47, 0, -3.64717)
+
+[node name="grave_B2" parent="Town" instance=ExtResource("64_jnvg0")]
+transform = Transform3D(0.123365, 0, -1.80078, 0, 1.805, 0, 1.80078, 0, 0.123365, 423.954, 3.59633, -87.3537)
 
 [node name="imports" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291.702, 0.811021, -116.66)
@@ -3657,3 +3668,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76095, 1.36952, -10.8748)
 
 [node name="bone_A3" parent="." instance=ExtResource("111_vjxb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8353, 4.88839, -8.70152)
+
+[node name="TransitionZone_LAB" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 422.513, 3.75369, -87.432)
+script = ExtResource("116_nr6q2")
+target_scene = ExtResource("117_087cg")
+target_scene_path = "uid://b5kwhrbgvdste"
+target_connector = "ConnectorFromMainWorld"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TransitionZone_LAB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0.215736)
+shape = SubResource("BoxShape3D_dlejt")

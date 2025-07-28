@@ -1,4 +1,4 @@
-[gd_scene load_steps=136 format=4 uid="uid://6hh7o77unixk"]
+[gd_scene load_steps=137 format=4 uid="uid://6hh7o77unixk"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_4dqq6"]
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_ponqc"]
@@ -68,6 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://b2cccsfb5tikx" path="res://addons/cogito/CogitoNPC/cogito_npc.tscn" id="63_t2hdn"]
 [ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="67_ovhpt"]
 [ext_resource type="PackedScene" uid="uid://87t5cnxk7t8t" path="res://Resources/pickup_crossbow.tscn" id="68_kt1ow"]
+[ext_resource type="PackedScene" uid="uid://d2jyhe1utbvgw" path="res://Scenes/Pickups/pickup_scroll.tscn" id="69_r8380"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_wjbty"]
 panorama = ExtResource("1_ponqc")
@@ -94,7 +95,7 @@ volumetric_fog_ambient_inject = 0.1
 volumetric_fog_sky_affect = 0.1
 volumetric_fog_temporal_reprojection_amount = 0.85
 
-[sub_resource type="Resource" id="Resource_kt1ow"]
+[sub_resource type="Resource" id="Resource_a6jus"]
 resource_local_to_scene = true
 script = ExtResource("4_hlewe")
 grid = true
@@ -920,7 +921,7 @@ environment = SubResource("Environment_bftoa")
 
 [node name="Player" parent="." instance=ExtResource("2_7qwrr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.13854, 0.8, -5.43073)
-inventory_data = SubResource("Resource_kt1ow")
+inventory_data = SubResource("Resource_a6jus")
 
 [node name="CONNECTOR_TO_LOBBY" type="Node3D" parent="."]
 
@@ -4069,7 +4070,6 @@ cogito_name = ""
 
 [node name="Pickup_LaserRifle" parent="NavigationRegion3D/SHOOTING_RANGE" instance=ExtResource("23_ex3ej")]
 transform = Transform3D(-4.37114e-08, 0, 1, -1, -4.37114e-08, -4.37114e-08, 4.37114e-08, -1, 1.91069e-15, 3.22065, 0.821979, -15.3026)
-cogito_name = ""
 
 [node name="Pickup_Pickaxe" parent="NavigationRegion3D/SHOOTING_RANGE" instance=ExtResource("29_ai41f")]
 transform = Transform3D(0.995536, -0.0938573, -0.0099791, 0, 0.105726, -0.994395, 0.0943863, 0.989956, 0.105254, 1.44729, 0.86964, -11.7382)
@@ -4590,6 +4590,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88628, 0.401361, -15.6723)
 
 [node name="pickup_crossbow" parent="." instance=ExtResource("68_kt1ow")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37788, 1.13388, -15.7068)
+
+[node name="PickupScroll" parent="." instance=ExtResource("69_r8380")]
+transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0.514786, 1.17849, -15.8081)
 
 [connection signal="pressed" from="NavigationRegion3D/SHOOTING_RANGE/KSI_console_spawn/GenericButton" to="NavigationRegion3D/SHOOTING_RANGE/Spawnzone_Targets" method="_on_generic_button_pressed"]
 [connection signal="object_placed" from="NavigationRegion3D/SYSTEMIC_PROPERTIES/SnapSlotMetalbar" to="NavigationRegion3D/SYSTEMIC_PROPERTIES/Cathode_B/CogitoProperties" method="make_electric"]

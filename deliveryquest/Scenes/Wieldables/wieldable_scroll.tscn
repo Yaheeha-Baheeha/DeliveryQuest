@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://jp6n0qamouqc"]
+[gd_scene load_steps=20 format=4 uid="uid://jp6n0qamouqc"]
 
 [ext_resource type="Script" uid="uid://c1p681xlrwq5f" path="res://Scenes/wieldable_scroll.gd" id="1_m58xh"]
 [ext_resource type="PackedScene" uid="uid://dnauxhdncgngx" path="res://addons/cogito/PackedScenes/laser_ray.tscn" id="2_a2cx8"]
@@ -69,22 +69,6 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_vtb0c")
 
-[sub_resource type="Animation" id="Animation_dipip"]
-resource_name = "shoot"
-length = 0.1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Scrollmesh/normolskrol_Scroll_0:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.0424508, 0.0982305),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0.47, 0.47, 0.47), Vector3(0.64, 0.47, 0.47), Vector3(0.47, 0.47, 0.47)]
-}
-
 [sub_resource type="Animation" id="Animation_rsyrd"]
 length = 0.001
 tracks/0/type = "value"
@@ -123,33 +107,65 @@ tracks/2/keys = {
 "update": 0,
 "values": [Vector3(0, 0, 0)]
 }
-
-[sub_resource type="Animation" id="Animation_p5myf"]
-resource_name = "unequip"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Scrollmesh:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(-0.0010919, 0.093681, -0.341702), Vector3(-0.0010919, -0.544018, -0.781281)]
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scrollmesh:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Scrollmesh:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override:albedo_color")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.986216, 0, 0)]
+"values": [Color(1, 0.545098, 1, 1)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override:blend_mode")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("LazerEffect:emitting")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_kqdij"]
@@ -179,6 +195,125 @@ tracks/1/keys = {
 "update": 0,
 "values": [Vector3(-0.986216, 0, 0), Vector3(0, 0, 0)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scrollmesh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0686494, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, true]
+}
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dipip"]
+blend_mode = 1
+
+[sub_resource type="Animation" id="Animation_dipip"]
+resource_name = "shoot"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scrollmesh/normolskrol_Scroll_0:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0424508, 0.0982305),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0.47, 0.47, 0.47), Vector3(0.64, 0.47, 0.47), Vector3(0.47, 0.47, 0.47)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.16672, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [null, SubResource("StandardMaterial3D_dipip"), null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override:albedo_color")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16672, 0.470739, 2.24908, 2.97105),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 0.545098, 1, 1), Color(0.763968, 0.000532519, 0.780446, 1), Color(0.764706, 0.188235, 0.321569, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override:blend_mode")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.166667, 2.9, 2.97179),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [1, 1, 0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("LazerEffect:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.0413246),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_p5myf"]
+resource_name = "unequip"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Scrollmesh:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.0010919, 0.093681, -0.341702), Vector3(-0.0010919, -0.544018, -0.781281)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Scrollmesh:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.986216, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Scrollmesh:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.441317, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_lrgyd"]
 _data = {
@@ -189,20 +324,20 @@ _data = {
 }
 
 [node name="Scroll" type="Node3D" node_paths=PackedStringArray("wieldable_mesh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.329, -0.264, -0.535)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.407092, -0.258415, -0.583944)
 script = ExtResource("1_m58xh")
 firing_delay = 3.0
 laser_ray_prefab = ExtResource("2_a2cx8")
-default_position = Vector3(0.329, -0.264, -0.535)
+default_position = Vector3(0.317, -0.258, -0.584)
 sound_primary_use = ExtResource("3_dipip")
 wieldable_mesh = NodePath("Scrollmesh")
 anim_action_primary = "shoot"
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00913012, 0.602603, -0.109684)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00913012, 0.5124, -0.109684)
 
-[node name="MuzzleFlash" type="GPUParticles3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00913012, 0.602603, -0.109684)
+[node name="LazerEffect" type="GPUParticles3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0716364, 0.338094, -0.148113)
 material_override = SubResource("StandardMaterial3D_p5myf")
 cast_shadow = 0
 emitting = false
@@ -216,17 +351,17 @@ process_material = SubResource("ParticleProcessMaterial_lrgyd")
 draw_pass_1 = SubResource("BoxMesh_tjrlx")
 
 [node name="Scrollmesh" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0010919, 0.093681, -0.341702)
+transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -0.0010919, 0.093681, -0.341702)
 script = ExtResource("4_dipip")
 
 [node name="normolskrol_Scroll_0" type="MeshInstance3D" parent="Scrollmesh"]
-transform = Transform3D(-2.05444e-08, -0.47, 0, 0.46213, -2.02003e-08, 0.0856507, -0.0856507, 3.74391e-09, 0.46213, 0, -0.0988348, 0.345249)
+transform = Transform3D(-0.0506634, -0.467167, -0.0093899, 0.459344, -0.0515262, 0.0851344, -0.0856507, 0, 0.46213, 0.153129, -0.26867, 0.345249)
 mesh = SubResource("ArrayMesh_36eog")
 skeleton = NodePath("")
 
 [node name="Bullet_Point" type="Node3D" parent="Scrollmesh"]
 unique_name_in_owner = true
-transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.00251591, 0.523532, 0.220789)
+transform = Transform3D(1, 0, -1.81899e-12, 0, 1, 0, 0, 0, 1, 0.0885741, 0.288034, 0.220789)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

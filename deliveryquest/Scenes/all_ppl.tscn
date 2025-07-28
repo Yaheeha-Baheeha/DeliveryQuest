@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://b081sxbiuaq5t"]
+
+[ext_resource type="PackedScene" uid="uid://cgnfyndtvhxpy" path="res://addons/KayKit_Adventurers_1.0_FREE/Characters/gltf/Barbarian.glb" id="1_s2bx0"]
+[ext_resource type="PackedScene" uid="uid://bnjn0wwx05w0u" path="res://addons/KayKit_Adventurers_1.0_FREE/Characters/gltf/Knight.glb" id="2_r8awu"]
+[ext_resource type="PackedScene" uid="uid://dpg0cq1c8lqem" path="res://addons/KayKit_Adventurers_1.0_FREE/Characters/gltf/Mage.glb" id="3_wucvo"]
+[ext_resource type="PackedScene" uid="uid://cqsc3df0ndj8r" path="res://addons/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue.glb" id="4_rupw5"]
+[ext_resource type="PackedScene" uid="uid://bqi53eeechg5x" path="res://addons/KayKit_Adventurers_1.0_FREE/Characters/gltf/Rogue_Hooded.glb" id="5_51hl6"]
+
+[node name="All ppl" type="Node3D"]
+
+[node name="Barbarian" parent="." instance=ExtResource("1_s2bx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.22827, 0, 2.24029)
+
+[node name="Knight" parent="." instance=ExtResource("2_r8awu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44343, 0, -1.55229)
+
+[node name="Mage" parent="." instance=ExtResource("3_wucvo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.08568, 0, -0.881294)
+
+[node name="Rogue" parent="." instance=ExtResource("4_rupw5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.178771, 0, 3.57979)
+
+[node name="Rogue_Hooded" parent="." instance=ExtResource("5_51hl6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.19553, 0, 2.31407)

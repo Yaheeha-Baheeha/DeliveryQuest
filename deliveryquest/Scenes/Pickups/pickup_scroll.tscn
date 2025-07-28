@@ -57,7 +57,7 @@ quantity = 1
 origin_index = -1
 metadata/_custom_type_script = "uid://di15gqemrkk0x"
 
-[node name="PickupScroll" type="Node3D"]
+[node name="PickupScroll" type="RigidBody3D"]
 script = ExtResource("1_runyn")
 cogito_name = "Scroll"
 
@@ -67,7 +67,6 @@ skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0, 1, 0, 0, 0)
-visible = false
 shape = SubResource("CapsuleShape3D_i4e3y")
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_an705")]

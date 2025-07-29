@@ -95,7 +95,7 @@ volumetric_fog_ambient_inject = 0.1
 volumetric_fog_sky_affect = 0.1
 volumetric_fog_temporal_reprojection_amount = 0.85
 
-[sub_resource type="Resource" id="Resource_a6jus"]
+[sub_resource type="Resource" id="Resource_r8380"]
 resource_local_to_scene = true
 script = ExtResource("4_hlewe")
 grid = true
@@ -921,7 +921,7 @@ environment = SubResource("Environment_bftoa")
 
 [node name="Player" parent="." instance=ExtResource("2_7qwrr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.13854, 0.8, -5.43073)
-inventory_data = SubResource("Resource_a6jus")
+inventory_data = SubResource("Resource_r8380")
 
 [node name="CONNECTOR_TO_LOBBY" type="Node3D" parent="."]
 
@@ -4553,10 +4553,10 @@ patrol_points = [NodePath("Patrolpoint_A"), NodePath("Patrolpoint_B"), NodePath(
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.78055, 0.1, -5.3669)
 
 [node name="Patrolpoint_B" type="Marker3D" parent="EnemyPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2806, 0.1, -8.1769)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.27453, 0.1, -8.1769)
 
 [node name="Patrolpoint_C" type="Marker3D" parent="EnemyPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76464, 3.5, 4.77092)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76464, 0.039102, -6.63954)
 
 [node name="CogitoEnemy" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("52_mlseg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23556, -2.66908, 15.663)

@@ -85,7 +85,7 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 
 top_level = true
 collision_layer = 2
 collision_mask = 3
-mass = 0.3
+mass = 1.348
 continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 10
@@ -105,7 +105,6 @@ shape = SubResource("ConvexPolygonShape3D_fgmik")
 slot_data = SubResource("Resource_q450k")
 
 [node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
-material_properties = 1
 
 [node name="Lifespan" type="Timer" parent="."]
 wait_time = 120.0

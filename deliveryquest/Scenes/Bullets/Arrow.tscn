@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cg5knuav7df4o" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_X.png" id="4_fgmik"]
 [ext_resource type="Texture2D" uid="uid://b3ie8fviatl6u" path="res://Scenes/Wieldables/Icons/Screenshot 2025-07-14 124401.png" id="5_acy82"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_q450k"]
-[ext_resource type="PackedScene" uid="uid://cj0yaeh3yg7tu" path="res://addons/cogito/Components/Properties/CogitoProperties.tscn" id="6_acy82"]
 [ext_resource type="Script" uid="uid://6vgnb68cqtwh" path="res://addons/cogito/InventoryPD/CustomResources/AmmoItemPD.gd" id="6_sgnou"]
 [ext_resource type="AudioStream" uid="uid://npav2p2tk10i" path="res://addons/cogito/Assets/Audio/Kenney/handleSmallLeather.ogg" id="7_lnsdt"]
 
@@ -50,15 +49,20 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_u58o4")
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fgmik"]
-points = PackedVector3Array(0.0412837, 0.362698, -0.0138991, -0.0615569, 0.271301, -0.0367569, -0.0329736, -0.300044, -0.0253227, -0.00440269, 0.288429, 0.0718042, 0.0412837, -0.305729, 0.00895865, 0.0641454, 0.276986, -0.0367569, -0.0272521, -0.305729, 0.0317952, 0.0241436, -0.305729, -0.0367569, 0.0241436, -0.305729, 0.0375016, -0.0444045, 0.362698, -0.0253227, 0.00700354, 0.271301, 0.0660765, -0.0041875, -0.371512, -0.00170988, -0.00440269, 0.368457, 0.0489464, -0.0386952, -0.300044, 0.0146757, -0.0215428, -0.305729, -0.0367569, 0.0641454, 0.282744, -0.0310398, 0.0412837, -0.305729, -0.00818201, -0.0215428, -0.305729, 0.0375016, -0.055823, 0.317, -0.0253227, -0.0386952, -0.311413, -0.00818201, 0.0412837, 0.368457, -0.0196056, 0.0355745, -0.300044, 0.020361, 0.0584238, 0.299872, -0.0367569, 0.00700354, 0.362698, 0.0432187, -0.055823, 0.299872, -0.0367569, -0.0386952, 0.368457, -0.0138991, 0.00670913, -0.36631, -0.00143416, -0.00440269, 0.276986, 0.0718042, 0.0584238, 0.305557, -0.0253227, -0.0386952, -0.311413, 0.00895865, -0.0386952, -0.300044, -0.0138991, 0.0355745, -0.300044, -0.0196056)
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_mtfql"]
+radius = 0.0601268
+height = 0.150704
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_fgmik"]
+height = 0.518677
+radius = 0.0185547
 
 [sub_resource type="Resource" id="Resource_fgmik"]
 resource_local_to_scene = true
 script = ExtResource("6_sgnou")
 reload_amount = 1
 name = "Arrow"
-description = "Vanishes after 60 secs"
+description = "Vanishes after 1 secs"
 icon = ExtResource("5_acy82")
 is_stackable = true
 is_droppable = true
@@ -86,10 +90,10 @@ top_level = true
 collision_layer = 2
 collision_mask = 3
 mass = 1.348
-continuous_cd = true
 contact_monitor = true
 max_contacts_reported = 10
 script = ExtResource("1_u58o4")
+destroy_on_impact = true
 cogito_name = "Arrow"
 
 [node name="arrow" type="MeshInstance3D" parent="."]
@@ -97,16 +101,21 @@ transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114
 mesh = SubResource("ArrayMesh_sgnou")
 skeleton = NodePath("")
 
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 8.74228e-08, 3.82138e-15, 8.04681e-21, -4.37114e-08, 1, 8.74228e-08, -1, -4.37114e-08, 0.000390275, 0.0107162, -0.302655)
+shape = SubResource("CapsuleShape3D_mtfql")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -1.41982e-08, 1.37959e-08, 0.324817)
+shape = SubResource("CapsuleShape3D_mtfql")
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, 0, 0, 0)
-shape = SubResource("ConvexPolygonShape3D_fgmik")
+transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114e-08, -1, -4.37114e-08, -9.82036e-10, 1.37959e-08, 0.0224664)
+shape = SubResource("CylinderShape3D_fgmik")
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
 slot_data = SubResource("Resource_q450k")
 
-[node name="CogitoProperties" parent="." instance=ExtResource("6_acy82")]
-
 [node name="Lifespan" type="Timer" parent="."]
-wait_time = 120.0
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="AmmoItemPD" load_steps=2 format=3 uid="uid://cgv17uk3igp4"]
+
+[ext_resource type="Script" uid="uid://6vgnb68cqtwh" path="res://addons/cogito/InventoryPD/CustomResources/AmmoItemPD.gd" id="1_ssrjw"]
+
+[resource]
+script = ExtResource("1_ssrjw")
+reload_amount = 1
+name = "Arrow_bundle"
+description = "you shouldn't have this"
+is_stackable = false
+is_droppable = true
+is_unique = false
+stack_size = 0
+drop_scene = null
+item_drop_size = 0.5
+hint_text_on_use = ""
+item_size = Vector2(1, 1)
+can_auto_slot = false
+slot_number = -1
+metadata/_custom_type_script = "uid://6vgnb68cqtwh"

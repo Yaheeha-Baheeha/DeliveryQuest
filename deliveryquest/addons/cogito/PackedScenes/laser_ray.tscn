@@ -5,9 +5,9 @@
 [sub_resource type="ORMMaterial3D" id="ORMMaterial3D_lgwhp"]
 transparency = 1
 blend_mode = 1
-albedo_color = Color(0.526988, 0.360905, 0.611182, 0.968627)
+albedo_color = Color(0.73289, 0.255209, 0.206824, 0.968627)
 emission_enabled = true
-emission = Color(0.792157, 0.792157, 0.792157, 1)
+emission = Color(0.901794, 0.341406, 0.367237, 1)
 rim_enabled = true
 
 [node name="LaserRay" type="Node3D"]

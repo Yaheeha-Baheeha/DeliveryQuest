@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=4 uid="uid://6hh7o77unixk"]
+[gd_scene load_steps=138 format=4 uid="uid://6hh7o77unixk"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_4dqq6"]
 [ext_resource type="Texture2D" uid="uid://sdcljx8f5dhj" path="res://addons/cogito/Assets/hdris/kloofendal_48d_partly_cloudy_puresky_2k.hdr" id="1_ponqc"]
@@ -63,6 +63,7 @@
 [ext_resource type="PackedScene" uid="uid://bdab2cuy8hue6" path="res://addons/cogito/DemoScenes/DemoPrefabs/Swing.tscn" id="57_sjmpt"]
 [ext_resource type="PackedScene" uid="uid://b60auyyy0apwb" path="res://addons/cogito/PackedScenes/Pickups/pickup_health_extension.tscn" id="59_aok6v"]
 [ext_resource type="PackedScene" uid="uid://d2vpt8d74j5u" path="res://addons/cogito/PackedScenes/sanity_drain_attribute_zone.tscn" id="60_lxppk"]
+[ext_resource type="PackedScene" uid="uid://c8owl6a25b7i8" path="res://Scenes/Pickups/arrow_bundle.tscn" id="61_a6jus"]
 [ext_resource type="PackedScene" uid="uid://ks0xcampuu3h" path="res://addons/cogito/PackedScenes/stamina_drain_attribute_zone.tscn" id="61_grgat"]
 [ext_resource type="PackedScene" uid="uid://d2lnk6ecthmvd" path="res://addons/cogito/PackedScenes/Pickups/pickup_strength_potion.tscn" id="62_bftoa"]
 [ext_resource type="PackedScene" uid="uid://b2cccsfb5tikx" path="res://addons/cogito/CogitoNPC/cogito_npc.tscn" id="63_t2hdn"]
@@ -95,7 +96,7 @@ volumetric_fog_ambient_inject = 0.1
 volumetric_fog_sky_affect = 0.1
 volumetric_fog_temporal_reprojection_amount = 0.85
 
-[sub_resource type="Resource" id="Resource_r8380"]
+[sub_resource type="Resource" id="Resource_gshxf"]
 resource_local_to_scene = true
 script = ExtResource("4_hlewe")
 grid = true
@@ -921,7 +922,7 @@ environment = SubResource("Environment_bftoa")
 
 [node name="Player" parent="." instance=ExtResource("2_7qwrr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.13854, 0.8, -5.43073)
-inventory_data = SubResource("Resource_r8380")
+inventory_data = SubResource("Resource_gshxf")
 
 [node name="CONNECTOR_TO_LOBBY" type="Node3D" parent="."]
 
@@ -1915,15 +1916,6 @@ inventory_data = SubResource("Resource_srp2h")
 text_when_closed = null
 text_when_open = null
 close_animation = null
-
-[node name="Arrow" parent="NavigationRegion3D/BASE_FLOOR" instance=ExtResource("28_fsk2l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.72294, 1.03008, -15.7413)
-
-[node name="Arrow2" parent="NavigationRegion3D/BASE_FLOOR" instance=ExtResource("28_fsk2l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.68447, 1.26105, -15.6617)
-
-[node name="Arrow3" parent="NavigationRegion3D/BASE_FLOOR" instance=ExtResource("28_fsk2l")]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.59262, 1.39714, -15.5832)
 
 [node name="CEILING" type="Node3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.5, 2)
@@ -4558,6 +4550,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.27453, 0.1, -8.1769)
 [node name="Patrolpoint_C" type="Marker3D" parent="EnemyPatrolpath2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.76464, 0.039102, -6.63954)
 
+[node name="ArrowBundle" parent="EnemyPatrolpath2" instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9919, 1.32339, -30.7945)
+
+[node name="ArrowBundle2" parent="EnemyPatrolpath2" instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9025, 1.32339, -30.7537)
+
 [node name="CogitoEnemy" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("52_mlseg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23556, -2.66908, 15.663)
 start_state = 1
@@ -4582,7 +4580,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.99269, 0.532, 6.01611)
 cogito_name = ""
 
 [node name="CogitoNPC" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("63_t2hdn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9769, 3.07015, 19.6502)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9769, 0.216599, 16.472)
 patrol_path = NodePath("../EnemyPatrolpath")
 
 [node name="Pickup_Sword" parent="." instance=ExtResource("67_ovhpt")]
@@ -4593,6 +4591,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37788, 1.13388, -15.7068)
 
 [node name="PickupScroll" parent="." instance=ExtResource("69_r8380")]
 transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0.514786, 1.17849, -15.8081)
+
+[node name="ArrowBundle" parent="." instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27051, 1.32339, -15.7534)
+
+[node name="ArrowBundle2" parent="." instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59265, 1.32339, -15.7589)
 
 [connection signal="pressed" from="NavigationRegion3D/SHOOTING_RANGE/KSI_console_spawn/GenericButton" to="NavigationRegion3D/SHOOTING_RANGE/Spawnzone_Targets" method="_on_generic_button_pressed"]
 [connection signal="object_placed" from="NavigationRegion3D/SYSTEMIC_PROPERTIES/SnapSlotMetalbar" to="NavigationRegion3D/SYSTEMIC_PROPERTIES/Cathode_B/CogitoProperties" method="make_electric"]

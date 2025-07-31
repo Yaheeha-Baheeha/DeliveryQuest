@@ -1233,7 +1233,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="CogitoPlayer" parent="." instance=ExtResource("12_nr6q2")]
-transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 401.089, 10.2754, -89.793)
+transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 258.627, 9.22888, 101.795)
 fall_damage = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -3677,5 +3677,16 @@ target_scene_path = "uid://b5kwhrbgvdste"
 target_connector = "ConnectorFromMainWorld"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TransitionZone_LAB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0.215736)
+shape = SubResource("BoxShape3D_dlejt")
+
+[node name="TransitionZone_LAB2" type="Area3D" parent="TransitionZone_LAB"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.265, 1.33488, 211.026)
+script = ExtResource("116_nr6q2")
+target_scene = ExtResource("117_087cg")
+target_scene_path = "uid://csee7u7nhoctl"
+target_connector = "ConnectorFromMainWorld"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TransitionZone_LAB/TransitionZone_LAB2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0.215736)
 shape = SubResource("BoxShape3D_dlejt")

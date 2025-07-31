@@ -542,260 +542,260 @@ shape = SubResource("ConcavePolygonShape3D_853qx")
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="realbossroom/Sketchfab_model/Dark Dungeon_obj_cleaner_materialmerger_gles/Object_7/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_853qx")
 
+[node name="bench2" parent="realbossroom" instance=ExtResource("18_bmnp4")]
+transform = Transform3D(0.0326668, 0, -0.999466, 0, 1, 0, 0.999466, 0, 0.0326668, -9.6892, 0.192407, 13.3906)
+
+[node name="bench_decorated2" parent="realbossroom" instance=ExtResource("19_pmajl")]
+transform = Transform3D(-0.200736, 0, 0.979645, 0, 1, 0, -0.979645, 0, -0.200736, -10.241, 0.192404, 6.8306)
+
+[node name="bone_A2" parent="realbossroom" instance=ExtResource("20_vecib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0466, 0.330452, 30.3465)
+
+[node name="bone_A3" parent="realbossroom" instance=ExtResource("20_vecib")]
+transform = Transform3D(0.244614, 0, 0.969621, 0, 1, 0, -0.969621, 0, 0.244614, 11.1173, 0.330451, 27.1823)
+
+[node name="bone_A4" parent="realbossroom" instance=ExtResource("20_vecib")]
+transform = Transform3D(0.292272, 0, 0.956335, 0, 1, 0, -0.956335, 0, 0.292272, 10.0807, 0.33045, 24.3373)
+
+[node name="bone_B2" parent="realbossroom" instance=ExtResource("21_awy0v")]
+transform = Transform3D(0.212604, 0, 0.977138, 0, 1, 0, -0.977138, 0, 0.212604, 10.8965, 0.260752, 28.4173)
+
+[node name="bone_C2" parent="realbossroom" instance=ExtResource("22_7yujg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.95045, 0.330451, 25.4515)
+
+[node name="candle2" parent="realbossroom" instance=ExtResource("23_wl5wb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.84715, 0.192411, 27.0464)
+
+[node name="candle_melted2" parent="realbossroom" instance=ExtResource("11_yk2o2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.0103, 0.186403, 27.4058)
+
+[node name="candle_thin2" parent="realbossroom" instance=ExtResource("12_yjt2f")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.55745, 0.192411, 26.8103)
+
+[node name="candle_triple2" parent="realbossroom" instance=ExtResource("10_853qx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.47115, 0.192412, 28.8923)
+
+[node name="coffin_decorated2" parent="realbossroom" instance=ExtResource("24_l2lnf")]
+transform = Transform3D(0.0244444, -0.994119, -0.105503, 0.0293398, 0.106202, -0.993912, 0.999271, 0.0212001, 0.0317633, 10.9867, 1.47766, 17.4944)
+
+[node name="fence_pillar_broken2" parent="realbossroom" instance=ExtResource("25_nck0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.43025, 0.192406, 10.7264)
+
+[node name="fence_pillar2" parent="realbossroom" instance=ExtResource("26_petlg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6183, 0.1924, -1.59689)
+
+[node name="gravemarker_B2" parent="realbossroom" instance=ExtResource("27_qgk7d")]
+transform = Transform3D(-0.496217, 0, 0.868199, 0, 1, 0, -0.868199, 0, -0.496217, -10.0076, 0.192407, 15.5741)
+
+[node name="gravestone2" parent="realbossroom" instance=ExtResource("28_smwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.89004, 0.192397, -10.4953)
+
+[node name="grave_A2" parent="realbossroom" instance=ExtResource("29_t6vh8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.01543, 0.192399, -7.03737)
+
+[node name="lantern_hanging2" parent="realbossroom" instance=ExtResource("30_apona")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4038, 7.25037, 11.0104)
+
+[node name="lantern_hanging3" parent="realbossroom" instance=ExtResource("30_apona")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.4038, 6.91904, 23.7181)
+
+[node name="lantern_standing2" parent="realbossroom" instance=ExtResource("31_2nmj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4781, 3.52887, 24.0202)
+
+[node name="lantern_standing3" parent="realbossroom" instance=ExtResource("31_2nmj4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4781, 4.2474, 11.2361)
+
+[node name="bone_A5" parent="realbossroom" instance=ExtResource("20_vecib")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.19545, 0.330443, 4.49214)
+
+[node name="bone_B3" parent="realbossroom" instance=ExtResource("21_awy0v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.19695, -0.20115, -11.187)
+
+[node name="bench_decorated3" parent="realbossroom" instance=ExtResource("19_pmajl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.48231, 0.192399, -8.12137)
+
+[node name="candle3" parent="realbossroom" instance=ExtResource("23_wl5wb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.8561, 0.192408, 18.8813)
+
+[node name="fence_pillar_broken3" parent="realbossroom" instance=ExtResource("25_nck0s")]
+transform = Transform3D(0.00895341, 0, 0.99996, 0, 1, 0, -0.99996, 0, 0.00895341, -9.31941, 0.192403, 2.38971)
+
+[node name="fence_pillar_broken4" parent="realbossroom" instance=ExtResource("25_nck0s")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73093, 0.448699, -7.93087)
+
+[node name="gravemarker_B3" parent="realbossroom" instance=ExtResource("27_qgk7d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16095, 0.840852, -11.2926)
+
+[node name="gravestone3" parent="realbossroom" instance=ExtResource("28_smwaj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.34485, 0.192399, -9.53577)
+
+[node name="grave_A3" parent="realbossroom" instance=ExtResource("29_t6vh8")]
+transform = Transform3D(0.750296, 0, -0.661102, 0, 1, 0, 0.661102, 0, 0.750296, 9.02525, 0.186403, -5.85497)
+
+[node name="grave_A_destroyed2" parent="realbossroom" instance=ExtResource("32_awy0v")]
+transform = Transform3D(-0.328471, 0, 0.944514, 0, 1, 0, -0.944514, 0, -0.328471, -7.13226, 0.3487, -4.26601)
+
+[node name="grave_B2" parent="realbossroom" instance=ExtResource("33_7yujg")]
+transform = Transform3D(0.331503, 0, 0.943454, 0, 1, 0, -0.943454, 0, 0.331503, -9.71504, 0.192402, -1.36862)
+
+[node name="pillar2" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, -6.62096, 0.192404, 10.4781)
+
+[node name="pillar3" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, -6.62096, 0.192404, 17.0547)
+
+[node name="pillar4" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, -6.84971, 0.192404, 23.0905)
+
+[node name="pillar5" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, -6.84971, 0.192404, 26.9513)
+
+[node name="pillar6" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, -6.84971, 0.192404, 32.987)
+
+[node name="pillar7" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 6.88005, 0.192404, 32.987)
+
+[node name="pillar8" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 6.88005, 0.192404, 24.757)
+
+[node name="pillar9" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 6.88005, 0.192404, 18.9074)
+
+[node name="pillar10" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 6.88005, 0.192404, 12.9704)
+
+[node name="pillar11" parent="realbossroom" instance=ExtResource("34_wl5wb")]
+transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 6.88005, 0.192404, 6.86382)
+
+[node name="path_D2" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.274228, 9.04803)
+
+[node name="path_D23" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.274228, 10.0689)
+
+[node name="path_D24" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.274228, 10.6546)
+
+[node name="path_D25" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.338783, 7.4497)
+
+[node name="path_D26" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.338783, 13.3321)
+
+[node name="path_D27" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.338783, 16.8223)
+
+[node name="path_D28" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5572, 0.338783, 20.468)
+
+[node name="path_D29" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.26585, 0.338783, 26.4765)
+
+[node name="path_D3" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78874, 0.274228, 6.55259)
+
+[node name="path_D4" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.84416, 0.274228, 6.55259)
+
+[node name="path_D5" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.23845, 0.274228, 6.55259)
+
+[node name="path_D6" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.4589, 0.274228, 6.55259)
+
+[node name="path_D7" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78595, 0.274228, 6.55259)
+
+[node name="path_D8" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78595, 0.274228, 8.6033)
+
+[node name="path_D9" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78595, 0.274228, 10.3751)
+
+[node name="path_D10" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78595, 0.274228, 12.7771)
+
+[node name="path_D11" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.78595, 0.274228, 15.867)
+
+[node name="path_D12" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40155, 0.274228, 18.0877)
+
+[node name="path_D13" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40155, 0.274228, 22.0112)
+
+[node name="path_D14" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40155, 0.274228, 27.5036)
+
+[node name="path_D33" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 26.0672)
+
+[node name="path_D34" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 24.8993)
+
+[node name="path_D35" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 23.5883)
+
+[node name="path_D36" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 28.9217)
+
+[node name="path_D37" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 30.4666)
+
+[node name="path_D38" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 33.6019)
+
+[node name="path_D39" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 20.6591)
+
+[node name="path_D40" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 19.2416)
+
+[node name="path_D41" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 13.3338)
+
+[node name="path_D42" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.32435, 0.274228, 15.0789)
+
+[node name="path_D15" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.40155, 0.274228, 31.7755)
+
+[node name="path_D16" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.88787, 0.274228, 31.7755)
+
+[node name="path_D17" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61983, 0.274228, 28.9027)
+
+[node name="path_D30" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61983, 0.274228, 30.2852)
+
+[node name="path_D31" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61983, 0.274228, 32.9548)
+
+[node name="path_D32" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61983, 0.274228, 33.6066)
+
+[node name="path_D18" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.50306, 0.274228, 25.3221)
+
+[node name="path_D19" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.45739, 0.274228, 22.9456)
+
+[node name="path_D20" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.70913, 0.274228, 18.9082)
+
+[node name="path_D21" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32662, 0.274228, 15.285)
+
+[node name="path_D22" parent="realbossroom" instance=ExtResource("6_gonin")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32662, 0.274228, 11.8275)
+
 [node name="DirectionalLight3D2" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.342725, 0, 0.939436, 0, 1, 0, -0.939436, 0, 0.342725, 0, 0, 0)
 light_color = Color(1, 0, 1, 1)
 light_energy = 0.146
 sky_mode = 1
-
-[node name="bench2" parent="." instance=ExtResource("18_bmnp4")]
-transform = Transform3D(0.0326668, 0, -0.999466, 0, 1, 0, 0.999466, 0, 0.0326668, -1.27015, 0.00600375, 9.06037)
-
-[node name="bench_decorated2" parent="." instance=ExtResource("19_pmajl")]
-transform = Transform3D(-0.200736, 0, 0.979645, 0, 1, 0, -0.979645, 0, -0.200736, -1.82192, 0.00600118, 2.50037)
-
-[node name="bone_A2" parent="." instance=ExtResource("20_vecib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4657, 0.144049, 26.0163)
-
-[node name="bone_A3" parent="." instance=ExtResource("20_vecib")]
-transform = Transform3D(0.244614, 0, 0.969621, 0, 1, 0, -0.969621, 0, 0.244614, 19.5364, 0.144048, 22.8521)
-
-[node name="bone_A4" parent="." instance=ExtResource("20_vecib")]
-transform = Transform3D(0.292272, 0, 0.956335, 0, 1, 0, -0.956335, 0, 0.292272, 18.4997, 0.144047, 20.0071)
-
-[node name="bone_B2" parent="." instance=ExtResource("21_awy0v")]
-transform = Transform3D(0.212604, 0, 0.977138, 0, 1, 0, -0.977138, 0, 0.212604, 19.3155, 0.0743485, 24.0871)
-
-[node name="bone_C2" parent="." instance=ExtResource("22_7yujg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.3695, 0.144048, 21.1213)
-
-[node name="candle2" parent="." instance=ExtResource("23_wl5wb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.2662, 0.00600844, 22.7162)
-
-[node name="candle_melted2" parent="." instance=ExtResource("11_yk2o2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.4294, 2.38419e-07, 23.0756)
-
-[node name="candle_thin2" parent="." instance=ExtResource("12_yjt2f")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9765, 0.00600818, 22.4801)
-
-[node name="candle_triple2" parent="." instance=ExtResource("10_853qx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8902, 0.0060087, 24.5621)
-
-[node name="coffin_decorated2" parent="." instance=ExtResource("24_l2lnf")]
-transform = Transform3D(0.0244444, -0.994119, -0.105503, 0.0293398, 0.106202, -0.993912, 0.999271, 0.0212001, 0.0317633, 19.4057, 1.29126, 13.1642)
-
-[node name="fence_pillar_broken2" parent="." instance=ExtResource("25_nck0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.8493, 0.00600299, 6.39612)
-
-[node name="fence_pillar2" parent="." instance=ExtResource("26_petlg")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0374, 0.00599727, -5.92712)
-
-[node name="gravemarker_B2" parent="." instance=ExtResource("27_qgk7d")]
-transform = Transform3D(-0.496217, 0, 0.868199, 0, 1, 0, -0.868199, 0, -0.496217, -1.58859, 0.00600399, 11.2439)
-
-[node name="gravestone2" parent="." instance=ExtResource("28_smwaj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.52901, 0.00599432, -14.8255)
-
-[node name="grave_A2" parent="." instance=ExtResource("29_t6vh8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.596379, 0.00599593, -11.3676)
-
-[node name="lantern_hanging2" parent="." instance=ExtResource("30_apona")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98474, 7.06397, 6.68012)
-
-[node name="lantern_hanging3" parent="." instance=ExtResource("30_apona")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.98474, 6.73264, 19.3879)
-
-[node name="lantern_standing2" parent="." instance=ExtResource("31_2nmj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8972, 3.34247, 19.69)
-
-[node name="lantern_standing3" parent="." instance=ExtResource("31_2nmj4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8972, 4.061, 6.90589)
-
-[node name="bone_A5" parent="." instance=ExtResource("20_vecib")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6145, 0.14404, 0.161913)
-
-[node name="bone_B3" parent="." instance=ExtResource("21_awy0v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.616, -0.387553, -15.5172)
-
-[node name="bench_decorated3" parent="." instance=ExtResource("19_pmajl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.93674, 0.00599617, -12.4516)
-
-[node name="candle3" parent="." instance=ExtResource("23_wl5wb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43705, 0.0060051, 14.5511)
-
-[node name="fence_pillar_broken3" parent="." instance=ExtResource("25_nck0s")]
-transform = Transform3D(0.00895341, 0, 0.99996, 0, 1, 0, -0.99996, 0, 0.00895341, -0.900364, 0.00599965, -1.94052)
-
-[node name="fence_pillar_broken4" parent="." instance=ExtResource("25_nck0s")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68812, 0.262296, -12.2611)
-
-[node name="gravemarker_B3" parent="." instance=ExtResource("27_qgk7d")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.58, 0.654449, -15.6228)
-
-[node name="gravestone3" parent="." instance=ExtResource("28_smwaj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.7639, 0.00599575, -13.866)
-
-[node name="grave_A3" parent="." instance=ExtResource("29_t6vh8")]
-transform = Transform3D(0.750296, 0, -0.661102, 0, 1, 0, 0.661102, 0, 0.750296, 17.4443, 0, -10.1852)
-
-[node name="grave_A_destroyed2" parent="." instance=ExtResource("32_awy0v")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.77926, 0.162297, -11.8838)
-
-[node name="grave_B2" parent="." instance=ExtResource("33_7yujg")]
-transform = Transform3D(0.331503, 0, 0.943454, 0, 1, 0, -0.943454, 0, 0.331503, -1.29599, 0.00599879, -5.69885)
-
-[node name="pillar2" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, 1.79809, 0.00600141, 6.1479)
-
-[node name="pillar3" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, 1.79809, 0.00600141, 12.7245)
-
-[node name="pillar4" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, 1.56934, 0.00600141, 18.7603)
-
-[node name="pillar5" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, 1.56934, 0.00600141, 22.6211)
-
-[node name="pillar6" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(-0.0329633, 0, 0.999457, 0, 1, 0, -0.999457, 0, -0.0329633, 1.56934, 0.00600141, 28.6568)
-
-[node name="pillar7" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 15.2991, 0.00600141, 28.6568)
-
-[node name="pillar8" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 15.2991, 0.00600141, 20.4268)
-
-[node name="pillar9" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 15.2991, 0.00600141, 14.5772)
-
-[node name="pillar10" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 15.2991, 0.00600141, 8.64012)
-
-[node name="pillar11" parent="." instance=ExtResource("34_wl5wb")]
-transform = Transform3D(0.0145904, 0, -0.999894, 0, 1, 0, 0.999894, 0, 0.0145904, 15.2991, 0.00600141, 2.53359)
-
-[node name="path_D2" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.0878247, 4.7178)
-
-[node name="path_D23" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.0878247, 5.73869)
-
-[node name="path_D24" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.0878247, 6.32437)
-
-[node name="path_D25" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.15238, 3.11947)
-
-[node name="path_D26" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.15238, 9.00187)
-
-[node name="path_D27" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.15238, 12.4921)
-
-[node name="path_D28" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86185, 0.15238, 16.1378)
-
-[node name="path_D29" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1532, 0.15238, 22.1463)
-
-[node name="path_D3" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.63031, 0.0878247, 2.22236)
-
-[node name="path_D4" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.26321, 0.0878247, 2.22236)
-
-[node name="path_D5" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.6575, 0.0878247, 2.22236)
-
-[node name="path_D6" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.96015, 0.0878247, 2.22236)
-
-[node name="path_D7" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.205, 0.0878247, 2.22236)
-
-[node name="path_D8" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.205, 0.0878247, 4.27307)
-
-[node name="path_D9" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.205, 0.0878247, 6.04483)
-
-[node name="path_D10" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.205, 0.0878247, 8.44684)
-
-[node name="path_D11" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.205, 0.0878247, 11.5368)
-
-[node name="path_D12" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8206, 0.0878247, 13.7575)
-
-[node name="path_D13" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8206, 0.0878247, 17.681)
-
-[node name="path_D14" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8206, 0.0878247, 23.1734)
-
-[node name="path_D33" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 21.737)
-
-[node name="path_D34" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 20.5691)
-
-[node name="path_D35" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 19.2581)
-
-[node name="path_D36" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 24.5915)
-
-[node name="path_D37" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 26.1364)
-
-[node name="path_D38" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 29.2717)
-
-[node name="path_D39" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 16.3289)
-
-[node name="path_D40" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 14.9114)
-
-[node name="path_D41" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 9.00357)
-
-[node name="path_D42" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7434, 0.0878247, 10.7487)
-
-[node name="path_D15" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.8206, 0.0878247, 27.4453)
-
-[node name="path_D16" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.53118, 0.0878247, 27.4453)
-
-[node name="path_D17" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79922, 0.0878247, 24.5725)
-
-[node name="path_D30" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79922, 0.0878247, 25.955)
-
-[node name="path_D31" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79922, 0.0878247, 28.6246)
-
-[node name="path_D32" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.79922, 0.0878247, 29.2764)
-
-[node name="path_D18" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.91599, 0.0878247, 20.9919)
-
-[node name="path_D19" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.96166, 0.0878247, 18.6154)
-
-[node name="path_D20" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.70992, 0.0878247, 14.578)
-
-[node name="path_D21" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09243, 0.0878247, 10.9548)
-
-[node name="path_D22" parent="." instance=ExtResource("6_gonin")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.09243, 0.0878247, 7.49731)
 
 [node name="ConnectorFromMainWorld" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84675, 1.60421, -12.3178)

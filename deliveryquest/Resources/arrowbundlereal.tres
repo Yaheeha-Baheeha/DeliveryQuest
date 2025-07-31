@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="CombinableItemPD" load_steps=6 format=3 uid="uid://obumryyrjb1k"]
+
+[ext_resource type="Resource" uid="uid://ch1xgxvg4ktom" path="res://Scenes/Bullets/Arrowq.tres" id="1_u1d3l"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="3_buxf5"]
+[ext_resource type="Script" uid="uid://cpeysdr8xn5a0" path="res://addons/cogito/InventoryPD/CustomResources/CombinableItemPD.gd" id="4_hnpm3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u1d3l"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/ArrowBundleIcon.png-931fbf26fe28113c0761ff4931907b5e.ctex"
+
+[sub_resource type="Resource" id="Resource_tywck"]
+resource_local_to_scene = true
+script = ExtResource("3_buxf5")
+inventory_item = ExtResource("1_u1d3l")
+quantity = 5
+origin_index = 0
+metadata/_custom_type_script = "uid://di15gqemrkk0x"
+
+[resource]
+script = ExtResource("4_hnpm3")
+target_item_combine = "Knife"
+resulting_item = SubResource("Resource_tywck")
+name = "Arrow Bundle"
+description = "Combine with knife  to get arrows"
+icon = SubResource("CompressedTexture2D_u1d3l")
+is_stackable = false
+is_droppable = false
+is_unique = false
+stack_size = 1
+drop_scene = "uid://c8owl6a25b7i8"
+item_drop_size = 0.5
+hint_text_on_use = ""
+item_size = Vector2(1, 1)
+can_auto_slot = false
+slot_number = -1
+metadata/_custom_type_script = "uid://cpeysdr8xn5a0"

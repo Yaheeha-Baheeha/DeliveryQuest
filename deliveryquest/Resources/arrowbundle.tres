@@ -1,20 +1,32 @@
-[gd_resource type="Resource" script_class="AmmoItemPD" load_steps=2 format=3 uid="uid://cgv17uk3igp4"]
+[gd_resource type="Resource" script_class="CombinableItemPD" load_steps=6 format=3 uid="uid://cgv17uk3igp4"]
 
-[ext_resource type="Script" uid="uid://6vgnb68cqtwh" path="res://addons/cogito/InventoryPD/CustomResources/AmmoItemPD.gd" id="1_ssrjw"]
+[ext_resource type="Texture2D" uid="uid://cu8h0ulmkc8kd" path="res://Scenes/Wieldables/Icons/ArrowBundleIcon.png" id="1_1u0f1"]
+[ext_resource type="Resource" uid="uid://quefvxbgsy5p" path="res://Scenes/Bullets/Arrow.tres" id="2_t888t"]
+[ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="3_f62ye"]
+[ext_resource type="Script" uid="uid://cpeysdr8xn5a0" path="res://addons/cogito/InventoryPD/CustomResources/CombinableItemPD.gd" id="4_spjjb"]
+
+[sub_resource type="Resource" id="Resource_tywck"]
+script = ExtResource("3_f62ye")
+inventory_item = ExtResource("2_t888t")
+quantity = 10
+origin_index = -1
+metadata/_custom_type_script = "uid://di15gqemrkk0x"
 
 [resource]
-script = ExtResource("1_ssrjw")
-reload_amount = 1
-name = "Arrow_bundle"
-description = "you shouldn't have this"
-is_stackable = false
+script = ExtResource("4_spjjb")
+target_item_combine = "Arrow Bundle"
+resulting_item = SubResource("Resource_tywck")
+name = "Arrow Bundle"
+description = "Combine with itself to get arrows"
+icon = ExtResource("1_1u0f1")
+is_stackable = true
 is_droppable = true
 is_unique = false
-stack_size = 0
+stack_size = 50
 drop_scene = null
 item_drop_size = 0.5
 hint_text_on_use = ""
 item_size = Vector2(1, 1)
 can_auto_slot = false
 slot_number = -1
-metadata/_custom_type_script = "uid://6vgnb68cqtwh"
+metadata/_custom_type_script = "uid://cpeysdr8xn5a0"

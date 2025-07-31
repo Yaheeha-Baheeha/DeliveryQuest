@@ -1,22 +1,25 @@
 [gd_resource type="Resource" script_class="AmmoItemPD" load_steps=5 format=3 uid="uid://quefvxbgsy5p"]
 
 [ext_resource type="Texture2D" uid="uid://cg5knuav7df4o" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_X.png" id="1_cwqsl"]
-[ext_resource type="Texture2D" uid="uid://b3ie8fviatl6u" path="res://Scenes/Wieldables/Icons/Screenshot 2025-07-14 124401.png" id="2_1p7et"]
 [ext_resource type="Script" uid="uid://6vgnb68cqtwh" path="res://addons/cogito/InventoryPD/CustomResources/AmmoItemPD.gd" id="2_ufam7"]
 [ext_resource type="AudioStream" uid="uid://npav2p2tk10i" path="res://addons/cogito/Assets/Audio/Kenney/handleSmallLeather.ogg" id="3_1p7et"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6kanr"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Screenshot 2025-07-14 124401.png-697c148d5bc77079bac6cbc642ffde70.ctex"
 
 [resource]
 resource_local_to_scene = true
 script = ExtResource("2_ufam7")
 reload_amount = 1
 name = "Arrow"
-description = "Vanishes after 60 secs"
-icon = ExtResource("2_1p7et")
+description = "Vanishes after 1 secs"
+icon = SubResource("CompressedTexture2D_6kanr")
 is_stackable = true
-is_droppable = true
+is_droppable = false
 is_unique = false
-stack_size = 50
-drop_scene = "uid://dlfbijka7cgw7"
+stack_size = 99
+drop_scene = "uid://c1umit2vtv22v"
 item_drop_size = 0.5
 hint_icon_on_use = ExtResource("1_cwqsl")
 hint_text_on_use = "Can't be used by itself."

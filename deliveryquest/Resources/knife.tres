@@ -1,0 +1,25 @@
+[gd_resource type="Resource" script_class="InventoryItemPD" load_steps=3 format=3 uid="uid://cjeueawmqv0ah"]
+
+[ext_resource type="Script" uid="uid://dog0pawpwd55d" path="res://addons/cogito/InventoryPD/CustomResources/InventoryItemPD.gd" id="2_v52pr"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8irkl"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/knife.png-85aeb4892a4e4be0d0d74f0a118008bc.ctex"
+
+[resource]
+resource_local_to_scene = true
+script = ExtResource("2_v52pr")
+name = "Knife"
+description = "Combine with arrow bundle to get arrows"
+icon = SubResource("CompressedTexture2D_8irkl")
+is_stackable = false
+is_droppable = true
+is_unique = false
+stack_size = 1
+drop_scene = null
+item_drop_size = 0.5
+hint_text_on_use = ""
+item_size = Vector2(1, 1)
+can_auto_slot = false
+slot_number = -1
+metadata/_custom_type_script = "uid://dog0pawpwd55d"

@@ -1,7 +1,8 @@
-[gd_resource type="Resource" script_class="LootTable" load_steps=7 format=3 uid="uid://h6ystnqxae1m"]
+[gd_resource type="Resource" script_class="LootTable" load_steps=8 format=3 uid="uid://h6ystnqxae1m"]
 
 [ext_resource type="Resource" uid="uid://58pyqr1djkcy" path="res://addons/cogito/InventoryPD/Items/Cogito_StrengthPotion.tres" id="2_gt25c"]
 [ext_resource type="Resource" uid="uid://cpqxudfjtjw66" path="res://addons/cogito/InventoryPD/Items/Cogito_HealthPotion.tres" id="3_lbovo"]
+[ext_resource type="Resource" uid="uid://b50q1ewwtjy08" path="res://Resources/KNIFEDROPENTRY.tres" id="4_av2kb"]
 [ext_resource type="Script" uid="uid://bw38ep6ean3wy" path="res://addons/cogito/Components/LootTables/LootDropEntry.gd" id="5_rapha"]
 [ext_resource type="Script" uid="uid://dj1uuvia16dhm" path="res://addons/cogito/Components/LootTables/BaseLootTable.gd" id="6_r4vfx"]
 
@@ -31,4 +32,4 @@ metadata/_custom_type_script = "uid://bw38ep6ean3wy"
 
 [resource]
 script = ExtResource("6_r4vfx")
-drops = Array[ExtResource("5_rapha")]([SubResource("Resource_gt25c"), SubResource("Resource_av2kb")])
+drops = Array[ExtResource("5_rapha")]([SubResource("Resource_gt25c"), SubResource("Resource_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb"), ExtResource("4_av2kb")])

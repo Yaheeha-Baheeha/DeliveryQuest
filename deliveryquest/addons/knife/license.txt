@@ -1,0 +1,11 @@
+Model Information:
+* title:	Low Poly Knife
+* source:	https://sketchfab.com/3d-models/low-poly-knife-dee8c21951e14a47b8985dc8718f222b
+* author:	GGklin (https://sketchfab.com/GGklin)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Low Poly Knife" (https://sketchfab.com/3d-models/low-poly-knife-dee8c21951e14a47b8985dc8718f222b) by GGklin (https://sketchfab.com/GGklin) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

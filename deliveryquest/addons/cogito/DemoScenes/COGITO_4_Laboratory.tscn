@@ -96,7 +96,7 @@ volumetric_fog_ambient_inject = 0.1
 volumetric_fog_sky_affect = 0.1
 volumetric_fog_temporal_reprojection_amount = 0.85
 
-[sub_resource type="Resource" id="Resource_gshxf"]
+[sub_resource type="Resource" id="Resource_a6jus"]
 resource_local_to_scene = true
 script = ExtResource("4_hlewe")
 grid = true
@@ -922,7 +922,7 @@ environment = SubResource("Environment_bftoa")
 
 [node name="Player" parent="." instance=ExtResource("2_7qwrr")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.13854, 0.8, -5.43073)
-inventory_data = SubResource("Resource_gshxf")
+inventory_data = SubResource("Resource_a6jus")
 
 [node name="CONNECTOR_TO_LOBBY" type="Node3D" parent="."]
 
@@ -4597,6 +4597,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27051, 1.32339, -15.7534)
 
 [node name="ArrowBundle2" parent="." instance=ExtResource("61_a6jus")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59265, 1.32339, -15.7589)
+
+[node name="ArrowBundle3" parent="." instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.01187, 2.05457, -15.7251)
+
+[node name="ArrowBundle4" parent="." instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27667, 2.05457, -15.713)
+
+[node name="ArrowBundle5" parent="." instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59407, 2.05457, -15.7065)
+
+[node name="ArrowBundle6" parent="." instance=ExtResource("61_a6jus")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86668, 2.05457, -15.6949)
 
 [connection signal="pressed" from="NavigationRegion3D/SHOOTING_RANGE/KSI_console_spawn/GenericButton" to="NavigationRegion3D/SHOOTING_RANGE/Spawnzone_Targets" method="_on_generic_button_pressed"]
 [connection signal="object_placed" from="NavigationRegion3D/SYSTEMIC_PROPERTIES/SnapSlotMetalbar" to="NavigationRegion3D/SYSTEMIC_PROPERTIES/Cathode_B/CogitoProperties" method="make_electric"]

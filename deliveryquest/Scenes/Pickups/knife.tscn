@@ -1,8 +1,8 @@
-[gd_scene load_steps=14 format=4 uid="uid://dj3pbaihc5h7w"]
+[gd_scene load_steps=16 format=4 uid="uid://dj3pbaihc5h7w"]
 
 [ext_resource type="Script" uid="uid://dmeh01c5ccjqc" path="res://addons/cogito/CogitoObjects/cogito_object.gd" id="1_npw6y"]
 [ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="2_oh738"]
-[ext_resource type="Resource" uid="uid://cjeueawmqv0ah" path="res://Resources/knife.tres" id="3_s1k3n"]
+[ext_resource type="Script" uid="uid://dog0pawpwd55d" path="res://addons/cogito/InventoryPD/CustomResources/InventoryItemPD.gd" id="3_s1k3n"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_rp8ti"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p7kdw"]
@@ -87,10 +87,32 @@ points = PackedVector3Array(1.02311, 0.128737, 4.47527, 1.00431, 0.128889, 4.430
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vuy3a"]
 points = PackedVector3Array(1.23235, -2.79397e-05, 4.55481, 1.21125, -0.133211, 4.55481, 1.2207, -2.79397e-05, 4.44296, 1.21125, 0.133183, 4.55481, 1.19234, -2.79397e-05, 4.65936, 1.17027, -0.137484, 4.64134, 0.58949, -0.130418, 3.06603, 1.19348, -0.129273, 4.43803, 0.598372, -2.79397e-05, 3.03543, 0.58949, 0.13039, 3.06603, 1.19348, 0.129245, 4.43803, 1.17027, 0.137456, 4.64134, 1.07601, 0.136925, 4.74282, 1.09282, -2.79397e-05, 4.76169, 1.07601, -0.136953, 4.74282, 0.929881, -0.139634, 4.75608, 0.777163, -0.14265, 4.57878, 0.796265, -0.142343, 4.57028, 0.578793, -0.130837, 3.09459, 0.288831, -0.128938, 3.21647, 0.286156, -0.0772734, 3.18791, 0.540303, -0.0758212, 3.06518, 0.286156, 0.0772454, 3.18791, 0.540303, 0.0757933, 3.06518, 0.288831, 0.128882, 3.21647, 0.578793, 0.130809, 3.09459, 0.777163, 0.14265, 4.57878, 0.796265, 0.142315, 4.57028, 0.929881, 0.139606, 4.75608, 0.921094, -2.79397e-05, 4.77206, 0.824726, -2.79397e-05, 4.70525, 0.837906, -0.139885, 4.68961, 0.763792, -2.79397e-05, 4.59289, 0.25674, -2.79397e-05, 3.20338, 0.837906, 0.139857, 4.68961)
 
-[sub_resource type="Resource" id="Resource_yl5ti"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_npw6y"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/knife.png-85aeb4892a4e4be0d0d74f0a118008bc.ctex"
+
+[sub_resource type="Resource" id="Resource_oh738"]
+resource_local_to_scene = true
+script = ExtResource("3_s1k3n")
+name = "Knife"
+description = "Combine with arrow bundle to get arrows"
+icon = SubResource("CompressedTexture2D_npw6y")
+is_stackable = false
+is_droppable = true
+is_unique = false
+stack_size = 1
+drop_scene = null
+item_drop_size = 0.5
+hint_text_on_use = ""
+item_size = Vector2(1, 1)
+can_auto_slot = false
+slot_number = -1
+metadata/_custom_type_script = "uid://dog0pawpwd55d"
+
+[sub_resource type="Resource" id="Resource_wg5kg"]
 resource_local_to_scene = true
 script = ExtResource("5_rp8ti")
-inventory_item = ExtResource("3_s1k3n")
+inventory_item = SubResource("Resource_oh738")
 quantity = 1
 origin_index = -1
 metadata/_custom_type_script = "uid://di15gqemrkk0x"
@@ -119,4 +141,4 @@ shape = SubResource("ConvexPolygonShape3D_vuy3a")
 
 [node name="PickupComponent" parent="." instance=ExtResource("2_oh738")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
-slot_data = SubResource("Resource_yl5ti")
+slot_data = SubResource("Resource_wg5kg")

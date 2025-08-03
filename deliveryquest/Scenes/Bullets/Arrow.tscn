@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=4 uid="uid://c1umit2vtv22v"]
+[gd_scene load_steps=16 format=4 uid="uid://c1umit2vtv22v"]
 
 [ext_resource type="Script" uid="uid://fo2f3fr8frg4" path="res://addons/cogito/CogitoObjects/cogito_projectile.gd" id="1_u58o4"]
 [ext_resource type="Texture2D" uid="uid://dw80q6l8s01k3" path="res://addons/kaykit_character_pack_adventures/Assets/gltf/rogue_texture.png" id="2_6kanr"]
 [ext_resource type="PackedScene" uid="uid://1xq4y42qkcur" path="res://addons/cogito/Components/Interactions/PickupComponent.tscn" id="3_mtfql"]
-[ext_resource type="Resource" uid="uid://ch1xgxvg4ktom" path="res://Scenes/Bullets/Arrowq.tres" id="4_7ku4d"]
+[ext_resource type="Texture2D" uid="uid://cg5knuav7df4o" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_X.png" id="4_6kanr"]
+[ext_resource type="Script" uid="uid://6vgnb68cqtwh" path="res://addons/cogito/InventoryPD/CustomResources/AmmoItemPD.gd" id="5_mtfql"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="5_q450k"]
+[ext_resource type="AudioStream" uid="uid://npav2p2tk10i" path="res://addons/cogito/Assets/Audio/Kenney/handleSmallLeather.ogg" id="6_fgmik"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ocxvc"]
 resource_name = "rogue_texture"
@@ -54,10 +56,34 @@ height = 0.150704
 height = 0.518677
 radius = 0.0185547
 
-[sub_resource type="Resource" id="Resource_fgmik"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q450k"]
+resource_local_to_scene = true
+load_path = "res://.godot/imported/Screenshot 2025-07-14 124401.png-697c148d5bc77079bac6cbc642ffde70.ctex"
+
+[sub_resource type="Resource" id="Resource_acy82"]
+resource_local_to_scene = true
+script = ExtResource("5_mtfql")
+reload_amount = 1
+name = "Arrow"
+description = "Vanishes after 1 secs"
+icon = SubResource("CompressedTexture2D_q450k")
+is_stackable = true
+is_droppable = false
+is_unique = false
+stack_size = 20
+drop_scene = "uid://c1umit2vtv22v"
+item_drop_size = 0.5
+hint_icon_on_use = ExtResource("4_6kanr")
+hint_text_on_use = "Can't be used by itself."
+item_size = Vector2(1, 1)
+sound_pickup = ExtResource("6_fgmik")
+can_auto_slot = false
+slot_number = -1
+
+[sub_resource type="Resource" id="Resource_sgnou"]
 resource_local_to_scene = true
 script = ExtResource("5_q450k")
-inventory_item = ExtResource("4_7ku4d")
+inventory_item = SubResource("Resource_acy82")
 quantity = 1
 origin_index = -1
 
@@ -91,7 +117,7 @@ transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114
 shape = SubResource("CylinderShape3D_fgmik")
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
-slot_data = SubResource("Resource_fgmik")
+slot_data = SubResource("Resource_sgnou")
 display_item_name = true
 
 [node name="Lifespan" type="Timer" parent="."]

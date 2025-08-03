@@ -58,6 +58,7 @@ origin_index = -1
 metadata/_custom_type_script = "uid://di15gqemrkk0x"
 
 [node name="PickupScroll" type="RigidBody3D"]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
 script = ExtResource("1_runyn")
 cogito_name = "Scroll"
 

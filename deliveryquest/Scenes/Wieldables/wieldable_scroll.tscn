@@ -355,7 +355,7 @@ transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -0.0010919, 0.093681
 script = ExtResource("4_dipip")
 
 [node name="normolskrol_Scroll_0" type="MeshInstance3D" parent="Scrollmesh"]
-transform = Transform3D(-0.0506634, -0.467167, -0.00938995, 0.459344, -0.0515263, 0.0851347, -0.085651, -8.75443e-09, 0.46213, 0.153129, -0.26867, 0.345249)
+transform = Transform3D(-0.0506634, -0.467167, -0.00938997, 0.459344, -0.0515263, 0.0851348, -0.085651, -1.83843e-08, 0.46213, 0.153129, -0.26867, 0.345249)
 mesh = SubResource("ArrayMesh_36eog")
 skeleton = NodePath("")
 

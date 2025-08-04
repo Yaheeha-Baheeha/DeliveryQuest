@@ -1,5 +1,6 @@
-[gd_scene load_steps=32 format=3 uid="uid://csee7u7nhoctl"]
+[gd_scene load_steps=33 format=3 uid="uid://csee7u7nhoctl"]
 
+[ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_elxwp"]
 [ext_resource type="PackedScene" uid="uid://7l4qp34aklfe" path="res://addons/cogito/SceneManagement/bossroom2.blend" id="1_n1okf"]
 [ext_resource type="PackedScene" uid="uid://cmv6f5nugvxwx" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/ribcage.gltf" id="2_kcert"]
 [ext_resource type="PackedScene" uid="uid://je86lkcg6qh4" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/path_A.gltf" id="3_lp0fp"]
@@ -32,7 +33,9 @@
 [ext_resource type="PackedScene" uid="uid://djvbguoalmacm" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bench_decorated.gltf" id="30_6cvwl"]
 [ext_resource type="PackedScene" uid="uid://rb5cf4r5ra8s" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/tree_dead_large.gltf" id="31_fyruv"]
 
-[node name="Bossroom2" type="Node3D"]
+[node name="Bossroom2" type="Node3D" node_paths=PackedStringArray("connectors")]
+script = ExtResource("1_elxwp")
+connectors = [NodePath("ConnectorFromMainWorld")]
 
 [node name="bossroom2" parent="." instance=ExtResource("1_n1okf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.984403, 1.19209e-07, -1.27708)

@@ -100,7 +100,7 @@
 [ext_resource type="PackedScene" uid="uid://cum7q5g4i1yqr" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/tree_pine_yellow_medium.gltf" id="97_rfyj4"]
 [ext_resource type="PackedScene" uid="uid://btpobdkfcsbqk" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/tree_pine_yellow_small.gltf" id="98_a0wpx"]
 [ext_resource type="PackedScene" uid="uid://dxws6r1ai3ac3" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/arch.gltf" id="98_mtuv6"]
-[ext_resource type="PackedScene" path="res://Assets/Polygon-FantasyVillage/Models/SM_Tree_01_A.prefab.scn" id="99_ftu17"]
+[ext_resource type="PackedScene" uid="uid://dgonl2s7ruw10" path="res://Assets/Polygon-FantasyVillage/Models/SM_Tree_01_A.prefab.scn" id="99_ftu17"]
 [ext_resource type="PackedScene" uid="uid://w74fb60m5obi" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Tree_02_A.prefab.scn" id="100_53wlm"]
 [ext_resource type="PackedScene" uid="uid://obqhfnm26iur" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Tree_01_B.prefab.scn" id="101_nac3h"]
 [ext_resource type="PackedScene" uid="uid://gt4x35bbf0qi" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Tree_03_B.prefab.scn" id="102_q0jvs"]
@@ -1890,9 +1890,6 @@ transform = Transform3D(-0.996312, 0, -0.0857994, 0, 1, 0, 0.0857994, 0, -0.9963
 [node name="SM_Hous_13_B3" parent="Town" instance=ExtResource("39_50tc1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 327.798, 1.40695, 103.861)
 
-[node name="SM_Hous_14_A2" parent="Town" instance=ExtResource("40_81sua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.133, 1.20779, 82.3543)
-
 [node name="SM_Hous_14_B2" parent="Town" instance=ExtResource("41_5u1ys")]
 transform = Transform3D(0.0207853, 0, -0.999784, 0, 1, 0, 0.999784, 0, 0.0207853, 324.781, 0.877805, 83.1551)
 
@@ -2041,7 +2038,7 @@ transform = Transform3D(-0.999904, 0, 0.0138749, 0, 1, 0, -0.0138749, 0, -0.9999
 transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -16.9897, 0.045462, -121.042)
 
 [node name="SM_Hous_25_B2" parent="Town" instance=ExtResource("60_0kq8q")]
-transform = Transform3D(-1.99224, 0, -0.17598, 0, 2, 0, 0.17598, 0, -1.99224, 259.599, 1.17507, 126.056)
+transform = Transform3D(-1.99997, 0, -0.0107159, 0, 2, 0, 0.0107159, 0, -1.99997, 279.59, 1.17507, 88.873)
 
 [node name="SM_Hous_26_B3" parent="Town" instance=ExtResource("62_c8kmu")]
 transform = Transform3D(-5.15794e-08, 0, 1.18, 0, 1.18, 0, -1.18, 0, -5.15794e-08, 240.725, 0.045462, -33.9029)
@@ -3669,6 +3666,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.76095, 1.36952, -10.8748)
 [node name="bone_A3" parent="." instance=ExtResource("111_vjxb2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8353, 4.88839, -8.70152)
 
+[node name="TransitionZone_LAB2" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.912, 5.08857, 85.868)
+script = ExtResource("116_nr6q2")
+target_scene = ExtResource("117_087cg")
+target_scene_path = "uid://csee7u7nhoctl"
+target_connector = "ConnectorFromMainWorld"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TransitionZone_LAB2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0.215736)
+shape = SubResource("BoxShape3D_dlejt")
+
 [node name="TransitionZone_LAB" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 422.513, 3.75369, -87.432)
 script = ExtResource("116_nr6q2")
@@ -3677,16 +3685,5 @@ target_scene_path = "uid://b5kwhrbgvdste"
 target_connector = "ConnectorFromMainWorld"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="TransitionZone_LAB"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0.215736)
-shape = SubResource("BoxShape3D_dlejt")
-
-[node name="TransitionZone_LAB2" type="Area3D" parent="TransitionZone_LAB"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -163.265, 1.33488, 211.026)
-script = ExtResource("116_nr6q2")
-target_scene = ExtResource("117_087cg")
-target_scene_path = "uid://csee7u7nhoctl"
-target_connector = "ConnectorFromMainWorld"
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="TransitionZone_LAB/TransitionZone_LAB2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.95816, 0.215736)
 shape = SubResource("BoxShape3D_dlejt")

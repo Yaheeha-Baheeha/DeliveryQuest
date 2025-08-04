@@ -86,7 +86,7 @@ filter_enabled = true
 filters = ["", "Rig/Skeleton3D:DEF-f_index.01.L", "Rig/Skeleton3D:DEF-f_index.01.R", "Rig/Skeleton3D:DEF-f_index.02.L", "Rig/Skeleton3D:DEF-f_index.02.R", "Rig/Skeleton3D:DEF-f_index.03.L", "Rig/Skeleton3D:DEF-f_index.03.R", "Rig/Skeleton3D:DEF-f_middle.01.L", "Rig/Skeleton3D:DEF-f_middle.01.R", "Rig/Skeleton3D:DEF-f_middle.02.L", "Rig/Skeleton3D:DEF-f_middle.02.R", "Rig/Skeleton3D:DEF-f_middle.03.L", "Rig/Skeleton3D:DEF-f_middle.03.R", "Rig/Skeleton3D:DEF-f_pinky.01.L", "Rig/Skeleton3D:DEF-f_pinky.01.R", "Rig/Skeleton3D:DEF-f_pinky.02.L", "Rig/Skeleton3D:DEF-f_pinky.02.R", "Rig/Skeleton3D:DEF-f_pinky.03.L", "Rig/Skeleton3D:DEF-f_pinky.03.R", "Rig/Skeleton3D:DEF-f_ring.01.L", "Rig/Skeleton3D:DEF-f_ring.01.R", "Rig/Skeleton3D:DEF-f_ring.02.L", "Rig/Skeleton3D:DEF-f_ring.02.R", "Rig/Skeleton3D:DEF-f_ring.03.L", "Rig/Skeleton3D:DEF-f_ring.03.R", "Rig/Skeleton3D:DEF-forearm.L", "Rig/Skeleton3D:DEF-forearm.R", "Rig/Skeleton3D:DEF-hand.L", "Rig/Skeleton3D:DEF-hand.R", "Rig/Skeleton3D:DEF-head", "Rig/Skeleton3D:DEF-neck", "Rig/Skeleton3D:DEF-shoulder.L", "Rig/Skeleton3D:DEF-shoulder.R", "Rig/Skeleton3D:DEF-thumb.01.L", "Rig/Skeleton3D:DEF-thumb.01.R", "Rig/Skeleton3D:DEF-thumb.02.L", "Rig/Skeleton3D:DEF-thumb.02.R", "Rig/Skeleton3D:DEF-thumb.03.L", "Rig/Skeleton3D:DEF-thumb.03.R", "Rig/Skeleton3D:DEF-upper_arm.L", "Rig/Skeleton3D:DEF-upper_arm.R"]
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_4ogfn"]
-graph_offset = Vector2(-424.68, -72.13)
+graph_offset = Vector2(-399.717, 98.4648)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_a5a6b")
 nodes/Animation/position = Vector2(-300, 160)
 nodes/Punch/node = SubResource("AnimationNodeAnimation_mf8n2")
@@ -118,10 +118,10 @@ states/PistolReady/position = Vector2(583, 259)
 states/RaisedFists/node = SubResource("AnimationNodeBlendTree_4ogfn")
 states/RaisedFists/position = Vector2(283, 259)
 transitions = ["Start", "Neutral", SubResource("AnimationNodeStateMachineTransition_duam4"), "Neutral", "PistolReady", SubResource("AnimationNodeStateMachineTransition_escyr"), "PistolReady", "Neutral", SubResource("AnimationNodeStateMachineTransition_p3khd"), "Neutral", "RaisedFists", SubResource("AnimationNodeStateMachineTransition_qx1ts"), "RaisedFists", "Neutral", SubResource("AnimationNodeStateMachineTransition_8plti")]
-graph_offset = Vector2(-31, -44)
+graph_offset = Vector2(-64, 195)
 
 [resource]
-graph_offset = Vector2(-330.519, 324.586)
+graph_offset = Vector2(-440.935, 331.827)
 nodes/Animation/node = SubResource("AnimationNodeAnimation_duam4")
 nodes/Animation/position = Vector2(-400, 1180)
 nodes/Movement/node = SubResource("AnimationNodeBlendSpace2D_a5a6b")

@@ -4592,7 +4592,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88628, 0.401361, -15.6723)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37788, 1.13388, -15.7068)
 
 [node name="PickupScroll" parent="." instance=ExtResource("69_r8380")]
-transform = Transform3D(0.355, 0, 0, 0, 0.355, 0, 0, 0, 0.355, 0.514786, 1.17849, -15.8081)
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0.514786, 1.17849, -15.8081)
 
 [node name="ArrowBundle" parent="." instance=ExtResource("61_a6jus")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.27051, 1.32339, -15.7534)
@@ -4612,8 +4612,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59407, 2.05457, -15.7065)
 [node name="ArrowBundle6" parent="." instance=ExtResource("61_a6jus")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86668, 2.05457, -15.6949)
 
-[node name="Barbarian" parent="." instance=ExtResource("71_gshxf")]
+[node name="Barbarian" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("71_gshxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7878, 0.292544, 6.08849)
+patrol_path = NodePath("../BarbarianPatrolpath")
+walk_speed = 1.0
 
 [node name="BarbarianPatrolpath" type="Node3D" parent="." node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3096, 0, 5.60287)

@@ -246,3 +246,7 @@ func update_indicator_mesh():
 		DetectorState.DETECTED:
 			indicator_material.set_albedo(color_detected)
 			indicator_light.light_color = color_detected
+
+
+func _on_chase_chase_ended() -> void:
+	pass # Replace with function body.

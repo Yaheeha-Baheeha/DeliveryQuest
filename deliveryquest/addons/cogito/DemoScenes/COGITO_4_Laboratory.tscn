@@ -4620,7 +4620,7 @@ walk_speed = 1.0
 [node name="BarbarianPatrolpath" type="Node3D" parent="." node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3096, 0, 5.60287)
 script = ExtResource("53_xiupp")
-patrol_points = [NodePath("Patrolpoint_A"), NodePath("Patrolpoint_B"), NodePath("Patrolpoint_C")]
+patrol_points = [NodePath("Patrolpoint_A"), NodePath("Patrolpoint_B"), NodePath("Patrolpoint_C"), NodePath("Patrolpoint_D")]
 
 [node name="Patrolpoint_A" type="Marker3D" parent="BarbarianPatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94682, 0, -0.905499)
@@ -4629,7 +4629,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.94682, 0, -0.905499)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.73957, 0, -5.4657)
 
 [node name="Patrolpoint_C" type="Marker3D" parent="BarbarianPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.05106)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.60068, 0, -13.3505)
+
+[node name="Patrolpoint_D" type="Marker3D" parent="BarbarianPatrolpath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -5.53947)
 
 [connection signal="pressed" from="NavigationRegion3D/SHOOTING_RANGE/KSI_console_spawn/GenericButton" to="NavigationRegion3D/SHOOTING_RANGE/Spawnzone_Targets" method="_on_generic_button_pressed"]
 [connection signal="object_placed" from="NavigationRegion3D/SYSTEMIC_PROPERTIES/SnapSlotMetalbar" to="NavigationRegion3D/SYSTEMIC_PROPERTIES/Cathode_B/CogitoProperties" method="make_electric"]

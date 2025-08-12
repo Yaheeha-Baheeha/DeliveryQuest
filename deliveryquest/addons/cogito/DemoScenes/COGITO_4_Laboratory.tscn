@@ -4612,10 +4612,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.59407, 2.05457, -15.7065)
 [node name="ArrowBundle6" parent="." instance=ExtResource("61_a6jus")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.86668, 2.05457, -15.6949)
 
-[node name="Barbarian" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("71_gshxf")]
+[node name="Barbarian" parent="." node_paths=PackedStringArray("patrol_path", "look_object") instance=ExtResource("71_gshxf")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.7878, 0.292544, 6.08849)
 patrol_path = NodePath("../BarbarianPatrolpath")
-walk_speed = 1.0
+look_object = NodePath("../Player")
 
 [node name="BarbarianPatrolpath" type="Node3D" parent="." node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.3096, 0, 5.60287)

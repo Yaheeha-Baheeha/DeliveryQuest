@@ -195,7 +195,7 @@ func drop_single_slot_data(grabbed_slot_data: InventorySlotPD, index: int) -> In
 		remove_slot_data(slot_data)
 		grabbed_slot_data.quantity -= 1
 		# Add resulting item to inventory:
-		pick_up_slot_data(grabbed_slot_data.inventory_item.resulting_item)
+		pick_up_slot_data(grabbed_slot_data.inventory_item.resulting_item.duplicate())
 	
 	inventory_updated.emit(self)
 	

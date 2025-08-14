@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bvkkotlj71pqa"]
+[gd_scene load_steps=6 format=3 uid="uid://b8f0ocwcti085"]
 
 [ext_resource type="Script" uid="uid://b0cad7dyjyqlb" path="res://addons/cogito/Assets/VFX/Explosion_01/explosion.gd" id="1_45qx7"]
 [ext_resource type="Shader" uid="uid://bspjwxt1hotc" path="res://addons/cogito/Assets/VFX/Explosion_01/explosion01_particle.tres" id="2_2f3gd"]

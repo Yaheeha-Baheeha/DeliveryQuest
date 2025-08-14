@@ -25,20 +25,29 @@ func using_grid(using_grid: bool):
 
 
 func set_icon_region(x, y):
-	#if item_data == null:
-		#push_error("item_data is null in set_icon_region")
-		#return
-	#
+	if item_data == null:
+		push_error("item_data is null in set_icon_region")
+		return
+	
 	var region = item_data.get_region(x, y)
 	texture_rect.texture = ImageTexture.create_from_image(region)
 
 
 func set_hotbar_icon():
+	if item_data == null:
+		push_error("item_data is null in set_hotbar_icon")
+		return
 	texture_rect.texture = item_data.icon
 
 
 func set_slot_data(slot_data: InventorySlotPD, index: int, moving: bool, x_size: int):
+	if slot_data == null:
+		push_error("slot_data is null in set_slot_data")
+		return
 	item_data = slot_data.inventory_item
+	if item_data == null:
+		push_error("slot_data.inventory_item is null in set_slot_data")
+		return
 	if moving:
 		slot_data.origin_index = index
 		origin_index = index

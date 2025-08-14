@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="CombinableItemPD" load_steps=6 format=3 uid="uid://obumryyrjb1k"]
 
-[ext_resource type="Resource" uid="uid://ch1xgxvg4ktom" path="res://Scenes/Bullets/Arrowq.tres" id="1_u1d3l"]
+[ext_resource type="Resource" uid="uid://quefvxbgsy5p" path="res://Scenes/Bullets/Arrow.tres" id="1_u1d3l"]
 [ext_resource type="Script" uid="uid://di15gqemrkk0x" path="res://addons/cogito/InventoryPD/CustomResources/InventorySlotPD.gd" id="3_buxf5"]
 [ext_resource type="Script" uid="uid://cpeysdr8xn5a0" path="res://addons/cogito/InventoryPD/CustomResources/CombinableItemPD.gd" id="4_hnpm3"]
 
@@ -10,6 +10,7 @@ load_path = "res://.godot/imported/ArrowBundleIcon.png-931fbf26fe28113c0761ff493
 
 [sub_resource type="Resource" id="Resource_tywck"]
 resource_local_to_scene = true
+resource_name = "Arrow"
 script = ExtResource("3_buxf5")
 inventory_item = ExtResource("1_u1d3l")
 quantity = 5

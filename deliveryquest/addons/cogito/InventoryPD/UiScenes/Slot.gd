@@ -25,6 +25,10 @@ func using_grid(using_grid: bool):
 
 
 func set_icon_region(x, y):
+	#if item_data == null:
+		#push_error("item_data is null in set_icon_region")
+		#return
+	#
 	var region = item_data.get_region(x, y)
 	texture_rect.texture = ImageTexture.create_from_image(region)
 

@@ -57,7 +57,7 @@ radius = 0.0185547
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h1u1o"]
 load_path = "res://.godot/imported/Hint_X.png-4fb2871d61bf2520b2bdf2eb1965f0b5.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_m1a5g"]
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ku4d"]
 resource_local_to_scene = true
 load_path = "res://.godot/imported/Screenshot 2025-07-14 124401.png-697c148d5bc77079bac6cbc642ffde70.ctex"
 
@@ -69,13 +69,13 @@ sampling_rate = 48000.0
 [sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_cwqsl"]
 packet_sequence = SubResource("OggPacketSequence_27j0v")
 
-[sub_resource type="Resource" id="Resource_7ku4d"]
+[sub_resource type="Resource" id="Resource_u58o4"]
 resource_local_to_scene = true
 script = ExtResource("5_mtfql")
 reload_amount = 1
 name = "Arrow"
 description = "Vanishes after 1 secs"
-icon = SubResource("CompressedTexture2D_m1a5g")
+icon = SubResource("CompressedTexture2D_7ku4d")
 is_stackable = true
 is_droppable = false
 is_unique = false
@@ -89,10 +89,10 @@ sound_pickup = SubResource("AudioStreamOggVorbis_cwqsl")
 can_auto_slot = false
 slot_number = -1
 
-[sub_resource type="Resource" id="Resource_u58o4"]
+[sub_resource type="Resource" id="Resource_6kanr"]
 resource_local_to_scene = true
 script = ExtResource("5_q450k")
-inventory_item = SubResource("Resource_7ku4d")
+inventory_item = SubResource("Resource_u58o4")
 quantity = 1
 origin_index = -1
 
@@ -126,7 +126,7 @@ transform = Transform3D(1, 4.37114e-08, 1.91069e-15, 0, -4.37114e-08, 1, 4.37114
 shape = SubResource("CylinderShape3D_fgmik")
 
 [node name="PickupComponent" parent="." instance=ExtResource("3_mtfql")]
-slot_data = SubResource("Resource_u58o4")
+slot_data = SubResource("Resource_6kanr")
 display_item_name = true
 
 [node name="Lifespan" type="Timer" parent="."]

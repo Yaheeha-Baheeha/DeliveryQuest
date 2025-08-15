@@ -1,0 +1,11 @@
+Model Information:
+* title:	Game level design - Dark Stone Dungeon
+* source:	https://sketchfab.com/3d-models/game-level-design-dark-stone-dungeon-c27da8ed84824bf3895b085a000082f4
+* author:	Karthik Naidu (https://sketchfab.com/Karthik_TS)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Game level design - Dark Stone Dungeon" (https://sketchfab.com/3d-models/game-level-design-dark-stone-dungeon-c27da8ed84824bf3895b085a000082f4) by Karthik Naidu (https://sketchfab.com/Karthik_TS) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

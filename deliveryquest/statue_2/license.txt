@@ -1,0 +1,11 @@
+Model Information:
+* title:	Statue_2
+* source:	https://sketchfab.com/3d-models/statue-2-cbf10d512c194a52ae97360130267b1c
+* author:	utkumustdie (https://sketchfab.com/utkumustdie)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Statue_2" (https://sketchfab.com/3d-models/statue-2-cbf10d512c194a52ae97360130267b1c) by utkumustdie (https://sketchfab.com/utkumustdie) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

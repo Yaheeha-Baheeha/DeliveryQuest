@@ -1,7 +1,6 @@
 [gd_scene load_steps=128 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="PackedScene" uid="uid://bi1fnwvtcgjhl" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_B.prefab.scn" id="1_4wp0g"]
-[ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://dmxgglnmegev7" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_A.prefab.scn" id="2_hr1cd"]
 [ext_resource type="PackedScene" uid="uid://bq3durpimelo2" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_B.prefab.scn" id="3_b4p4q"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
@@ -115,8 +114,71 @@
 [ext_resource type="PackedScene" uid="uid://ci7t4cyub7dra" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bone_A.gltf" id="111_vjxb2"]
 [ext_resource type="PackedScene" uid="uid://djvbguoalmacm" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bench_decorated.gltf" id="112_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://ogw7f2fmw5ui" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bone_C.gltf" id="113_jnvg0"]
-[ext_resource type="Script" uid="uid://6010ovanwkwo" path="res://addons/cogito/Scripts/scene_transition_zone.gd" id="116_nr6q2"]
 [ext_resource type="PackedScene" uid="uid://b5kwhrbgvdste" path="res://boss_room_1.tscn" id="117_087cg"]
+
+[sub_resource type="GDScript" id="GDScript_7w3xb"]
+script/source = "extends Node
+
+## List of connector nodes. These are used to place the Player in the correct position when they transition to this scene from a different scene. The Node name needs to match the passed string for this to work.
+@export var connectors : Array[Node3D]
+## Saves scene and player temp states
+@export var save_temp_on_enter : bool = false
+
+@export_category(\"Music Settings\")
+@onready var music_player: AudioStreamPlayer
+@export var bgm_neutral : AudioStream
+@export var bgm_combat : AudioStream
+@export_range(-80.0, 24.0) var music_max_volume_db : float = -6.0
+
+
+func move_player_to_connector(connector_name:String):
+	for node in connectors:
+		if node.get_name() == connector_name:
+			CogitoGlobals.debug_log(true, \"CogitoScene.gd\", \"Connector found, moving player to \" + node.get_name() )
+			CogitoSceneManager._current_player_node.global_position = node.global_position
+			CogitoSceneManager._current_player_node.body.global_rotation = node.global_rotation
+			return
+	
+	CogitoGlobals.debug_log(true, \"CogitoScene.gd\",  \"No connector with name \" + connector_name + \" found.\")
+
+
+func _enter_tree() -> void:
+	CogitoSceneManager._current_scene_root_node = self
+	CogitoGlobals.debug_log(true, \"CogitoScene.gd\", \"Current scene root node set to \" + CogitoSceneManager._current_scene_root_node.name )
+	
+	setup_bgm.call_deferred()
+	if save_temp_on_enter:
+		save_temp.call_deferred()
+
+
+func save_temp() -> void:
+	var current_scene_statename = get_tree().get_current_scene().get_name()
+	CogitoSceneManager.save_scene_state(current_scene_statename,\"temp\")
+	CogitoSceneManager.save_player_state(CogitoSceneManager._current_player_node, \"temp\")
+
+
+func setup_bgm() -> void:
+	var valid := true
+	if not is_instance_valid(bgm_neutral):
+		CogitoGlobals.debug_log(true, \"cogito_scene.gd\", \"Scene Music is lacking a \\\"bgm_neutral\\\". Set it in the inspector on the node: {0}\".format([get_path()]))
+		valid = false
+	if not is_instance_valid(bgm_combat):
+		CogitoGlobals.debug_log(true, \"cogito_scene.gd\", \"Scene Music Demo script is lacking a \\\"bgm_combat\\\". Set it in the inspector on the node: {0}\".format([get_path()]))
+		valid = false
+	if valid:
+		music_player = Audio.play_sound(bgm_neutral,false)
+		music_player.set_bus(\"Music\")
+		music_player.volume_db = -80.0 #Start at mute
+		music_fade_in(music_player, 4, music_max_volume_db)
+		music_player.play()
+
+
+func music_fade_in(audio_stream_player, seconds := 1.0, max_volume_db:= 0.0, tween := create_tween()):
+	if not (audio_stream_player is AudioStreamPlayer or audio_stream_player is AudioStreamPlayer2D or audio_stream_player is AudioStreamPlayer3D):
+		push_error(\"Non-AudioStreamPlayer[XD] provided to Audio.fade_in(...)\")
+		return
+	tween.tween_method(func(x): audio_stream_player.volume_db = linear_to_db(x), db_to_linear(audio_stream_player.volume_db), db_to_linear(max_volume_db), seconds)
+"
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ltp5"]
 size = Vector2(1000, 1000)
@@ -273,12 +335,54 @@ _data = {
 &"day_night": SubResource("Animation_mtuv6")
 }
 
+[sub_resource type="GDScript" id="GDScript_vjxb2"]
+script/source = "extends Area3D
+
+### Level scene to transition to
+@export var target_scene : PackedScene = null
+## Level scene to transition to
+@export_file(\"*.tscn\") var target_scene_path : String
+## Name of connector node the player should transition to in target scene. This node needs to exist in the target scene and has to be added to the connector array of the target scene cogito_scene script.
+@export var target_connector : String
+
+var current_scene_statename : String
+var current_scene_filepath : String
+
+func _ready():
+	body_entered.connect(_on_body_entered)
+	body_exited.connect(_on_body_exited)
+	
+	
+func _on_body_entered(body: Node3D):
+	if !body.is_in_group(\"Player\"):
+		return
+	
+	transition_to_next_scene()
+
+	
+func _on_body_exited(body: Node3D):
+	if !body.is_in_group(\"Player\"):
+		return
+
+
+func transition_to_next_scene():
+	current_scene_statename = get_tree().get_current_scene().get_name()
+	CogitoSceneManager.save_scene_state(current_scene_statename,\"temp\")
+	CogitoSceneManager.save_player_state(CogitoSceneManager._current_player_node, \"temp\")
+	
+	CogitoSceneManager.fade_out()
+	await CogitoSceneManager.fade_finished
+	
+	# CogitoSceneManager.load_next_scene(path_to_new_scene, target_connector, \"temp\", CogitoSceneManager.CogitoSceneLoadMode.TEMP)
+	CogitoSceneManager.load_next_scene(target_scene_path, target_connector, \"temp\", CogitoSceneManager.CogitoSceneLoadMode.TEMP)
+"
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dlejt"]
 size = Vector3(5.53, 6.80804, 5.77135)
 
 [node name="mainworld" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54863, -1.23779, -4.63899)
-script = ExtResource("1_7vrjw")
+script = SubResource("GDScript_7w3xb")
 
 [node name="roads" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 262.732, 0.00543641, -139.964)
@@ -1233,7 +1337,7 @@ top_level = true
 metadata/_edit_lock_ = true
 
 [node name="CogitoPlayer" parent="." instance=ExtResource("12_nr6q2")]
-transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 258.627, 9.22888, 101.795)
+transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 402.069, 7.34511, -93.9694)
 fall_damage = 1
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
@@ -3668,7 +3772,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.8353, 4.88839, -8.70152)
 
 [node name="TransitionZone_LAB2" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.912, 5.08857, 85.868)
-script = ExtResource("116_nr6q2")
+script = SubResource("GDScript_vjxb2")
 target_scene = ExtResource("117_087cg")
 target_scene_path = "uid://csee7u7nhoctl"
 target_connector = "ConnectorFromMainWorld"
@@ -3679,7 +3783,7 @@ shape = SubResource("BoxShape3D_dlejt")
 
 [node name="TransitionZone_LAB" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 422.513, 3.75369, -87.432)
-script = ExtResource("116_nr6q2")
+script = SubResource("GDScript_vjxb2")
 target_scene = ExtResource("117_087cg")
 target_scene_path = "uid://b5kwhrbgvdste"
 target_connector = "ConnectorFromMainWorld"

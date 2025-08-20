@@ -3,13 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dftdetr3035ec"
-path="res://.godot/imported/statue.gltf-01a56216c8afd374a60848e8eb863604.scn"
+uid="uid://btp87e7bm3ujy"
+valid=false
 
 [deps]
 
-source_file="res://statue.gltf"
-dest_files=["res://.godot/imported/statue.gltf-01a56216c8afd374a60848e8eb863604.scn"]
+source_file="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/obj/scene.gltf"
 
 [params]
 

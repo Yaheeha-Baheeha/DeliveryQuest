@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://k70chhoht058"
-path="res://.godot/imported/KSI_floor_high.glb-ba6d1874850304185ec7a447f980b050.scn"
+path="res://.godot/imported/KSI_floor_high.glb-ddcd953866d0019cabe29a48ba8a55f4.scn"
 
 [deps]
 
-source_file="res://addons/cogito/Assets/Models/Kenney/SpaceInterior/GLTF format/KSI_floor_high.glb"
-dest_files=["res://.godot/imported/KSI_floor_high.glb-ba6d1874850304185ec7a447f980b050.scn"]
+source_file="res://addons/cogito/Assets/Models/Kenney/KSI_floor_high.glb"
+dest_files=["res://.godot/imported/KSI_floor_high.glb-ddcd953866d0019cabe29a48ba8a55f4.scn"]
 
 [params]
 

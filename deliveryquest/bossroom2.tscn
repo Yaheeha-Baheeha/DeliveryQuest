@@ -496,125 +496,125 @@ sky_mode = 1
 [node name="tree_dead_medium2" parent="." instance=ExtResource("16_6g8s1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.45354, 0.492699, -4.1146)
 
+[node name="tree_dead_large_decorated2" parent="tree_dead_medium2" instance=ExtResource("17_6g8s1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.8515, -0.027984, 33.4346)
+
+[node name="tree_dead_medium3" parent="tree_dead_medium2" instance=ExtResource("16_6g8s1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8228, 9.0003e-06, 28.1151)
+
+[node name="tree_dead_small2" parent="tree_dead_medium2" instance=ExtResource("18_elxwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.189, -0.225167, 31.5114)
+
+[node name="skull_candle2" parent="tree_dead_medium2" instance=ExtResource("19_bnlhy")]
+transform = Transform3D(-0.281404, 0, -0.959589, 0, 1, 0, 0.959589, 0, -0.281404, 17.6358, -0.323225, 15.3364)
+
+[node name="skull2" parent="tree_dead_medium2" instance=ExtResource("14_6d48t")]
+transform = Transform3D(-0.436441, 0, -0.899733, 0, 1, 0, 0.899733, 0, -0.436441, 19.6915, -0.300238, 18.32)
+
+[node name="shrine2" parent="tree_dead_medium2" instance=ExtResource("13_kscej")]
+transform = Transform3D(-0.289149, 0, -0.957284, 0, 1, 0, 0.957284, 0, -0.289149, 18.8371, -0.300239, 16.5656)
+
+[node name="ribcage2" parent="tree_dead_medium2" instance=ExtResource("2_kcert")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.9619, 0.08674, 8.69313)
+
+[node name="pumpkin_yellow_jackolantern2" parent="tree_dead_medium2" instance=ExtResource("20_26orm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.11837, -0.296574, -7.8146)
+
+[node name="post_skull2" parent="tree_dead_medium2" instance=ExtResource("21_p7dj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.0837, -0.284866, -8.0214)
+
+[node name="post_skull3" parent="tree_dead_medium2" instance=ExtResource("21_p7dj3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.81542, -0.300247, -7.5744)
+
+[node name="post2" parent="tree_dead_medium2" instance=ExtResource("22_ihvei")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.60456, -0.300241, 4.93348)
+
+[node name="plaque2" parent="tree_dead_medium2" instance=ExtResource("23_r31nh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.54332, -0.30024, 9.52639)
+
+[node name="path_D2" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.41232, -0.300239, 16.1117)
+
+[node name="path_D3" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.472, -0.300239, 16.1631)
+
+[node name="path_D4" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.9433, -0.300235, 25.9966)
+
+[node name="path_C2" parent="tree_dead_medium2" instance=ExtResource("24_5cqrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.6172, -0.30024, 11.3988)
+
+[node name="path_D5" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.2806, -0.300238, 16.0142)
+
+[node name="path_C3" parent="tree_dead_medium2" instance=ExtResource("24_5cqrx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.89824, -0.300234, 26.6619)
+
+[node name="path_D6" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.8467, -0.300237, 20.8227)
+
+[node name="path_D7" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.28189, -0.300236, 22.5516)
+
+[node name="path_D8" parent="tree_dead_medium2" instance=ExtResource("4_7snjt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.42195, -0.300237, 20.0583)
+
+[node name="candle_triple2" parent="tree_dead_medium2" instance=ExtResource("6_jmyqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.91635, -0.300245, -3.8801)
+
+[node name="candle_thin2" parent="tree_dead_medium2" instance=ExtResource("8_gdnrk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.69798, 0.290518, -8.6545)
+
+[node name="coffin2" parent="tree_dead_medium2" instance=ExtResource("25_h3ab0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.5389, -0.300245, -3.97956)
+
+[node name="candle_triple3" parent="tree_dead_medium2" instance=ExtResource("6_jmyqb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.62414, -0.300244, 0.29105)
+
+[node name="candle_melted2" parent="tree_dead_medium2" instance=ExtResource("7_j6682")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00245, -0.300245, -2.35903)
+
+[node name="gravemarker_A2" parent="tree_dead_medium2" instance=ExtResource("26_yfmhj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.498, -0.256754, 37.2406)
+
+[node name="gravemarker_B2" parent="tree_dead_medium2" instance=ExtResource("27_73up6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.61107, -0.300232, 35.9254)
+
+[node name="coffin_decorated2" parent="tree_dead_medium2" instance=ExtResource("28_ed6xh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.219, -0.300236, 21.6116)
+
+[node name="bone_C2" parent="tree_dead_medium2" instance=ExtResource("29_qbj2n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.24793, -0.162199, 14.4996)
+
+[node name="bench_decorated2" parent="tree_dead_medium2" instance=ExtResource("30_6cvwl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.41327, -0.300237, 20.3182)
+
+[node name="pumpkin_orange2" parent="tree_dead_medium2" instance=ExtResource("10_xadq6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27146, -0.296855, 13.9842)
+
+[node name="pumpkin_orange_jackolantern2" parent="tree_dead_medium2" instance=ExtResource("9_khm26")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.52145, -0.296567, 15.6114)
+
+[node name="pumpkin_orange_small2" parent="tree_dead_medium2" instance=ExtResource("11_arstl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.61468, -0.297526, 18.6106)
+
+[node name="pumpkin_yellow2" parent="tree_dead_medium2" instance=ExtResource("12_v61el")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8442, -0.296849, 34.578)
+
+[node name="skull3" parent="tree_dead_medium2" instance=ExtResource("14_6d48t")]
+transform = Transform3D(0.0335912, 0, 0.999436, 0, 1, 0, -0.999436, 0, 0.0335912, 5.5805, -0.300232, 36.0862)
+
+[node name="skull_candle3" parent="tree_dead_medium2" instance=ExtResource("19_bnlhy")]
+transform = Transform3D(-0.83685, 0, -0.547432, 0, 1, 0, 0.547432, 0, -0.83685, 16.318, -0.300234, 30.4175)
+
+[node name="tree_dead_large2" parent="tree_dead_medium2" instance=ExtResource("31_fyruv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.03221, -0.027983, 36.1648)
+
+[node name="tree_dead_small3" parent="tree_dead_medium2" instance=ExtResource("18_elxwp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7495, -0.026807, 37.1413)
+
+[node name="plaque3" parent="tree_dead_medium2" instance=ExtResource("23_r31nh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05143, -0.300235, 27.2313)
+
 [node name="ConnectorFromMainWorld" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554031, 1.60421, -8.55755)
-
-[node name="tree_dead_large_decorated2" parent="." instance=ExtResource("17_6g8s1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.398, 0.464715, 29.32)
-
-[node name="tree_dead_medium3" parent="." instance=ExtResource("16_6g8s1")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.3693, 0.492708, 24.0005)
-
-[node name="tree_dead_small2" parent="." instance=ExtResource("18_elxwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.7355, 0.267532, 27.3968)
-
-[node name="skull_candle2" parent="." instance=ExtResource("19_bnlhy")]
-transform = Transform3D(-0.281404, 0, -0.959589, 0, 1, 0, 0.959589, 0, -0.281404, 9.18228, 0.169474, 11.2218)
-
-[node name="skull2" parent="." instance=ExtResource("14_6d48t")]
-transform = Transform3D(-0.436441, 0, -0.899733, 0, 1, 0, 0.899733, 0, -0.436441, 11.238, 0.192461, 14.2054)
-
-[node name="shrine2" parent="." instance=ExtResource("13_kscej")]
-transform = Transform3D(-0.289149, 0, -0.957284, 0, 1, 0, 0.957284, 0, -0.289149, 10.3836, 0.19246, 12.451)
-
-[node name="ribcage2" parent="." instance=ExtResource("2_kcert")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.50833, 0.579439, 4.57853)
-
-[node name="pumpkin_yellow_jackolantern2" parent="." instance=ExtResource("20_26orm")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.33517, 0.196125, -11.9292)
-
-[node name="post_skull2" parent="." instance=ExtResource("21_p7dj3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6302, 0.207833, -12.136)
-
-[node name="post_skull3" parent="." instance=ExtResource("21_p7dj3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.63812, 0.192452, -11.689)
-
-[node name="post2" parent="." instance=ExtResource("22_ihvei")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.0581, 0.192458, 0.818884)
-
-[node name="plaque2" parent="." instance=ExtResource("23_r31nh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.91022, 0.192459, 5.41179)
-
-[node name="path_D2" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.04122, 0.19246, 11.9971)
-
-[node name="path_D3" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.01845, 0.19246, 12.0485)
-
-[node name="path_D4" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.48978, 0.192464, 21.882)
-
-[node name="path_C2" parent="." instance=ExtResource("24_5cqrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.16364, 0.192459, 7.28419)
-
-[node name="path_D5" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.82707, 0.192461, 11.8996)
-
-[node name="path_C3" parent="." instance=ExtResource("24_5cqrx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5553, 0.192465, 22.5473)
-
-[node name="path_D6" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.3932, 0.192462, 16.7081)
-
-[node name="path_D7" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.17165, 0.192463, 18.437)
-
-[node name="path_D8" parent="." instance=ExtResource("4_7snjt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.03159, 0.192462, 15.9437)
-
-[node name="candle_triple2" parent="." instance=ExtResource("6_jmyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.36989, 0.192454, -7.9947)
-
-[node name="candle_thin2" parent="." instance=ExtResource("8_gdnrk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.244445, 0.783217, -12.7691)
-
-[node name="coffin2" parent="." instance=ExtResource("25_h3ab0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.0854, 0.192454, -8.09416)
-
-[node name="candle_triple3" parent="." instance=ExtResource("6_jmyqb")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.07768, 0.192455, -3.82355)
-
-[node name="candle_melted2" parent="." instance=ExtResource("7_j6682")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.45599, 0.192454, -6.47363)
-
-[node name="gravemarker_A2" parent="." instance=ExtResource("26_yfmhj")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.04447, 0.235945, 33.126)
-
-[node name="gravemarker_B2" parent="." instance=ExtResource("27_73up6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.84247, 0.192467, 31.8108)
-
-[node name="coffin_decorated2" parent="." instance=ExtResource("28_ed6xh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.76546, 0.192463, 17.497)
-
-[node name="bone_C2" parent="." instance=ExtResource("29_qbj2n")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.20561, 0.3305, 10.385)
-
-[node name="bench_decorated2" parent="." instance=ExtResource("30_6cvwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.86681, 0.192462, 16.2036)
-
-[node name="pumpkin_orange2" parent="." instance=ExtResource("10_xadq6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.18208, 0.195844, 9.86958)
-
-[node name="pumpkin_orange_jackolantern2" parent="." instance=ExtResource("9_khm26")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.93209, 0.196132, 11.4968)
-
-[node name="pumpkin_orange_small2" parent="." instance=ExtResource("11_arstl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.83886, 0.195173, 14.496)
-
-[node name="pumpkin_yellow2" parent="." instance=ExtResource("12_v61el")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.39064, 0.19585, 30.4634)
-
-[node name="skull3" parent="." instance=ExtResource("14_6d48t")]
-transform = Transform3D(0.0335912, 0, 0.999436, 0, 1, 0, -0.999436, 0, 0.0335912, -2.87304, 0.192467, 31.9716)
-
-[node name="skull_candle3" parent="." instance=ExtResource("19_bnlhy")]
-transform = Transform3D(-0.83685, 0, -0.547432, 0, 1, 0, 0.547432, 0, -0.83685, 7.86444, 0.192465, 26.3029)
-
-[node name="tree_dead_large2" parent="." instance=ExtResource("31_fyruv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42133, 0.464716, 32.0502)
-
-[node name="tree_dead_small3" parent="." instance=ExtResource("18_elxwp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.29599, 0.465892, 33.0267)
-
-[node name="plaque3" parent="." instance=ExtResource("23_r31nh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.40211, 0.192464, 23.1167)

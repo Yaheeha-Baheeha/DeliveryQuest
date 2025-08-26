@@ -225,7 +225,7 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0.261799, 0)]
+"values": [Vector3(0, 0, 0), Vector3(0, 1.68396, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_qj67x"]

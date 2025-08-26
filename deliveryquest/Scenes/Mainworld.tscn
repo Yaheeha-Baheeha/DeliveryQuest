@@ -1,4 +1,4 @@
-[gd_scene load_steps=137 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=138 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="PackedScene" uid="uid://bi1fnwvtcgjhl" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_B.prefab.scn" id="1_4wp0g"]
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
@@ -125,6 +125,7 @@
 [ext_resource type="Script" uid="uid://6010ovanwkwo" path="res://addons/cogito/Scripts/scene_transition_zone.gd" id="116_nr6q2"]
 [ext_resource type="PackedScene" uid="uid://b5kwhrbgvdste" path="res://boss_room_1.tscn" id="117_087cg"]
 [ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="125_ljpb5"]
+[ext_resource type="PackedScene" uid="uid://8yjvixt6oadc" path="res://Scenes/Loot/chest.tscn" id="126_qi3j0"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ltp5"]
 size = Vector2(1000, 1000)
@@ -3785,3 +3786,6 @@ transform = Transform3D(0.0753094, 0, 0.99716, 0, 1, 0, -0.99716, 0, 0.0753094, 
 
 [node name="Pickup_Sword" parent="." instance=ExtResource("125_ljpb5")]
 transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 300.631, 1.66326, -71.0738)
+
+[node name="Chest" parent="." instance=ExtResource("126_qi3j0")]
+transform = Transform3D(-1.44248e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.44248e-08, 298.446, 1.36128, -70.7079)

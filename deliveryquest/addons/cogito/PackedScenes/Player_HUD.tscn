@@ -611,7 +611,7 @@ focus_neighbor_bottom = NodePath("../CogitoQuickslotContainer4")
 focus_mode = 2
 
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer1/MarginContainerInputIcon" index="0"]
-position = Vector2(59, 32)
+position = Vector2(33.6667, 58.6666)
 
 [node name="CogitoQuickslotContainer2" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
 layout_mode = 0
@@ -640,7 +640,7 @@ focus_mode = 2
 input_action = "quickslot_3"
 
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer3/MarginContainerInputIcon" index="0"]
-position = Vector2(0, 32)
+position = Vector2(33.3333, 58.6666)
 
 [node name="CogitoQuickslotContainer4" parent="InventoryInterface/QuickSlots" instance=ExtResource("21_q2hxa")]
 layout_mode = 0
@@ -656,7 +656,7 @@ focus_mode = 2
 input_action = "quickslot_4"
 
 [node name="DynamicInputIcon" parent="InventoryInterface/QuickSlots/CogitoQuickslotContainer4/MarginContainerInputIcon" index="0"]
-position = Vector2(32, 0)
+position = Vector2(32, 58.6666)
 
 [node name="DeathScreen" parent="." instance=ExtResource("23_4avie")]
 visible = false

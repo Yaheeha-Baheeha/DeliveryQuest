@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=6 format=3 uid="uid://b7mprdtj1r5r"]
+
+[ext_resource type="Script" uid="uid://bw38ep6ean3wy" path="res://addons/cogito/Components/LootTables/LootDropEntry.gd" id="1_h4cqi"]
+[ext_resource type="Script" uid="uid://dj1uuvia16dhm" path="res://addons/cogito/Components/LootTables/BaseLootTable.gd" id="2_mypgp"]
+[ext_resource type="Resource" uid="uid://c042tx3p36ivd" path="res://Resources/RealKnifeDrop.tres" id="2_xpo0o"]
+[ext_resource type="Resource" uid="uid://cpqxudfjtjw66" path="res://addons/cogito/InventoryPD/Items/Cogito_HealthPotion.tres" id="3_vkyh2"]
+
+[sub_resource type="Resource" id="Resource_ocese"]
+script = ExtResource("1_h4cqi")
+name = "Health"
+droptype = 2
+weight = 50.0
+inventory_item = ExtResource("3_vkyh2")
+quantity_min = 1
+quantity_max = 30
+quest_id = -1
+quest_item_total_count = 1
+metadata/_custom_type_script = "uid://bw38ep6ean3wy"
+
+[resource]
+script = ExtResource("2_mypgp")
+drops = Array[ExtResource("1_h4cqi")]([ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), SubResource("Resource_ocese")])
+metadata/_custom_type_script = "uid://dj1uuvia16dhm"

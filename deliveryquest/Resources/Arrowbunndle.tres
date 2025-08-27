@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="LootDropEntry" load_steps=3 format=3 uid="uid://dt7t2psfewfu0"]
+
+[ext_resource type="Resource" uid="uid://obumryyrjb1k" path="res://Resources/arrowbundlereal.tres" id="1_8riu2"]
+[ext_resource type="Script" uid="uid://bw38ep6ean3wy" path="res://addons/cogito/Components/LootTables/LootDropEntry.gd" id="1_awkqn"]
+
+[resource]
+script = ExtResource("1_awkqn")
+name = "Arrowsss"
+droptype = 4
+weight = 100.0
+inventory_item = ExtResource("1_8riu2")
+quantity_min = 1
+quantity_max = 1
+quest_id = 1
+quest_item_total_count = 50
+metadata/_custom_type_script = "uid://bw38ep6ean3wy"

@@ -10,7 +10,7 @@
 script = ExtResource("4_331w0")
 grid = false
 starter_inventory = Array[ExtResource("3_30il6")]([])
-inventory_size = Vector2i(4, 1)
+inventory_size = Vector2i(12, 1)
 inventory_slots = Array[ExtResource("3_30il6")]([])
 metadata/_custom_type_script = "uid://btnha2whsheir"
 
@@ -169,34 +169,6 @@ height = 0.565172
 [sub_resource type="BoxShape3D" id="BoxShape3D_ek1ax"]
 size = Vector3(2.80116, 1.72513, 3.58252)
 
-[sub_resource type="Animation" id="Animation_m3tnr"]
-resource_name = "open"
-length = 0.15
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Lid:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0.87317, 0.735013, 0), Vector3(0.87317, 0.735013, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Lid:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.133333),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.10837)]
-}
-
 [sub_resource type="Animation" id="Animation_mh1dj"]
 length = 0.001
 tracks/0/type = "value"
@@ -240,6 +212,34 @@ tracks/0/keys = {
 "values": [Vector3(0, 0, -1.10837), Vector3(0, 0, 0), Vector3(0, 0, -0.0398459), Vector3(0, 0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_m3tnr"]
+resource_name = "open"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Lid:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.87317, 0.735013, 0), Vector3(0.87317, 0.735013, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Lid:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.133333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -1.10837)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_30il6"]
 _data = {
 &"RESET": SubResource("Animation_mh1dj"),
@@ -253,9 +253,8 @@ collision_layer = 3
 collision_mask = 0
 script = ExtResource("1_mh1dj")
 loot_table = ExtResource("2_5ac5c")
+amount_of_items_to_drop = 8
 inventory_respawning_logic = 1
-respawn_timer_minutes = 30.0
-respawn_timer_seconds = 15.0
 display_name = "Chest"
 inventory_data = SubResource("Resource_q2lmv")
 uses_animation = true

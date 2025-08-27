@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://cgptfktecc5yn"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_w1pok"]
+
+[resource]
+script = ExtResource("1_w1pok")
+id = 2
+quest_name = "Find the Crossbow"
+quest_title = "Find the Crossbow"
+quest_description_active = "Pick up the Crossbow"
+quest_description_completed = "You completed this quest."
+quest_description_failed = "You failed this quest."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

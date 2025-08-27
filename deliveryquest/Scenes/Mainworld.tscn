@@ -1,9 +1,11 @@
-[gd_scene load_steps=138 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=141 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="PackedScene" uid="uid://bi1fnwvtcgjhl" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_B.prefab.scn" id="1_4wp0g"]
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://b6vttmuwlbnpq" path="res://Scenes/enemies/knight.tscn" id="2_087cg"]
+[ext_resource type="Script" uid="uid://d2jjqadlnhp6x" path="res://addons/cogito/QuestSystem/Components/cogito_quest_updater.gd" id="2_ctels"]
 [ext_resource type="PackedScene" uid="uid://dmxgglnmegev7" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_A.prefab.scn" id="2_hr1cd"]
+[ext_resource type="Resource" uid="uid://cgptfktecc5yn" path="res://Quests/GetCrossBow.tres" id="3_44jbl"]
 [ext_resource type="PackedScene" uid="uid://bq3durpimelo2" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_B.prefab.scn" id="3_b4p4q"]
 [ext_resource type="PackedScene" uid="uid://c1i5a7ejkcatc" path="res://Scenes/enemies/barbarian.tscn" id="3_dlejt"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
@@ -126,6 +128,9 @@
 [ext_resource type="PackedScene" uid="uid://b5kwhrbgvdste" path="res://boss_room_1.tscn" id="117_087cg"]
 [ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="125_ljpb5"]
 [ext_resource type="PackedScene" uid="uid://8yjvixt6oadc" path="res://Scenes/Loot/chest.tscn" id="126_qi3j0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_12ax6"]
+size = Vector3(5, 3.3, 4)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ltp5"]
 size = Vector2(1000, 1000)
@@ -293,6 +298,15 @@ polygons = [PackedInt32Array(1, 5, 2), PackedInt32Array(2, 5, 6), PackedInt32Arr
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54863, -1.23779, -4.63899)
 script = ExtResource("1_7vrjw")
 
+[node name="Archive_QuestStarter" type="Area3D" parent="."]
+transform = Transform3D(1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, 1, 295.973, 1.39958, -61.7025)
+script = ExtResource("2_ctels")
+quest_to_update = ExtResource("3_44jbl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Archive_QuestStarter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, -0.5)
+shape = SubResource("BoxShape3D_12ax6")
+
 [node name="TempFeatures" type="Node3D" parent="."]
 transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 295.879, 1.04789, -59.055)
 
@@ -363,6 +377,16 @@ transform = Transform3D(0.99155, 0, 0.12973, 0, 1, 0, -0.12973, 0, 0.99155, 7.38
 
 [node name="pickup_crossbow" parent="TempFeatures" instance=ExtResource("8_3yh3x")]
 transform = Transform3D(0.99155, 0, 0.12973, 0, 1, 0, -0.12973, 0, 0.99155, 4.84036, 0.351692, -12.1805)
+
+[node name="QUESTUPDATE" type="Node3D" parent="TempFeatures/pickup_crossbow"]
+script = ExtResource("2_ctels")
+quest_to_update = ExtResource("3_44jbl")
+update_type = 1
+
+[node name="QUESTUPDATE2" type="Node3D" parent="TempFeatures/pickup_crossbow"]
+script = ExtResource("2_ctels")
+quest_to_update = ExtResource("3_44jbl")
+update_type = 1
 
 [node name="PickupScroll" parent="TempFeatures" instance=ExtResource("9_ctels")]
 transform = Transform3D(0.39662, 0, 0.051892, 0, 0.4, 0, -0.051892, 0, 0.39662, 3.26706, 0.358997, -11.886)
@@ -3789,3 +3813,8 @@ transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 300.631, 1.66326, -7
 
 [node name="Chest" parent="." instance=ExtResource("126_qi3j0")]
 transform = Transform3D(-1.44248e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.44248e-08, 298.446, 1.36128, -70.7079)
+amount_of_items_to_drop = 20
+time_passes_when_unloaded = false
+
+[connection signal="body_entered" from="Archive_QuestStarter" to="Archive_QuestStarter" method="_on_body_entered"]
+[connection signal="object_exits_tree" from="TempFeatures/pickup_crossbow" to="TempFeatures/pickup_crossbow/QUESTUPDATE" method="update_quest"]

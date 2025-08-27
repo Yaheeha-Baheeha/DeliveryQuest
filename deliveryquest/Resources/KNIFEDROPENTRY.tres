@@ -6,11 +6,11 @@
 [resource]
 script = ExtResource("2_kmk2d")
 name = "Knife"
-droptype = 1
+droptype = 4
 weight = 100.0
 inventory_item = ExtResource("1_37o2e")
 quantity_min = 4
 quantity_max = 4
-quest_id = -1
+quest_id = 2
 quest_item_total_count = 1
 metadata/_custom_type_script = "uid://bw38ep6ean3wy"

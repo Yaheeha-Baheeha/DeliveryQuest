@@ -1,4 +1,4 @@
-[gd_scene load_steps=141 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=140 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="PackedScene" uid="uid://bi1fnwvtcgjhl" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_B.prefab.scn" id="1_4wp0g"]
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://c1i5a7ejkcatc" path="res://Scenes/enemies/barbarian.tscn" id="3_dlejt"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
 [ext_resource type="Script" uid="uid://cabgyitb3d8cj" path="res://addons/cogito/Enemies/cogito_patrol_path.gd" id="4_n6ysv"]
-[ext_resource type="PackedScene" uid="uid://ctrisi3giijcs" path="res://addons/cogito/DemoScenes/DemoPrefabs/respawning_fridge.tscn" id="6_ljpb5"]
 [ext_resource type="PackedScene" uid="uid://dsl1qfxbomqu6" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_01_B.prefab.scn" id="6_mtuv6"]
 [ext_resource type="PackedScene" uid="uid://deayc55uja673" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Raod_03_B.prefab.scn" id="7_hlf8l"]
 [ext_resource type="PackedScene" uid="uid://c8owl6a25b7i8" path="res://Scenes/Pickups/arrow_bundle.tscn" id="7_qi3j0"]
@@ -129,8 +128,8 @@
 [ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="125_ljpb5"]
 [ext_resource type="PackedScene" uid="uid://8yjvixt6oadc" path="res://Scenes/Loot/chest.tscn" id="126_qi3j0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_12ax6"]
-size = Vector3(5, 3.3, 4)
+[sub_resource type="BoxShape3D" id="BoxShape3D_3yh3x"]
+size = Vector3(30.2467, 8.58887, 28.7836)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_4ltp5"]
 size = Vector2(1000, 1000)
@@ -298,15 +297,6 @@ polygons = [PackedInt32Array(1, 5, 2), PackedInt32Array(2, 5, 6), PackedInt32Arr
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.54863, -1.23779, -4.63899)
 script = ExtResource("1_7vrjw")
 
-[node name="Archive_QuestStarter" type="Area3D" parent="."]
-transform = Transform3D(1, 0, -1.49012e-07, 0, 1, 0, 1.49012e-07, 0, 1, 295.973, 1.39958, -61.7025)
-script = ExtResource("2_ctels")
-quest_to_update = ExtResource("3_44jbl")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Archive_QuestStarter"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.15, -0.5)
-shape = SubResource("BoxShape3D_12ax6")
-
 [node name="TempFeatures" type="Node3D" parent="."]
 transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 295.879, 1.04789, -59.055)
 
@@ -343,19 +333,6 @@ transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -0.76527
 
 [node name="Marker3D3" type="Marker3D" parent="TempFeatures/BarbarianPatrolpath"]
 transform = Transform3D(1, 0, -5.96046e-08, 0, 1, 0, 5.96046e-08, 0, 1, -0.956993, 0.323398, 20.6011)
-
-[node name="kitchenFridgeContainer" parent="TempFeatures" instance=ExtResource("6_ljpb5")]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 3.13229, 0, -13.2764)
-inventory_respawning_logic = 0
-time_passes_when_unloaded = null
-respawn_timer_days = null
-respawn_timer_hours = null
-respawn_timer_minutes = null
-respawn_timer_seconds = null
-display_name = "Non Respawning Lootable Container"
-text_when_closed = null
-text_when_open = null
-close_animation = null
 
 [node name="ArrowBundle" parent="TempFeatures" instance=ExtResource("7_qi3j0")]
 transform = Transform3D(0.99155, 0, 0.12973, 0, 1, 0, -0.12973, 0, 0.99155, 5.77884, 0.541201, -12.7078)
@@ -396,6 +373,14 @@ transform = Transform3D(0.99155, 0, 0.12973, 0, 1, 0, -0.12973, 0, 0.99155, 6.11
 
 [node name="ArrowBundle8" parent="TempFeatures" instance=ExtResource("7_qi3j0")]
 transform = Transform3D(0.99155, 0, 0.12973, 0, 1, 0, -0.12973, 0, 0.99155, 5.99927, 0.541202, -13.849)
+
+[node name="Area3D" type="Area3D" parent="TempFeatures"]
+script = ExtResource("2_ctels")
+quest_to_update = ExtResource("3_44jbl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="TempFeatures/Area3D"]
+transform = Transform3D(1, 0, -2.68221e-07, 0, 1, 0, 2.68221e-07, 0, 1, -8.40079, 0.0112305, 2.83348)
+shape = SubResource("BoxShape3D_3yh3x")
 
 [node name="CogitoPlayer" parent="." instance=ExtResource("12_nr6q2")]
 transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 295.879, 2.66105, -61.2651)
@@ -2726,7 +2711,7 @@ transform = Transform3D(0.0574833, 0, -1.99917, 0, 2, 0, 1.99917, 0, 0.0574833, 
 transform = Transform3D(0.0574833, 0, -1.99917, 0, 2, 0, 1.99917, 0, 0.0574833, -7.2451, 0, -4.36816)
 
 [node name="SM_Dummy_01_B" parent="NavigationRegion3D/farm" instance=ExtResource("77_s14lr")]
-transform = Transform3D(1.105, 0, 0, 0, 1.105, 0, 0, 0, 1.105, 6.88821, 0.310722, -3.00904)
+transform = Transform3D(1.105, 0, 0, 0, 1.105, 0, 0, 0, 1.105, 6.88821, 0.553512, -3.00904)
 
 [node name="SM_Cockshot_01_A2" parent="NavigationRegion3D/farm" instance=ExtResource("73_3ey7c")]
 transform = Transform3D(0.990584, 0, 0.136909, 0, 1, 0, -0.136909, 0, 0.990584, -125.403, -4.76837e-07, -26.6503)
@@ -3813,8 +3798,10 @@ transform = Transform3D(0.54, 0, 0, 0, 0.54, 0, 0, 0, 0.54, 300.631, 1.66326, -7
 
 [node name="Chest" parent="." instance=ExtResource("126_qi3j0")]
 transform = Transform3D(-1.44248e-08, 0, 0.33, 0, 0.33, 0, -0.33, 0, -1.44248e-08, 298.446, 1.36128, -70.7079)
-amount_of_items_to_drop = 20
-time_passes_when_unloaded = false
+amount_of_items_to_drop = 4
+inventory_respawning_logic = 1
+respawn_timer_minutes = 0.0
+respawn_timer_seconds = 20.0
 
-[connection signal="body_entered" from="Archive_QuestStarter" to="Archive_QuestStarter" method="_on_body_entered"]
 [connection signal="object_exits_tree" from="TempFeatures/pickup_crossbow" to="TempFeatures/pickup_crossbow/QUESTUPDATE" method="update_quest"]
+[connection signal="body_entered" from="TempFeatures/Area3D" to="TempFeatures/Area3D" method="_on_body_entered"]

@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://dmnj1mo5w55u6"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_u6oj3"]
+
+[resource]
+script = ExtResource("1_u6oj3")
+id = 111
+quest_name = "Choose the Sword"
+quest_title = "Choose the Sword"
+quest_description_active = "Pick up the sword."
+quest_description_completed = "You are now a warrior."
+quest_description_failed = "You chose another weapon.
+"
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

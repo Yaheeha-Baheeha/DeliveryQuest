@@ -7,5 +7,5 @@
 
 [resource]
 script = ExtResource("2_mypgp")
-drops = Array[ExtResource("1_h4cqi")]([ExtResource("2_xpo0o"), ExtResource("4_vkyh2"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o")])
+drops = Array[ExtResource("1_h4cqi")]([ExtResource("4_vkyh2"), ExtResource("4_vkyh2"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o")])
 metadata/_custom_type_script = "uid://dj1uuvia16dhm"

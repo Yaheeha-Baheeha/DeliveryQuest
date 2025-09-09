@@ -7,11 +7,11 @@
 resource_local_to_scene = true
 script = ExtResource("2_dnv1c")
 name = "Knife"
-droptype = 4
+droptype = 1
 weight = 100.0
 inventory_item = ExtResource("1_5sot5")
-quantity_min = 4
-quantity_max = 4
-quest_id = 2
-quest_item_total_count = 50
+quantity_min = 1
+quantity_max = 1
+quest_id = -1
+quest_item_total_count = 1
 metadata/_custom_type_script = "uid://bw38ep6ean3wy"

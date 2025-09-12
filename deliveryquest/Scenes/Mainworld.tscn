@@ -1,7 +1,6 @@
-[gd_scene load_steps=133 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=134 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
-[ext_resource type="PackedScene" uid="uid://dmxgglnmegev7" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_A.prefab.scn" id="2_hr1cd"]
 [ext_resource type="PackedScene" uid="uid://bq3durpimelo2" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_B.prefab.scn" id="3_b4p4q"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
 [ext_resource type="PackedScene" uid="uid://dqibkuqxuhd14" path="res://addons/cogito/Components/castle.blend" id="6_dlejt"]
@@ -9,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://bpx2ac8l0xsco" path="res://statue_2/modular_dungeon (1)/dungeon.tscn" id="7_087cg"]
 [ext_resource type="PackedScene" uid="uid://deayc55uja673" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Raod_03_B.prefab.scn" id="7_hlf8l"]
 [ext_resource type="PackedScene" uid="uid://db23f2y8api70" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Cart_01_B.prefab.scn" id="8_7w3xb"]
+[ext_resource type="PackedScene" uid="uid://li7sdx2dwepf" path="res://Scenes/enemies/Lady_assassin.tscn" id="9_n6ysv"]
 [ext_resource type="Terrain3DMaterial" uid="uid://cucldk088ofyp" path="res://TerrainDir/new_terrain_3d_material.tres" id="10_7vrjw"]
+[ext_resource type="PackedScene" uid="uid://dthddwjy8e2vk" path="res://Scenes/enemies/assassin.tscn" id="10_rbn25"]
 [ext_resource type="Terrain3DAssets" uid="uid://cuqdmkilbu7em" path="res://TerrainDir/new_terrain_3d_assets.tres" id="11_jnvg0"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="12_nr6q2"]
 [ext_resource type="PackedScene" uid="uid://seh2saedcgoy" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Hous_28_B.prefab.scn" id="14_dlejt"]
@@ -369,94 +370,201 @@ shape = SubResource("BoxShape3D_dlejt")
 [node name="enemies" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 290.236, 1.2959, -9.67237)
 
-[node name="Knight" parent="enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67224, 0.0159979, -0.261731)
+[node name="Knights" type="Node3D" parent="enemies"]
+
+[node name="Knight" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27185, 0.0159979, -25.1391)
 patrol_path = NodePath("../knightpatrolpath")
 
-[node name="knightpatrolpath" type="Node3D" parent="enemies" node_paths=PackedStringArray("patrol_points")]
+[node name="knightpatrolpath" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59961, 0, -24.8774)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
-[node name="pointa" type="Marker3D" parent="enemies/knightpatrolpath"]
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 
-[node name="pointb" type="Marker3D" parent="enemies/knightpatrolpath"]
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1626)
 
-[node name="pointc" type="Marker3D" parent="enemies/knightpatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, -4.74482)
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, 4.69351)
 
-[node name="Knight2" parent="enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+[node name="Knight2" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8517, 0.0159979, -0.261731)
 patrol_path = NodePath("../knightpatrolpath")
 
-[node name="knightpatrolpath2" type="Node3D" parent="enemies" node_paths=PackedStringArray("patrol_points")]
+[node name="knightpatrolpath2" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5239, 0, 0)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
-[node name="pointa" type="Marker3D" parent="enemies/knightpatrolpath2"]
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 
-[node name="pointb" type="Marker3D" parent="enemies/knightpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1626)
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6401, 0, -11.1626)
 
-[node name="pointc" type="Marker3D" parent="enemies/knightpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, -4.74482)
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, -1.09784)
 
-[node name="Knight3" parent="enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+[node name="Knight3" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(0.056989, 0, -0.998375, 0, 1, 0, 0.998375, 0, 0.056989, -30.4525, 0.0159979, -28.683)
 patrol_path = NodePath("../knightpatrolpath")
 
-[node name="knightpatrolpath3" type="Node3D" parent="enemies" node_paths=PackedStringArray("patrol_points")]
+[node name="knightpatrolpath3" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(0.056989, 0, -0.998375, 0, 1, 0, 0.998375, 0, 0.056989, -30.9231, 0, -32.3343)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
-[node name="pointa" type="Marker3D" parent="enemies/knightpatrolpath3"]
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 
-[node name="pointb" type="Marker3D" parent="enemies/knightpatrolpath3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1626)
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath3"]
+transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 24.9334, 0, -20.0717)
 
-[node name="pointc" type="Marker3D" parent="enemies/knightpatrolpath3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, -4.74482)
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath3"]
+transform = Transform3D(1, 0, -1.11759e-08, 0, 1, 0, 1.11759e-08, 0, 1, 9.6786, 0, -49.3983)
 
-[node name="Knight4" parent="enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
-transform = Transform3D(0.658374, 0, -0.752691, 0, 1, 0, 0.752691, 0, 0.658374, 16.4893, 0.0159979, 15.9738)
+[node name="Knight4" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+transform = Transform3D(0.997774, 0, -0.0666922, 0, 1, 0, 0.0666922, 0, 0.997774, 16.4893, 0.0159979, 14.3796)
 patrol_path = NodePath("../knightpatrolpath")
 
-[node name="knightpatrolpath4" type="Node3D" parent="enemies" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(0.658374, 0, -0.752691, 0, 1, 0, 0.752691, 0, 0.658374, 13.8747, 0, 13.3821)
+[node name="knightpatrolpath4" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.658374, 0, -0.752691, 0, 1, 0, 0.752691, 0, 0.658374, 16.6531, 0, 15.9756)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
-[node name="pointa" type="Marker3D" parent="enemies/knightpatrolpath4"]
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 
-[node name="pointb" type="Marker3D" parent="enemies/knightpatrolpath4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1626)
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2213, 0, -5.72086)
 
-[node name="pointc" type="Marker3D" parent="enemies/knightpatrolpath4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1426, 0, -15.1184)
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 
-[node name="Knight5" parent="enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+[node name="Knight5" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 29.4596, 0.0159979, 14.5324)
 patrol_path = NodePath("../knightpatrolpath")
 
-[node name="knightpatrolpath5" type="Node3D" parent="enemies" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 25.7896, 0, 14.8235)
+[node name="knightpatrolpath5" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 30.1364, 0, 14.8235)
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("../knightpatrolpath2/pointc")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
+
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2213, 0, -5.72086)
+
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
+
+[node name="Knight6" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 2.1701, 0.0159979, 14.5324)
+patrol_path = NodePath("../knightpatrolpath")
+
+[node name="knightpatrolpath6" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 2.84689, 0, 14.8235)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
-[node name="pointa" type="Marker3D" parent="enemies/knightpatrolpath5"]
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath6"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 
-[node name="pointb" type="Marker3D" parent="enemies/knightpatrolpath5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1626)
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2213, 0, -5.72086)
 
-[node name="pointc" type="Marker3D" parent="enemies/knightpatrolpath5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, -4.74482)
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
+
+[node name="Knight7" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+transform = Transform3D(-0.997774, 0, 0.0666923, 0, 1, 0, -0.0666923, 0, -0.997774, 16.0958, 0.0159979, -1.15353)
+patrol_path = NodePath("../knightpatrolpath")
+
+[node name="knightpatrolpath7" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.658374, 0, 0.752691, 0, 1, 0, -0.752691, 0, -0.658374, 15.932, 0, -2.74946)
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
+
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2213, 0, -5.72086)
+
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
+
+[node name="Knight8" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 3.12549, 0.0159979, -1.30628)
+patrol_path = NodePath("../knightpatrolpath")
+
+[node name="knightpatrolpath8" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 2.4487, 0, -1.59738)
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("../knightpatrolpath2/pointc")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
+
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2213, 0, -5.72086)
+
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
+
+[node name="Knight9" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
+transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 30.415, 0.0159979, -1.30628)
+patrol_path = NodePath("../knightpatrolpath")
+
+[node name="knightpatrolpath9" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 29.7382, 0, -1.59738)
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Knights/knightpatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
+
+[node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.2213, 0, -5.72086)
+
+[node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
+
+[node name="Assassins" type="Node3D" parent="enemies"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -303.287, 0.0963421, -29.8134)
+
+[node name="Assassin" parent="enemies/Assassins" instance=ExtResource("9_n6ysv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8433, 0, -24.5119)
+
+[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+
+[node name="Assassin2" parent="enemies/Assassins" instance=ExtResource("10_rbn25")]
+
+[node name="Assassin3" parent="enemies/Assassins" instance=ExtResource("10_rbn25")]
+
+[node name="Assassin4" parent="enemies/Assassins" instance=ExtResource("10_rbn25")]
+
+[node name="Assassin5" parent="enemies/Assassins" instance=ExtResource("9_n6ysv")]
+
+[node name="Assassin6" parent="enemies/Assassins" instance=ExtResource("9_n6ysv")]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
 navigation_mesh = SubResource("NavigationMesh_nr6q2")
@@ -1498,12 +1606,6 @@ transform = Transform3D(1, 0, 0, 0, 0.08, 0, 0, 0, 1, -122.747, -0.807043, 101.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -107.789, 0.508094, 123.199)
 visible = false
 
-[node name="SM_Territory_01_B3" parent="NavigationRegion3D/imports" instance=ExtResource("6_mtuv6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -99.1663, 0.508092, 154.512)
-
-[node name="SM_Territory_02_A2" parent="NavigationRegion3D/imports" instance=ExtResource("2_hr1cd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -89.1433, 0.508094, 155.402)
-
 [node name="SM_Territory_02_B2" parent="NavigationRegion3D/imports" instance=ExtResource("3_b4p4q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -94.0713, 0.508094, 134.51)
 
@@ -2216,7 +2318,7 @@ transform = Transform3D(0.959697, 0, 0.281035, 0, 1, 0, -0.281035, 0, 0.959697, 
 transform = Transform3D(0.952741, 0, 0.303784, 0, 1, 0, -0.303784, 0, 0.952741, -242.72, -0.811021, 6.908)
 
 [node name="farm" type="Node3D" parent="NavigationRegion3D"]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 268.168, 0.0119209, -88.872)
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 268.168, 0.939748, -88.872)
 
 [node name="SM_Cockshot_01_A" parent="NavigationRegion3D/farm" instance=ExtResource("73_3ey7c")]
 transform = Transform3D(0.0326842, 0, 0.999466, 0, 1, 0, -0.999466, 0, 0.0326842, -4.23875, 0.466506, -2.70943)

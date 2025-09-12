@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="LootTable" load_steps=5 format=3 uid="uid://b7mprdtj1r5r"]
+
+[ext_resource type="Script" uid="uid://bw38ep6ean3wy" path="res://addons/cogito/Components/LootTables/LootDropEntry.gd" id="1_h4cqi"]
+[ext_resource type="Script" uid="uid://dj1uuvia16dhm" path="res://addons/cogito/Components/LootTables/BaseLootTable.gd" id="2_mypgp"]
+[ext_resource type="Resource" uid="uid://c042tx3p36ivd" path="res://Resources/RealKnifeDrop.tres" id="2_xpo0o"]
+[ext_resource type="Resource" uid="uid://dt7t2psfewfu0" path="res://Resources/Arrowbunndle.tres" id="4_vkyh2"]
+
+[resource]
+script = ExtResource("2_mypgp")
+drops = Array[ExtResource("1_h4cqi")]([ExtResource("4_vkyh2"), ExtResource("4_vkyh2"), ExtResource("2_xpo0o"), ExtResource("2_xpo0o")])
+metadata/_custom_type_script = "uid://dj1uuvia16dhm"

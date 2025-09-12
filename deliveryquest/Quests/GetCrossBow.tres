@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://cgptfktecc5yn"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_w1pok"]
+
+[resource]
+script = ExtResource("1_w1pok")
+id = 222
+quest_name = "Choose the Crossbow"
+quest_title = "Choose the Crossbow"
+quest_description_active = "Pick up the Crossbow."
+quest_description_completed = "You are an Assassin."
+quest_description_failed = "You chose another weapon."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

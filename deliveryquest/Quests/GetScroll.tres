@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://b6wfq0liehud5"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_vaese"]
+
+[resource]
+script = ExtResource("1_vaese")
+id = 333
+quest_name = "Choose the Scroll"
+quest_title = "Choose the Scroll"
+quest_description_active = "Pick up the scroll."
+quest_description_completed = "You are now a Wizard."
+quest_description_failed = "you chose another weapon."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

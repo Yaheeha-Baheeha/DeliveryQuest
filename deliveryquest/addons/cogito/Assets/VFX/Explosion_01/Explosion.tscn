@@ -17,8 +17,10 @@ material = SubResource("ShaderMaterial_2w3i7")
 
 [node name="Explosion" type="Area3D"]
 script = ExtResource("1_45qx7")
-target_scale = Vector3(7, 7, 7)
+target_scale = Vector3(12, 12, 12)
 duration = 0.6
+damage_amount = 5.0
+damage_force = 5.0
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("SphereMesh_a4utb")

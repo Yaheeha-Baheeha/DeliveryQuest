@@ -13,6 +13,10 @@ var current_scene_filepath : String
 func _ready():
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	if self is Area3D:
+		if $Area != null:
+			$Area.monitoring = false
+			$Area.monitorable = false
 	
 	
 func _on_body_entered(body: Node3D):
@@ -37,3 +41,10 @@ func transition_to_next_scene():
 	
 	# CogitoSceneManager.load_next_scene(path_to_new_scene, target_connector, "temp", CogitoSceneManager.CogitoSceneLoadMode.TEMP)
 	CogitoSceneManager.load_next_scene(target_scene_path, target_connector, "temp", CogitoSceneManager.CogitoSceneLoadMode.TEMP)
+
+
+func _on_boss_1_tree_exited() -> void:
+	#if self is Area3D:
+		self.monitoring = true
+		self.monitorable = true
+		print("Montoring")

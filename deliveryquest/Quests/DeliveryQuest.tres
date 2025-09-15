@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://5ay7lhxxk8yo"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_8p7de"]
+
+[resource]
+script = ExtResource("1_8p7de")
+id = 301
+quest_name = "Deliver Your Wepon to the king"
+quest_title = "Deliver Your Wepon to the king"
+quest_description_active = "Deliver Your Wepon to the king"
+quest_description_completed = "Congratulations, you win"
+quest_description_failed = "You failed this quest."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

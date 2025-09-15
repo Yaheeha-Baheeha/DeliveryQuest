@@ -8,7 +8,7 @@ id = 111
 quest_name = "Choose the Sword"
 quest_title = "Choose the Sword"
 quest_description_active = "Pick up the sword."
-quest_description_completed = "You are now a warrior."
+quest_description_completed = "You are now a warrior. Go to enter the towers with the beacons, and fight the bosses. Then, Head for the castle."
 quest_description_failed = "You chose another weapon.
 "
 quest_counter_current = 0

@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://cm6fjyykvc0vj"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_05vsv"]
+
+[resource]
+script = ExtResource("1_05vsv")
+id = 983
+quest_name = "Defeat the Peasant Skeletons"
+quest_title = "Defeat the Peasant Skeletons"
+quest_description_active = "Kill the people you once called family"
+quest_description_completed = "You  the Peasant Skeletons"
+quest_description_failed = "You failed this quest."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

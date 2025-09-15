@@ -4,11 +4,11 @@
 
 [resource]
 script = ExtResource("1_lychh")
-id = 0
-quest_name = ""
-quest_title = ""
-quest_description_active = ""
-quest_description_completed = "You completed this quest."
+id = 981
+quest_name = "Defeat The Axe Skeleton"
+quest_title = "Defeat The Axe Skeleton"
+quest_description_active = "defeat the boss"
+quest_description_completed = "You slayed  The Axe Skeleton"
 quest_description_failed = "You failed this quest."
 quest_counter_current = 0
 quest_counter_goal = 0

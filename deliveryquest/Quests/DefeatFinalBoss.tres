@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://w4ra4fkkg0j6"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_fbi6m"]
+
+[resource]
+script = ExtResource("1_fbi6m")
+id = 969
+quest_name = "Defeat The Final Boss"
+quest_title = "Defeat The Final Boss"
+quest_description_active = "defeat the boss"
+quest_description_completed = "You slayed  The Final Boss, You finished the game.
+"
+quest_description_failed = "You failed this quest."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

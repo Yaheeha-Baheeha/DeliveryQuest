@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="CogitoQuest" load_steps=2 format=3 uid="uid://c30io13pbuedc"]
+
+[ext_resource type="Script" uid="uid://bb3ww0nivppeq" path="res://addons/cogito/QuestSystem/CustomResources/cogito_quest.gd" id="1_6udbw"]
+
+[resource]
+script = ExtResource("1_6udbw")
+id = 982
+quest_name = "Defeat the Skeleton Wizard"
+quest_title = "Defeat the Skeleton Wizard"
+quest_description_active = "defeat the boss"
+quest_description_completed = "you slayed Defeat the Skeleton Wizard"
+quest_description_failed = "You failed this quest."
+quest_counter_current = 0
+quest_counter_goal = 0
+metadata/_custom_type_script = "uid://bb3ww0nivppeq"

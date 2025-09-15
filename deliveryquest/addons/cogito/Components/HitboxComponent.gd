@@ -26,6 +26,7 @@ func _ready() -> void:
 func damage(damage_amount: float, _hit_direction:= Vector3.ZERO, _hit_position:= Vector3.ZERO):
 	if health_attribute:
 		health_attribute.subtract(damage_amount)
+		print("Damaged!")
 	
 	if spawn_at_global_collision != null:
 		var spawned_object = spawn_at_global_collision.instantiate()

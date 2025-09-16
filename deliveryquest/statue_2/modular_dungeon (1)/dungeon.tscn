@@ -9,7 +9,6 @@
 [ext_resource type="Script" uid="uid://d2jjqadlnhp6x" path="res://addons/cogito/QuestSystem/Components/cogito_quest_updater.gd" id="6_du7pq"]
 [ext_resource type="Resource" uid="uid://cm6fjyykvc0vj" path="res://Quests/DefeatThirdBoss.tres" id="8_du7pq"]
 [ext_resource type="Script" uid="uid://6010ovanwkwo" path="res://addons/cogito/Scripts/scene_transition_zone.gd" id="8_fogwp"]
-[ext_resource type="PackedScene" uid="uid://dinvhe27jhx8t" path="res://Scenes/Mainworld.tscn" id="9_5ayqo"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q2ehd"]
 size = Vector3(49.2275, 16.8295, 56.4119)
@@ -3301,7 +3300,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 25.7635, 3.86411, 10.0943)
 monitoring = false
 monitorable = false
 script = ExtResource("8_fogwp")
-target_scene = ExtResource("9_5ayqo")
 target_scene_path = "uid://dinvhe27jhx8t"
 target_connector = "ConnectorFromBoss1"
 

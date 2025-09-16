@@ -13,7 +13,6 @@
 [ext_resource type="Script" uid="uid://6010ovanwkwo" path="res://addons/cogito/Scripts/scene_transition_zone.gd" id="7_5cqrx"]
 [ext_resource type="PackedScene" uid="uid://b8f2q0nnh4gmp" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/candle_melted.gltf" id="7_j6682"]
 [ext_resource type="PackedScene" uid="uid://dklyxlym3eps7" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/candle_thin.gltf" id="8_gdnrk"]
-[ext_resource type="PackedScene" uid="uid://dinvhe27jhx8t" path="res://Scenes/Mainworld.tscn" id="8_h3ab0"]
 [ext_resource type="PackedScene" uid="uid://bfe2d76f47vsf" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/pumpkin_orange_jackolantern.gltf" id="9_khm26"]
 [ext_resource type="PackedScene" uid="uid://cnsfbo5mhwemh" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/pumpkin_orange.gltf" id="10_xadq6"]
 [ext_resource type="PackedScene" uid="uid://b5xf0gn4dhv6r" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/pumpkin_orange_small.gltf" id="11_arstl"]
@@ -92,7 +91,6 @@ update_type = 1
 monitoring = false
 monitorable = false
 script = ExtResource("7_5cqrx")
-target_scene = ExtResource("8_h3ab0")
 target_scene_path = "uid://dinvhe27jhx8t"
 target_connector = "ConnectorFromBoss1"
 

@@ -12,7 +12,6 @@
 [ext_resource type="Resource" uid="uid://cgptfktecc5yn" path="res://Quests/GetCrossBow.tres" id="10_4f8gj"]
 [ext_resource type="Resource" uid="uid://b6wfq0liehud5" path="res://Quests/GetScroll.tres" id="11_7q4uy"]
 [ext_resource type="Script" uid="uid://6010ovanwkwo" path="res://addons/cogito/Scripts/scene_transition_zone.gd" id="12_4f8gj"]
-[ext_resource type="PackedScene" uid="uid://dinvhe27jhx8t" path="res://Scenes/Mainworld.tscn" id="13_7q4uy"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7spl6"]
 size = Vector3(0.878525, 3.59509, 12.2874)
@@ -373,7 +372,6 @@ omni_range = 13.693
 monitoring = false
 monitorable = false
 script = ExtResource("12_4f8gj")
-target_scene = ExtResource("13_7q4uy")
 target_scene_path = "uid://dinvhe27jhx8t"
 target_connector = "ConnectorFromBoss1"
 

@@ -1,12 +1,8 @@
-[gd_scene load_steps=149 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=145 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://bq3durpimelo2" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_B.prefab.scn" id="3_b4p4q"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
-[ext_resource type="PackedScene" uid="uid://csee7u7nhoctl" path="res://bossroom2.tscn" id="5_qi3j0"]
-[ext_resource type="PackedScene" uid="uid://bpx2ac8l0xsco" path="res://statue_2/modular_dungeon (1)/dungeon.tscn" id="6_3yh3x"]
-[ext_resource type="PackedScene" uid="uid://dqibkuqxuhd14" path="res://addons/cogito/Components/castle.blend" id="6_dlejt"]
-[ext_resource type="PackedScene" uid="uid://b5kwhrbgvdste" path="res://boss_room_1.tscn" id="6_jwuh5"]
 [ext_resource type="PackedScene" uid="uid://dsl1qfxbomqu6" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_01_B.prefab.scn" id="6_mtuv6"]
 [ext_resource type="PackedScene" uid="uid://deayc55uja673" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Raod_03_B.prefab.scn" id="7_hlf8l"]
 [ext_resource type="Script" uid="uid://cpg8hfwhtplwm" path="res://Scenes/hideme.gd" id="7_jwuh5"]
@@ -386,7 +382,6 @@ script = ExtResource("7_jwuh5")
 [node name="Bossroom_2Teleporter" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.67, 106.441, 88.855)
 script = ExtResource("116_nr6q2")
-target_scene = ExtResource("5_qi3j0")
 target_scene_path = "uid://csee7u7nhoctl"
 target_connector = "ConnectorFromMainWorld"
 
@@ -403,7 +398,6 @@ script = ExtResource("7_jwuh5")
 [node name="Dungeon_Teleporter" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 83.4175, 3.76473, -44.7172)
 script = ExtResource("116_nr6q2")
-target_scene = ExtResource("6_3yh3x")
 target_scene_path = "uid://bpx2ac8l0xsco"
 target_connector = "ConnectorFromMainWorld"
 
@@ -422,7 +416,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.596, 4.46174, -2.01946)
 monitoring = false
 monitorable = false
 script = ExtResource("116_nr6q2")
-target_scene = ExtResource("6_dlejt")
 target_scene_path = "uid://doi8pk5s7lunh"
 target_connector = "ConnectorFromMainWorld"
 
@@ -439,7 +432,6 @@ script = ExtResource("7_jwuh5")
 [node name="Bossroom_1Teleporter" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 420.42, 1.6162, -81.5083)
 script = ExtResource("116_nr6q2")
-target_scene = ExtResource("6_jwuh5")
 target_scene_path = "uid://b5kwhrbgvdste"
 target_connector = "ConnectorFromMainWorld"
 

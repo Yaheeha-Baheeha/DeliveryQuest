@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://csee7u7nhoctl"]
+[gd_scene load_steps=42 format=3 uid="uid://csee7u7nhoctl"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_elxwp"]
 [ext_resource type="PackedScene" uid="uid://7l4qp34aklfe" path="res://addons/cogito/SceneManagement/bossroom2.blend" id="1_n1okf"]
@@ -53,7 +53,10 @@ size = Vector3(22.332, 0.878662, 44.6625)
 
 [node name="Bossroom2" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_elxwp")
-connectors = [NodePath("NavigationRegion3D/ConnectorFromMainWorld")]
+connectors = [NodePath("ConnectorFromMainWorld")]
+
+[node name="ConnectorFromMainWorld" type="Node3D" parent="."]
+transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 1.38956, 2.74833, 27.4745)
 
 [node name="CogitoPlayer" parent="." instance=ExtResource("15_xcmqb")]
 transform = Transform3D(1.26423, 0, -0.165406, 0, 1.275, 0, 0.165406, 0, 1.26423, 1.38956, 2.74833, 27.4745)
@@ -675,9 +678,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7495, -0.026807, 37.1413)
 
 [node name="plaque3" parent="NavigationRegion3D/tree_dead_medium2" instance=ExtResource("23_r31nh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.05143, -0.300235, 27.2313)
-
-[node name="ConnectorFromMainWorld" type="Node3D" parent="NavigationRegion3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554031, 1.60421, -8.55755)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70035, -0.0739746, 10.3107)

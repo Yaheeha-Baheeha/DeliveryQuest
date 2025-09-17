@@ -1,4 +1,4 @@
-[gd_scene load_steps=283 format=4 uid="uid://bpx2ac8l0xsco"]
+[gd_scene load_steps=282 format=4 uid="uid://bpx2ac8l0xsco"]
 
 [ext_resource type="PackedScene" uid="uid://dd7cstr106e0a" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/fbx(unity)/floor_dirt.fbx" id="1_de6o5"]
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_r4rpe"]
@@ -3218,10 +3218,10 @@ transform = Transform3D(0.756613, -0.631564, -0.169303, -0.501019, -0.393607, -0
 light_energy = 0.405
 
 [node name="ConnectorFromMainWorld" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8986, 1.60421, 6.1493)
+transform = Transform3D(-0.99134, 0, -0.131322, 0, 1, 0, 0.131322, 0, -0.99134, 19.387, 1.57234, 2.04572)
 
 [node name="CogitoPlayer" parent="." instance=ExtResource("2_5vjbi")]
-transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 17.2019, 2.23266, 6.19847)
+transform = Transform3D(-0.991339, 0, -0.131322, 0, 1, 0, 0.131322, 0, -0.991339, 19.387, 1.57234, 2.04572)
 fall_damage = 1
 
 [node name="Enemies" type="Node3D" parent="."]

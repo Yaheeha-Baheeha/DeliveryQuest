@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://b5kwhrbgvdste"]
+[gd_scene load_steps=45 format=3 uid="uid://b5kwhrbgvdste"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_gjh8l"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="2_kuu48"]
@@ -60,12 +60,12 @@ size = Vector3(49.2275, 16.8295, 56.4119)
 script = ExtResource("1_gjh8l")
 connectors = [NodePath("ConnectorFromMainWorld")]
 
+[node name="ConnectorFromMainWorld" type="Node3D" parent="."]
+transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 8.2699, 2.00308, 27.8233)
+
 [node name="CogitoPlayer" parent="." instance=ExtResource("2_kuu48")]
 transform = Transform3D(1.26423, 0, -0.165406, 0, 1.275, 0, 0.165406, 0, 1.26423, 8.2699, 2.00308, 27.8233)
 fall_damage = 1
-
-[node name="ConnectorFromMainWorld" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.84675, 1.60421, -12.3178)
 
 [node name="Boss1" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("35_7yujg")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 8.61014, 0.49466, -7.00146)

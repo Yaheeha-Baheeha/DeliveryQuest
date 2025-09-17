@@ -376,7 +376,7 @@ autoplay = "day_night"
 [node name="YellowBeacon(witch)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 279.67, 106.441, 88.855)
 mesh = SubResource("CylinderMesh_qi3j0")
-skeleton = NodePath("../Bossroom2_teleporter")
+skeleton = NodePath("")
 script = ExtResource("7_jwuh5")
 
 [node name="Bossroom_2Teleporter" type="Area3D" parent="."]
@@ -392,7 +392,7 @@ shape = SubResource("BoxShape3D_rbn25")
 [node name="BlueBeacon(Peasants)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.4096, 110.783, -52.0564)
 mesh = SubResource("CylinderMesh_ctels")
-skeleton = NodePath("../Bossroom2_teleporter")
+skeleton = NodePath("")
 script = ExtResource("7_jwuh5")
 
 [node name="Dungeon_Teleporter" type="Area3D" parent="."]
@@ -408,7 +408,7 @@ shape = SubResource("BoxShape3D_jwuh5")
 [node name="RedBeacon(FinalBoss)" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.228, 115.245, -3.6153)
 mesh = SubResource("CylinderMesh_ljpb5")
-skeleton = NodePath("../Bossroom2_teleporter")
+skeleton = NodePath("")
 script = ExtResource("7_jwuh5")
 
 [node name="Mainbossroom_teleporter" type="Area3D" parent="."]

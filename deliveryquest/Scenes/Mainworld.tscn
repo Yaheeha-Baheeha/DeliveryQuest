@@ -413,8 +413,6 @@ script = ExtResource("7_jwuh5")
 
 [node name="Mainbossroom_teleporter" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.596, 4.46174, -2.01946)
-monitoring = false
-monitorable = false
 script = ExtResource("116_nr6q2")
 target_scene_path = "uid://doi8pk5s7lunh"
 target_connector = "ConnectorFromMainWorld"
@@ -445,11 +443,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 290.236, 1.2959, -9.67237)
 [node name="Knights" type="Node3D" parent="enemies"]
 
 [node name="Knight" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27185, 0.0159979, -25.1391)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.27185, 0.0159979, -40.8282)
 patrol_path = NodePath("../knightpatrolpath")
 
 [node name="knightpatrolpath" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59961, 0, -24.8774)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.59961, 0, -40.5665)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
@@ -463,11 +461,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -11.1626)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, 4.69351)
 
 [node name="Knight2" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.8517, 0.0159979, -0.261731)
-patrol_path = NodePath("../knightpatrolpath")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9015, 0.0159941, -54.1227)
+patrol_path = NodePath("../knightpatrolpath2")
 
 [node name="knightpatrolpath2" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.5239, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.5737, -3.8147e-06, -53.861)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 
@@ -478,11 +476,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -16.6401, 0, -11.1626)
 
 [node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.5844, 0, -1.09784)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.26979, 0, -1.09784)
 
 [node name="Knight3" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(0.056989, 0, -0.998375, 0, 1, 0, 0.998375, 0, 0.056989, -30.4525, 0.0159979, -28.683)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath3")
 
 [node name="knightpatrolpath3" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(0.056989, 0, -0.998375, 0, 1, 0, 0.998375, 0, 0.056989, -30.9231, 0, -32.3343)
@@ -493,14 +491,14 @@ patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.99426, 0, 0.33021)
 
 [node name="pointb" type="Marker3D" parent="enemies/Knights/knightpatrolpath3"]
-transform = Transform3D(1, 0, -7.45058e-09, 0, 1, 0, 7.45058e-09, 0, 1, 24.9334, 0, -20.0717)
+transform = Transform3D(1, 0, -1.11759e-08, 0, 1, 0, 1.11759e-08, 0, 1, 8.72373, 0, -6.80392)
 
 [node name="pointc" type="Marker3D" parent="enemies/Knights/knightpatrolpath3"]
-transform = Transform3D(1, 0, -1.11759e-08, 0, 1, 0, 1.11759e-08, 0, 1, 9.6786, 0, -49.3983)
+transform = Transform3D(1, 0, -1.49012e-08, 0, 1, 0, 1.49012e-08, 0, 1, -0.309868, -3.8147e-06, -7.8576)
 
 [node name="Knight4" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(0.997774, 0, -0.0666922, 0, 1, 0, 0.0666922, 0, 0.997774, 16.4893, 0.0159979, 14.3796)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath4")
 
 [node name="knightpatrolpath4" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(0.658374, 0, -0.752691, 0, 1, 0, 0.752691, 0, 0.658374, 16.6531, 0, 15.9756)
@@ -518,7 +516,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 
 [node name="Knight5" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 29.4596, 0.0159979, 14.5324)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath5")
 
 [node name="knightpatrolpath5" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 30.1364, 0, 14.8235)
@@ -536,7 +534,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 
 [node name="Knight6" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 2.1701, 0.0159979, 14.5324)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath6")
 
 [node name="knightpatrolpath6" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(0.999968, 0, 0.00801101, 0, 1, 0, -0.00801101, 0, 0.999968, 2.84689, 0, 14.8235)
@@ -554,7 +552,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 
 [node name="Knight7" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(-0.997774, 0, 0.0666923, 0, 1, 0, -0.0666923, 0, -0.997774, 16.0958, 0.0159979, -1.15353)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath7")
 
 [node name="knightpatrolpath7" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(-0.658374, 0, 0.752691, 0, 1, 0, -0.752691, 0, -0.658374, 15.932, 0, -2.74946)
@@ -572,7 +570,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 
 [node name="Knight8" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 3.12549, 0.0159979, -1.30628)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath8")
 
 [node name="knightpatrolpath8" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 2.4487, 0, -1.59738)
@@ -590,7 +588,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 
 [node name="Knight9" parent="enemies/Knights" node_paths=PackedStringArray("patrol_path") instance=ExtResource("119_dlejt")]
 transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 30.415, 0.0159979, -1.30628)
-patrol_path = NodePath("../knightpatrolpath")
+patrol_path = NodePath("../knightpatrolpath9")
 
 [node name="knightpatrolpath9" type="Node3D" parent="enemies/Knights" node_paths=PackedStringArray("patrol_points")]
 transform = Transform3D(-0.999968, 0, -0.00801092, 0, 1, 0, 0.00801092, 0, -0.999968, 29.7382, 0, -1.59738)
@@ -609,392 +607,402 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.9148, 0, 5.82008)
 [node name="Assassins" type="Node3D" parent="enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -303.287, 0.198298, -29.8134)
 
-[node name="Assassin" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8433, 0, -24.5119)
-patrol_path = NodePath("AssassinPatrolpath")
-
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.8147e-06)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin/AssassinPatrolpath"]
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin/AssassinPatrolpath"]
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin/AssassinPatrolpath"]
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin/AssassinPatrolpath"]
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+
+[node name="Assassin" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.8433, 0, -24.5119)
+patrol_path = NodePath("../AssassinPatrolpath")
+
+[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.50616, 0, -21.23)
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin2" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.50616, 0, -21.23)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath2")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin2" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath3" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.033, 0, 32.7969)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin2/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin2/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin2/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin2/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin3" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.8763, 0, 8.285)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath3")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin3" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath4" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2711, 0, -21.23)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin3/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin3/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin3/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin3/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin4" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.2711, 0, -21.23)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath4")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin4" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath5" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.9625, 0, -36.5572)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin4/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin4/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin4/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin4/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin5" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 11.8808, 0, -12.0453)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath5")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin5" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath6" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -8.46863, 0, -15.3272)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin5/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin5/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin5/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin5/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin6" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -8.46863, 0, -15.3272)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath6")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin6" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath7" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 5.0705, 0, -69.3541)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin6/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin6/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin6/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin6/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin7" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 19.9138, 0, -44.8422)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath7")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin7" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath8" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -20.2336, 0, -15.3272)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin7/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin7/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin7/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin7/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath8"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin8" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -20.2336, 0, -15.3272)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath8")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin8" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath9" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 9.92023, 0, -26.1352)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin8/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin8/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin8/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin8/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath9"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin9" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 38.5698, 0, -26.7339)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath9")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin9" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath10" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 25.5529, 0, -10.7516)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin9/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin9/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin9/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1218, 0, 36.6618)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin9/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath10"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin10" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 25.5529, 0, -10.7516)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath10")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin10" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath11" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, -14.4662, 0, -49.4904)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin10/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin10/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin10/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.1218, 0, 36.6618)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin10/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath11"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin11" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(-0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, -0.5, 14.1834, 0, -50.0891)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath11")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin11" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath12" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 19.6704, 0, -0.562885)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin11/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68315, 0, -0.925247)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin11/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin11/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin11/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath12"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.92613, 0, 11.8666)
 
 [node name="Assassin12" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(0.866025, 0, -0.5, 0, 1, 0, 0.5, 0, 0.866025, 19.6704, 0, -0.562885)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath12")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin12" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath13" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 43.061, 0, -10.4221)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin12/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.68315, 0, -0.925247)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin12/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin12/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin12/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.92613, 0, 11.8666)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath13"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin13" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 14.4114, 0, -9.82337)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath13")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin13" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath14" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 27.4283, 0, -25.8056)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin13/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin13/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin13/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin13/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath14"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin14" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 27.4283, 0, -25.8056)
-patrol_path = NodePath("AssassinPatrolpath2")
+patrol_path = NodePath("../AssassinPatrolpath14")
 
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin14" node_paths=PackedStringArray("patrol_points")]
+[node name="AssassinPatrolpath15" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 67.4474, 0, 12.9332)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin14/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin14/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin14/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 17.3498, 0, 35.3246)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin14/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath15"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
 
 [node name="Assassin15" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("9_n6ysv")]
 transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 38.7978, 0, 13.5319)
-patrol_path = NodePath("AssassinPatrolpath")
+patrol_path = NodePath("../AssassinPatrolpath15")
 
-[node name="AssassinPatrolpath" type="Node3D" parent="enemies/Assassins/Assassin15" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8433, 0, 24.5119)
+[node name="AssassinPatrolpath16" type="Node3D" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 33.3108, 0, -35.9943)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin15/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.4815, 0, -28.8695)
+[node name="pointa" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin15/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.4389, 0, -24.9204)
+[node name="pointb" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
 
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin15/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.7112, 0, -18.7924)
+[node name="pointc" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1824, 0, 26.3745)
 
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin15/AssassinPatrolpath"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.6054, 0, -24.9204)
+[node name="pointd" type="Marker3D" parent="enemies/Assassins/AssassinPatrolpath16"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
 
 [node name="Assassin16" parent="enemies/Assassins" node_paths=PackedStringArray("patrol_path") instance=ExtResource("10_rbn25")]
 transform = Transform3D(-0.866025, 0, 0.5, 0, 1, 0, -0.5, 0, -0.866025, 33.3108, 0, -35.9943)
-patrol_path = NodePath("AssassinPatrolpath2")
-
-[node name="AssassinPatrolpath2" type="Node3D" parent="enemies/Assassins/Assassin16" node_paths=PackedStringArray("patrol_points")]
-script = ExtResource("120_n6ysv")
-patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd")]
-
-[node name="pointa" type="Marker3D" parent="enemies/Assassins/Assassin16/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.21734, 0, 0)
-
-[node name="pointb" type="Marker3D" parent="enemies/Assassins/Assassin16/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0447, 0, 6.42859)
-
-[node name="pointc" type="Marker3D" parent="enemies/Assassins/Assassin16/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.1824, 0, 26.3745)
-
-[node name="pointd" type="Marker3D" parent="enemies/Assassins/Assassin16/AssassinPatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.87049, 0, 10.6798)
+patrol_path = NodePath("../AssassinPatrolpath16")
 
 [node name="Witches" type="Node3D" parent="enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.43594, 0)
 
-[node name="Witch" parent="enemies/Witches" node_paths=PackedStringArray("patrol_path") instance=ExtResource("11_rbn25")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -310.881, 0.0925234, 63.7468)
-patrol_path = NodePath("Witchpatrolpath")
-
-[node name="Witchpatrolpath" type="Node3D" parent="enemies/Witches/Witch" node_paths=PackedStringArray("patrol_points")]
+[node name="Witchpatrolpath" type="Node3D" parent="enemies/Witches" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -310.881, 0.0925235, 63.7468)
 script = ExtResource("120_n6ysv")
 patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd"), NodePath("pointe"), NodePath("pointf"), NodePath("pointg")]
 
-[node name="pointa" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointa" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13538, 0, 0)
 
-[node name="pointb" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointb" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.1907, 0, -10.3815)
 
-[node name="pointc" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointc" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.7766, 0, -10.3815)
 
-[node name="pointd" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointd" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.7766, 0, 9.12816)
 
-[node name="pointe" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointe" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.6311, 0, 12.1046)
 
-[node name="pointf" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointf" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9971, 0, 18.4267)
 
-[node name="pointg" type="Marker3D" parent="enemies/Witches/Witch/Witchpatrolpath"]
+[node name="pointg" type="Marker3D" parent="enemies/Witches/Witchpatrolpath"]
+
+[node name="Witch" parent="enemies/Witches" node_paths=PackedStringArray("patrol_path") instance=ExtResource("11_rbn25")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -310.881, 0.0925234, 63.7468)
+patrol_path = NodePath("../Witchpatrolpath")
+
+[node name="Witchpatrolpath2" type="Node3D" parent="enemies/Witches" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -206.627, 0.0925235, 33.5372)
+script = ExtResource("120_n6ysv")
+patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd"), NodePath("pointe"), NodePath("pointf"), NodePath("pointg")]
+
+[node name="pointa" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13538, 0, 0)
+
+[node name="pointb" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3363, 0, -12.1735)
+
+[node name="pointc" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4227, 0, -10.3815)
+
+[node name="pointd" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.8048, 0, 6.66375)
+
+[node name="pointe" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6047, 0, 8.2755)
+
+[node name="pointf" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9971, 0, 4.65283)
+
+[node name="pointg" type="Marker3D" parent="enemies/Witches/Witchpatrolpath2"]
 
 [node name="Witch2" parent="enemies/Witches" node_paths=PackedStringArray("patrol_path") instance=ExtResource("11_rbn25")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -206.627, 0.0925234, 33.5372)
-patrol_path = NodePath("Witchpatrolpath2")
-
-[node name="Witchpatrolpath2" type="Node3D" parent="enemies/Witches/Witch2" node_paths=PackedStringArray("patrol_points")]
-script = ExtResource("120_n6ysv")
-patrol_points = [NodePath("pointa"), NodePath("pointb"), NodePath("pointc"), NodePath("pointd"), NodePath("pointe"), NodePath("pointf"), NodePath("pointg")]
-
-[node name="pointa" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.13538, 0, 0)
-
-[node name="pointb" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.3363, 0, -12.1735)
-
-[node name="pointc" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.4227, 0, -10.3815)
-
-[node name="pointd" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.8048, 0, 6.66375)
-
-[node name="pointe" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.6047, 0, 8.2755)
-
-[node name="pointf" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.9971, 0, 4.65283)
-
-[node name="pointg" type="Marker3D" parent="enemies/Witches/Witch2/Witchpatrolpath2"]
+patrol_path = NodePath("../Witchpatrolpath2")
 
 [node name="Barbarians" type="Node3D" parent="enemies"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 56.9886)
@@ -4731,7 +4739,10 @@ transform = Transform3D(0.312021, 0, 0.107437, 0, 0.33, 0, -0.107437, 0, 0.31202
 [node name="Chest11" parent="chests" instance=ExtResource("125_ljpb5")]
 transform = Transform3D(-0.126286, 0, -0.30488, 0, 0.33, 0, 0.30488, 0, -0.126286, 402.786, 1.31638, -95.7696)
 
+[connection signal="bossstarted" from="YellowBeacon(witch)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="Bossroom_2Teleporter" to="YellowBeacon(witch)" method="_on_bossroom_1_teleporter_body_entered"]
+[connection signal="bossstarted" from="BlueBeacon(Peasants)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="Dungeon_Teleporter" to="BlueBeacon(Peasants)" method="_on_bossroom_1_teleporter_body_entered"]
 [connection signal="bossstarted" from="RedBeacon(FinalBoss)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
+[connection signal="bossstarted" from="PurpleBeacon(AxeSkelly)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="Bossroom_1Teleporter" to="PurpleBeacon(AxeSkelly)" method="_on_bossroom_1_teleporter_body_entered"]

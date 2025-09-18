@@ -18,7 +18,8 @@ func _ready():
 			$Area.monitoring = false
 			$Area.monitorable = false
 	
-	
+
+
 func _on_body_entered(body: Node3D):
 	if !body.is_in_group("Player"):
 		return
@@ -41,7 +42,6 @@ func transition_to_next_scene():
 	
 	# CogitoSceneManager.load_next_scene(path_to_new_scene, target_connector, "temp", CogitoSceneManager.CogitoSceneLoadMode.TEMP)
 	CogitoSceneManager.load_next_scene(target_scene_path, target_connector, "temp", CogitoSceneManager.CogitoSceneLoadMode.TEMP)
-
 
 func _on_boss_1_tree_exited() -> void:
 	#if self is Area3D:

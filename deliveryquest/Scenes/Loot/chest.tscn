@@ -266,6 +266,14 @@ transform = Transform3D(1.01564, 0, 0, 0, 0.517469, 0, 0, 0, 1.78309, -0.136674,
 mesh = SubResource("ArrayMesh_ek1ax")
 skeleton = NodePath("")
 
+[node name="OmniLight3D" type="OmniLight3D" parent="Cube"]
+light_color = Color(0.71006, 0.67309, 3.85046e-07, 1)
+light_energy = 3.298
+light_indirect_energy = 7.947
+light_volumetric_fog_energy = 2.149
+omni_range = 0.913
+omni_attenuation = 4.646
+
 [node name="Lid" type="AnimatableBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.87317, 0.735013, 0)
 

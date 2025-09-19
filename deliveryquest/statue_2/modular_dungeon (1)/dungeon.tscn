@@ -3228,56 +3228,60 @@ fall_damage = 1
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0176, 0.110425, 8.59844)
 script = ExtResource("3_w67n1")
 
-[node name="Skeletonb" parent="Enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("4_53jwo")]
-patrol_path = NodePath("patrol")
-
-[node name="patrol" type="Node3D" parent="Enemies/Skeletonb" node_paths=PackedStringArray("patrol_points")]
+[node name="patrol" type="Node3D" parent="Enemies" node_paths=PackedStringArray("patrol_points")]
 script = ExtResource("5_us34p")
 patrol_points = [NodePath("pointa"), NodePath("pointb")]
 
-[node name="pointa" type="Marker3D" parent="Enemies/Skeletonb/patrol"]
+[node name="pointa" type="Marker3D" parent="Enemies/patrol"]
 
-[node name="pointb" type="Marker3D" parent="Enemies/Skeletonb/patrol"]
+[node name="pointb" type="Marker3D" parent="Enemies/patrol"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.53819)
+
+[node name="Skeletonb" parent="Enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("4_53jwo")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+patrol_path = NodePath("../patrol")
+
+[node name="patrol2" type="Node3D" parent="Enemies" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37934, -2.38419e-07, -0.0212011)
+script = ExtResource("5_us34p")
+patrol_points = [NodePath("pointa"), NodePath("pointb")]
+
+[node name="pointa" type="Marker3D" parent="Enemies/patrol2"]
+
+[node name="pointb" type="Marker3D" parent="Enemies/patrol2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.53819)
 
 [node name="Skeletonb2" parent="Enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("4_53jwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.37934, -2.38419e-07, -0.0212011)
-patrol_path = NodePath("patrol")
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.37934, -2.38419e-07, -0.0212011)
+patrol_path = NodePath("../patrol2")
 
-[node name="patrol" type="Node3D" parent="Enemies/Skeletonb2" node_paths=PackedStringArray("patrol_points")]
+[node name="patrol3" type="Node3D" parent="Enemies" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48831, -2.38419e-07, -0.0425911)
 script = ExtResource("5_us34p")
 patrol_points = [NodePath("pointa"), NodePath("pointb")]
 
-[node name="pointa" type="Marker3D" parent="Enemies/Skeletonb2/patrol"]
+[node name="pointa" type="Marker3D" parent="Enemies/patrol3"]
 
-[node name="pointb" type="Marker3D" parent="Enemies/Skeletonb2/patrol"]
+[node name="pointb" type="Marker3D" parent="Enemies/patrol3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.53819)
 
 [node name="Skeletonb3" parent="Enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("4_53jwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.48831, -2.38419e-07, -0.0425911)
-patrol_path = NodePath("patrol")
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -4.48831, -2.38419e-07, -0.0425911)
+patrol_path = NodePath("../patrol3")
 
-[node name="patrol" type="Node3D" parent="Enemies/Skeletonb3" node_paths=PackedStringArray("patrol_points")]
+[node name="patrol4" type="Node3D" parent="Enemies" node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05714, 0, -0.0668182)
 script = ExtResource("5_us34p")
 patrol_points = [NodePath("pointa"), NodePath("pointb")]
 
-[node name="pointa" type="Marker3D" parent="Enemies/Skeletonb3/patrol"]
+[node name="pointa" type="Marker3D" parent="Enemies/patrol4"]
 
-[node name="pointb" type="Marker3D" parent="Enemies/Skeletonb3/patrol"]
+[node name="pointb" type="Marker3D" parent="Enemies/patrol4"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.53819)
 
 [node name="Skeletonb4" parent="Enemies" node_paths=PackedStringArray("patrol_path") instance=ExtResource("4_53jwo")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.05714, 0, -0.0668182)
-patrol_path = NodePath("patrol")
-
-[node name="patrol" type="Node3D" parent="Enemies/Skeletonb4" node_paths=PackedStringArray("patrol_points")]
-script = ExtResource("5_us34p")
-patrol_points = [NodePath("pointa"), NodePath("pointb")]
-
-[node name="pointa" type="Marker3D" parent="Enemies/Skeletonb4/patrol"]
-
-[node name="pointb" type="Marker3D" parent="Enemies/Skeletonb4/patrol"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.53819)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -7.05714, 0, -0.0668182)
+patrol_path = NodePath("../patrol4")
 
 [node name="queststuff" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.0176, 0.110425, 8.59844)

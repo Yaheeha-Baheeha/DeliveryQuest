@@ -11,11 +11,11 @@ func _process(delta: float) -> void:
 	pass
 
 signal bossstarted
-var counter = 0
+
 func _on_bossroom_1_teleporter_body_entered(body: Node3D) -> void:
-	counter+=1
+	CogitoGlobals.counter+=1
 	self.hide()
-	print("hid myself",counter)
-	if counter >= 3:
-		counter = 0
+	print("hid myself. Counter = ", CogitoGlobals.counter)
+	if CogitoGlobals.counter >= 3:
 		emit_signal("bossstarted")
+		print("boss")

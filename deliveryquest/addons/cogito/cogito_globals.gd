@@ -14,6 +14,7 @@ var default_transition_duration : float = .4
 var _debug_shape_pool : Array[MeshInstance3D]
 var _box_pool := []
 var _box_mesh : Mesh = null
+var counter = 0
 
 func _ready() -> void:
 	load_cogito_project_settings()

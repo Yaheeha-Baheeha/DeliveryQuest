@@ -61,19 +61,19 @@ transform = Transform3D(0.991549, 0, -0.12973, 0, 1, 0, 0.12973, 0, 0.991549, 1.
 [node name="CogitoPlayer" parent="." instance=ExtResource("15_xcmqb")]
 transform = Transform3D(1.26423, 0, -0.165406, 0, 1.275, 0, 0.165406, 0, 1.26423, 1.38956, 2.74833, 27.4745)
 
-[node name="Boss2" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("33_bnlhy")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.23997, 0.827468, -5.93483)
-patrol_path = NodePath("patrol")
-
-[node name="patrol" type="Node3D" parent="Boss2" node_paths=PackedStringArray("patrol_points")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.398077, 0)
+[node name="patrol" type="Node3D" parent="." node_paths=PackedStringArray("patrol_points")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 1.23997, 0.429391, -5.93483)
 script = ExtResource("4_26orm")
 patrol_points = [NodePath("pointa"), NodePath("pointb")]
 
-[node name="pointa" type="Marker3D" parent="Boss2/patrol"]
+[node name="pointa" type="Marker3D" parent="patrol"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.86102e-06, 0, -36.3044)
 
-[node name="pointb" type="Marker3D" parent="Boss2/patrol"]
+[node name="pointb" type="Marker3D" parent="patrol"]
+
+[node name="Boss2" parent="." node_paths=PackedStringArray("patrol_path") instance=ExtResource("33_bnlhy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.23997, 0.827468, -5.93483)
+patrol_path = NodePath("../patrol")
 
 [node name="queststuff" type="Node3D" parent="."]
 

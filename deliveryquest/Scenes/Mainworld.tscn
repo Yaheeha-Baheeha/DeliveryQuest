@@ -1,8 +1,9 @@
-[gd_scene load_steps=145 format=3 uid="uid://dinvhe27jhx8t"]
+[gd_scene load_steps=147 format=3 uid="uid://dinvhe27jhx8t"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_7vrjw"]
 [ext_resource type="PackedScene" uid="uid://bq3durpimelo2" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_02_B.prefab.scn" id="3_b4p4q"]
 [ext_resource type="PackedScene" uid="uid://b7obc6n7tcame" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_03_A.prefab.scn" id="4_cc01v"]
+[ext_resource type="Script" uid="uid://ggjexi1fpp4k" path="res://Scenes/bossblocker.gd" id="5_rbn25"]
 [ext_resource type="PackedScene" uid="uid://dsl1qfxbomqu6" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Territory_01_B.prefab.scn" id="6_mtuv6"]
 [ext_resource type="PackedScene" uid="uid://deayc55uja673" path="res://Assets/Polygon-FantasyVillage/Prefabs/SM_Raod_03_B.prefab.scn" id="7_hlf8l"]
 [ext_resource type="Script" uid="uid://cpg8hfwhtplwm" path="res://Scenes/hideme.gd" id="7_jwuh5"]
@@ -311,6 +312,9 @@ emission_energy_multiplier = 8.78
 material = SubResource("StandardMaterial3D_jwuh5")
 height = 200.0
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_qi3j0"]
+size = Vector3(6.14708, 7.75683, 8.61812)
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_dlejt"]
 size = Vector3(5.39398, 6.9995, 7.05689)
 
@@ -410,6 +414,14 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 354.228, 115.245, -3.6153)
 mesh = SubResource("CylinderMesh_ljpb5")
 skeleton = NodePath("")
 script = ExtResource("7_jwuh5")
+
+[node name="Bossblocker" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.596, 4.46174, -2.01946)
+script = ExtResource("5_rbn25")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Bossblocker"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.830933, 0.497175, -1.14012)
+shape = SubResource("BoxShape3D_qi3j0")
 
 [node name="Mainbossroom_teleporter" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 350.596, 4.46174, -2.01946)
@@ -4739,10 +4751,14 @@ transform = Transform3D(0.312021, 0, 0.107437, 0, 0.33, 0, -0.107437, 0, 0.31202
 [node name="Chest11" parent="chests" instance=ExtResource("125_ljpb5")]
 transform = Transform3D(-0.126286, 0, -0.30488, 0, 0.33, 0, 0.30488, 0, -0.126286, 402.786, 1.31638, -95.7696)
 
+[connection signal="bossstarted" from="YellowBeacon(witch)" to="Bossblocker" method="allow_boss"]
 [connection signal="bossstarted" from="YellowBeacon(witch)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="Bossroom_2Teleporter" to="YellowBeacon(witch)" method="_on_bossroom_1_teleporter_body_entered"]
+[connection signal="bossstarted" from="BlueBeacon(Peasants)" to="Bossblocker" method="allow_boss"]
 [connection signal="bossstarted" from="BlueBeacon(Peasants)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="Dungeon_Teleporter" to="BlueBeacon(Peasants)" method="_on_bossroom_1_teleporter_body_entered"]
+[connection signal="bossstarted" from="RedBeacon(FinalBoss)" to="Bossblocker" method="allow_boss"]
 [connection signal="bossstarted" from="RedBeacon(FinalBoss)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
+[connection signal="bossstarted" from="PurpleBeacon(AxeSkelly)" to="Bossblocker" method="allow_boss"]
 [connection signal="bossstarted" from="PurpleBeacon(AxeSkelly)" to="Mainbossroom_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="Bossroom_1Teleporter" to="PurpleBeacon(AxeSkelly)" method="_on_bossroom_1_teleporter_body_entered"]

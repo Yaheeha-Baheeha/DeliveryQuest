@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://du10uujgwbu3m" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/halloweenbits_texture.png" id="3_7spl6"]
 [ext_resource type="PackedScene" uid="uid://87t5cnxk7t8t" path="res://Resources/pickup_crossbow.tscn" id="4_hvtnj"]
 [ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="5_iihbx"]
-[ext_resource type="PackedScene" uid="uid://d2jyhe1utbvgw" path="res://Scenes/Pickups/pickup_scroll.tscn" id="5_v3i87"]
+[ext_resource type="PackedScene" uid="uid://d2jyhe1utbvgw" path="res://Assets/King/pickup_scroll.tscn" id="5_v3i87"]
 [ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="7_7spl6"]
 [ext_resource type="Script" uid="uid://d2jjqadlnhp6x" path="res://addons/cogito/QuestSystem/Components/cogito_quest_updater.gd" id="8_jqsce"]
 [ext_resource type="Resource" uid="uid://dmnj1mo5w55u6" path="res://Quests/GetSword.tres" id="9_cs0x0"]

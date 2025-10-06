@@ -28,7 +28,7 @@
 [ext_resource type="PackedScene" uid="uid://bho0nwh5rlnua" path="res://addons/cogito/PackedScenes/target_destructable.tscn" id="15_n0vqj"]
 [ext_resource type="PackedScene" uid="uid://dvc8ghayvuasy" path="res://addons/cogito/DemoScenes/DemoPrefabs/ksi_floor_recessed_end.tscn" id="16_kb157"]
 [ext_resource type="PackedScene" uid="uid://b5ukfmvoxa33e" path="res://addons/cogito/PackedScenes/Pickups/pickup_laser_ammo.tscn" id="17_l2vbg"]
-[ext_resource type="PackedScene" uid="uid://bpuio1pidh8fa" path="res://addons/cogito/DemoScenes/DemoPrefabs/ksi_floor_recessed_straight.tscn" id="17_muanm"]
+[ext_resource type="PackedScene" uid="uid://bpuio1pidh8fa" path="res://addons/cogito/Assets/Models/Kenney/SpaceInterior/GLTF format/ksi_floor_recessed_straight.tscn" id="17_muanm"]
 [ext_resource type="PackedScene" uid="uid://o0xgl5obc551" path="res://addons/cogito/PackedScenes/Pickups/pickup_pistol.tscn" id="19_1ce0p"]
 [ext_resource type="PackedScene" uid="uid://nqyrraqwixxy" path="res://addons/cogito/DemoScenes/DemoPrefabs/sliding_door.tscn" id="20_t5vwn"]
 [ext_resource type="PackedScene" uid="uid://ciil8mli32kuk" path="res://addons/cogito/PackedScenes/Pickups/pickup_laser_rifle.tscn" id="23_ex3ej"]
@@ -69,7 +69,7 @@
 [ext_resource type="PackedScene" uid="uid://b2cccsfb5tikx" path="res://addons/cogito/CogitoNPC/cogito_npc.tscn" id="63_t2hdn"]
 [ext_resource type="PackedScene" uid="uid://cbe3gqvench2s" path="res://Scenes/Pickups/Pickup_Sword.tscn" id="67_ovhpt"]
 [ext_resource type="PackedScene" uid="uid://87t5cnxk7t8t" path="res://Resources/pickup_crossbow.tscn" id="68_kt1ow"]
-[ext_resource type="PackedScene" uid="uid://d2jyhe1utbvgw" path="res://Scenes/Pickups/pickup_scroll.tscn" id="69_r8380"]
+[ext_resource type="PackedScene" uid="uid://d2jyhe1utbvgw" path="res://Assets/King/pickup_scroll.tscn" id="69_r8380"]
 [ext_resource type="PackedScene" uid="uid://c1i5a7ejkcatc" path="res://Scenes/enemies/barbarian.tscn" id="71_gshxf"]
 [ext_resource type="PackedScene" uid="uid://b6vttmuwlbnpq" path="res://Scenes/enemies/knight.tscn" id="72_4a2ug"]
 

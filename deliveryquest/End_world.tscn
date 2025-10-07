@@ -1,0 +1,116 @@
+[gd_scene load_steps=8 format=3 uid="uid://5eiqykj4unv6"]
+
+[ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_ns4dl"]
+[ext_resource type="PackedScene" uid="uid://b6yj5prtsl7hy" path="res://addons/cogito/DemoScenes/DemoPrefabs/floor_3x_3_00.tscn" id="2_tmgcy"]
+[ext_resource type="PackedScene" uid="uid://1p4vcn6myoet" path="res://addons/cogito/DemoScenes/DemoPrefabs/ksi_wall.tscn" id="3_jxuih"]
+[ext_resource type="PackedScene" uid="uid://kicjwmh02uwf" path="res://addons/cogito/PackedScenes/cogito_player.tscn" id="4_6w2pm"]
+[ext_resource type="Script" uid="uid://cavnyj4jcfvqp" path="res://addons/cogito/Scripts/hazard_zone.gd" id="5_jxuih"]
+[ext_resource type="Texture2D" uid="uid://cg5knuav7df4o" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_X.png" id="6_6w2pm"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rjolg"]
+size = Vector3(5733.93, 2752.43, 7000.53)
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_ns4dl")
+
+[node name="WORLD" type="Node3D" parent="."]
+
+[node name="Floor_3x3_00" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.238106, 0, 0)
+
+[node name="KSI_wall" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, -0.5)
+
+[node name="Floor_3x3_01" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77697, 0, 0)
+
+[node name="KSI_wall2" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3, 0, -0.5)
+
+[node name="Floor_3x3_02" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.25, 0, 9)
+
+[node name="KSI_wall3" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 9)
+
+[node name="Floor_3x3_03" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.25, 0, 6)
+
+[node name="KSI_wall4" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 6)
+
+[node name="Floor_3x3_04" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.76701, 0, 2.98912)
+
+[node name="KSI_wall5" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.26701, 0, 2.98912)
+
+[node name="Floor_3x3_05" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.76701, 0, 5.98912)
+
+[node name="KSI_wall6" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.26701, 0, 5.98912)
+
+[node name="KSI_wall7" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 6.26701, 0, -0.0108752)
+
+[node name="KSI_wall8" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 3)
+
+[node name="KSI_wall9" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 5.73252, 0, 9.42585)
+
+[node name="KSI_wall10" parent="WORLD" instance=ExtResource("3_jxuih")]
+transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 2.73252, 0, 9.42585)
+
+[node name="Floor_3x3_06" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.238106, 3.0158, 0)
+
+[node name="Floor_3x3_07" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.77697, 3.0158, 0)
+
+[node name="Floor_3x3_08" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.25, 3.0158, 9)
+
+[node name="Floor_3x3_09" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.25, 3.0158, 6)
+
+[node name="Floor_3x3_10" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.76701, 3.0158, 2.98912)
+
+[node name="Floor_3x3_11" parent="WORLD" instance=ExtResource("2_tmgcy")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.76701, 3.0158, 5.98912)
+
+[node name="ENDCONNECTOR" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.62002, 1.79627, 1.56222)
+
+[node name="CogitoPlayer" parent="." instance=ExtResource("4_6w2pm")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 2.62002, 1.79627, 1.56222)
+
+[node name="HazardZone" type="Area3D" parent="."]
+transform = Transform3D(0.500001, 0, 0, 0, 0.5, 0, 0, 0, 0.500001, 0, -8.24659, 0)
+script = ExtResource("5_jxuih")
+player_attribute = "health"
+drain_amount = 200.0
+hint_icon = ExtResource("6_6w2pm")
+hint_message = "You're taking damage!"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HazardZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.920969, -2800.84, -26.104)
+shape = SubResource("BoxShape3D_rjolg")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+autoplay = true
+max_distance = 1166.22
+bus = &"SFX"
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63957, 3.8907, 4.13415)
+light_color = Color(0.8311, 0.819476, 0, 1)
+light_energy = 18.285
+light_indirect_energy = 16.0
+omni_range = 4096.0
+omni_attenuation = 10.0
+
+[connection signal="body_entered" from="HazardZone" to="HazardZone" method="_on_body_entered"]
+[connection signal="body_exited" from="HazardZone" to="HazardZone" method="_on_body_exited"]

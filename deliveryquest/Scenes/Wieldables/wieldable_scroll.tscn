@@ -210,10 +210,11 @@ tracks/2/keys = {
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dipip"]
 blend_mode = 1
+albedo_color = Color(0.764706, 0.188235, 0.321569, 1)
 
 [sub_resource type="Animation" id="Animation_dipip"]
 resource_name = "shoot"
-length = 3.0
+length = 7.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -233,7 +234,7 @@ tracks/1/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.16672, 3),
+"times": PackedFloat32Array(0, 0.2, 6.83333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [null, SubResource("StandardMaterial3D_dipip"), null]
@@ -245,7 +246,7 @@ tracks/2/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override:albe
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0.16672, 0.470739, 2.24908, 2.97105),
+"times": PackedFloat32Array(0.866667, 2.86667, 4.23333, 5.66667),
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 1), Color(1, 0.545098, 1, 1), Color(0.763968, 0.000532519, 0.780446, 1), Color(0.764706, 0.188235, 0.321569, 1)]
@@ -257,7 +258,7 @@ tracks/3/path = NodePath("Scrollmesh/normolskrol_Scroll_0:material_override:blen
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0.166667, 2.9, 2.97179),
+"times": PackedFloat32Array(0.166667, 6.16667, 6.9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
 "values": [1, 1, 0]
@@ -355,7 +356,7 @@ transform = Transform3D(0.82, 0, 0, 0, 0.82, 0, 0, 0, 0.82, -0.0010919, 0.093681
 script = ExtResource("4_dipip")
 
 [node name="normolskrol_Scroll_0" type="MeshInstance3D" parent="Scrollmesh"]
-transform = Transform3D(-0.0506634, -0.467167, -0.00938997, 0.459344, -0.0515263, 0.0851348, -0.085651, -1.83843e-08, 0.46213, 0.153129, -0.26867, 0.345249)
+transform = Transform3D(-0.0506634, -0.467167, -0.00938998, 0.459344, -0.0515263, 0.0851348, -0.085651, -2.80142e-08, 0.46213, 0.153129, -0.26867, 0.345249)
 mesh = SubResource("ArrayMesh_36eog")
 skeleton = NodePath("")
 

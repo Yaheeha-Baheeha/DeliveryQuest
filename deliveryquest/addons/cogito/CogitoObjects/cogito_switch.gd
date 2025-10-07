@@ -5,6 +5,7 @@ extends Node3D
 signal object_state_updated(interaction_text: String) #used to display correct interaction prompts
 signal switched(is_on: bool)
 signal damage_received(damage_value:float)
+signal ondeez()
 
 #region Variables
 ## Name that will displayed when interacting. Leave blank to hide
@@ -130,6 +131,7 @@ func switch_on():
 	interaction_text = interaction_text_when_on
 	object_state_updated.emit(interaction_text)
 	switched.emit(is_on)
+	ondeez.emit()
 
 
 func switch_off():

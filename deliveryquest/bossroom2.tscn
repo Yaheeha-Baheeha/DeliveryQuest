@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://csee7u7nhoctl"]
+[gd_scene load_steps=45 format=3 uid="uid://csee7u7nhoctl"]
 
 [ext_resource type="Script" uid="uid://c2kkj7vhsd1oi" path="res://addons/cogito/SceneManagement/cogito_scene.gd" id="1_elxwp"]
 [ext_resource type="PackedScene" uid="uid://7l4qp34aklfe" path="res://addons/cogito/SceneManagement/bossroom2.blend" id="1_n1okf"]
@@ -37,6 +37,8 @@
 [ext_resource type="PackedScene" uid="uid://djvbguoalmacm" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/bench_decorated.gltf" id="30_6cvwl"]
 [ext_resource type="PackedScene" uid="uid://rb5cf4r5ra8s" path="res://KayKit_HalloweenBits_1.0_FREE/KayKit_HalloweenBits_1.0_FREE/Assets/gltf/tree_dead_large.gltf" id="31_fyruv"]
 [ext_resource type="PackedScene" uid="uid://c1uem14geojct" path="res://Scenes/enemies/bosses/magicSkelly.tscn" id="33_bnlhy"]
+[ext_resource type="Script" uid="uid://cavnyj4jcfvqp" path="res://addons/cogito/Scripts/hazard_zone.gd" id="38_h3ab0"]
+[ext_resource type="Texture2D" uid="uid://cg5knuav7df4o" path="res://addons/cogito/Assets/Graphics/HintIcons/Hint_X.png" id="39_yfmhj"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_5cqrx"]
 size = Vector3(49.2275, 16.8295, 56.4119)
@@ -50,6 +52,9 @@ polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1), PackedInt32Arr
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bnlhy"]
 size = Vector3(22.332, 0.878662, 44.6625)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_73up6"]
+size = Vector3(8187.2, 2752.43, 7000.53)
 
 [node name="Bossroom2" type="Node3D" node_paths=PackedStringArray("connectors")]
 script = ExtResource("1_elxwp")
@@ -686,7 +691,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.70035, -0.0739746, 10.3107)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0133057, 0)
 shape = SubResource("BoxShape3D_bnlhy")
 
+[node name="HazardZone" type="Area3D" parent="."]
+transform = Transform3D(0.500001, 0, 0, 0, 0.5, 0, 0, 0, 0.500001, 0, -8.24659, 0)
+script = ExtResource("38_h3ab0")
+player_attribute = "health"
+drain_amount = 200.0
+hint_icon = ExtResource("39_yfmhj")
+hint_message = "You're taking damage!"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="HazardZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8446, -2800.84, -7.15832)
+shape = SubResource("BoxShape3D_73up6")
+
 [connection signal="tree_exited" from="Boss2" to="queststuff/WinWWWW" method="update_quest"]
 [connection signal="tree_exited" from="Boss2" to="Bossroom2_teleporter" method="_on_boss_1_tree_exited"]
 [connection signal="body_entered" from="queststuff/StartQuest" to="queststuff/StartQuest" method="_on_body_entered"]
 [connection signal="body_entered" from="Bossroom2_teleporter" to="Bossroom2_teleporter" method="_on_body_entered"]
+[connection signal="body_entered" from="HazardZone" to="HazardZone" method="_on_body_entered"]
+[connection signal="body_exited" from="HazardZone" to="HazardZone" method="_on_body_exited"]

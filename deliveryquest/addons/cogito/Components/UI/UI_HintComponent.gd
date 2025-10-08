@@ -23,7 +23,8 @@ func _ready() -> void:
 	
 
 func set_hint(passed_hint_icon:Texture2D, passed_hint_text:String):
-	hint_text.text = passed_hint_text
+	if hint_text.text:
+		hint_text.text = passed_hint_text
 	if passed_hint_icon != null:
 		hint_icon.set_texture(passed_hint_icon)
 	else:
